@@ -28,6 +28,5 @@ public class MainActivity extends AppCompatActivity {
 
         //test2
     }//hallo
-    //hallo2
 
 }
