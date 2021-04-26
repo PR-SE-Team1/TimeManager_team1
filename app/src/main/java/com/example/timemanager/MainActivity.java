@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navView, navController);
     }
 
+
     public void handleText(View v){
 
         v.setEnabled(false);
@@ -41,10 +42,4 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, "DELETED", Toast.LENGTH_LONG).show();
     }
 
-
-    public void launchProject(View v){
-
-        Intent i = new Intent(this, ProjectsActivity.class);
-        startActivity(i);
-    }
 }

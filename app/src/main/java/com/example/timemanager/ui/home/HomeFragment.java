@@ -1,10 +1,13 @@
 package com.example.timemanager.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,6 +16,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.timemanager.R;
+import com.example.timemanager.ui.projects.ProjectsActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +39,10 @@ public class HomeFragment extends Fragment {
         });
         return root;
     }
+
+
+
+
 
 
 
