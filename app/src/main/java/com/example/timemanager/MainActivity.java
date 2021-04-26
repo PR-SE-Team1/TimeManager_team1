@@ -1,7 +1,15 @@
 package com.example.timemanager;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
+import android.widget.EditText;
+import android.widget.Toast;
+import android.view.View;
+import android.util.Log;
 
+
+import com.example.timemanager.ui.home.ProjectsActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,8 +33,20 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
-
-
     }
 
+    public void handleText(View v){
+
+        v.setEnabled(false);
+
+        Log.d("MyLog", "message");
+        Toast.makeText(this, "DELETED", Toast.LENGTH_LONG).show();
+    }
+
+
+    public void launchProject(View v){
+
+        Intent i = new Intent(this, ProjectsActivity.class);
+        startActivity(i);
+    }
 }

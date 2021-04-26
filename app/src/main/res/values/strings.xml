@@ -3,4 +3,14 @@
     <string name="title_home">Home</string>
     <string name="title_info">Info</string>
     <string name="title_settings">Settings</string>
+    <string name="projektansicht">Projektansicht</string>
+    <string name="projekt_ndern">Projekt ändern:</string>
+    <string name="kurzbeschreibung">Kurzbeschreibung:</string>
+    <string name="sollstunden">Sollstunden:</string>
+    <string name="standardaufgabe">Standardaufgabe:</string>
+    <string name="farbe">Farbe:</string>
+    <string name="projekt_1">Projekt 1</string>
+    <string name="projekt_2">Projekt 2</string>
+    <string name="projekt_3">Projekt 3</string>
+    <string name="projekt_4">Projekt 4</string>
 </resources>
