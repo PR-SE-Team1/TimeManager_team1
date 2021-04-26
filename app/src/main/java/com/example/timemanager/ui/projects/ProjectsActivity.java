@@ -1,4 +1,4 @@
-package com.example.timemanager.ui.home;
+package com.example.timemanager.ui.projects;
 
 import androidx.appcompat.app.AppCompatActivity;
 

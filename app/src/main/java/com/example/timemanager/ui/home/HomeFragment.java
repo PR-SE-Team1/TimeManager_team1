@@ -14,6 +14,9 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.timemanager.R;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
@@ -32,4 +35,8 @@ public class HomeFragment extends Fragment {
         });
         return root;
     }
+
+
+
 }
+

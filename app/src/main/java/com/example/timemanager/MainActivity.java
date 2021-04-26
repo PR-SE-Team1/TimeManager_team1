@@ -2,14 +2,12 @@ package com.example.timemanager;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TextView;
-import android.widget.EditText;
 import android.widget.Toast;
 import android.view.View;
 import android.util.Log;
 
 
-import com.example.timemanager.ui.home.ProjectsActivity;
+import com.example.timemanager.ui.projects.ProjectsActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
