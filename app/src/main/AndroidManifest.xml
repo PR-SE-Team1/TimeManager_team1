@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TimeManager">
-        <activity android:name=".ui.projects.ProjectActivity"></activity>
+        <activity android:name=".ui.recycler.RecyclerActivity"></activity>
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name">

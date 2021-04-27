@@ -1,4 +1,4 @@
-package com.example.timemanager.ui.home;
+package com.example.timemanager.ui.recycler;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.timemanager.R;
 import com.example.timemanager.ui.projects.Project;
+import com.example.timemanager.ui.recycler.RecyclerViewAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,52 +49,36 @@ public class RecyclerViewFragment extends Fragment {
         initDataset();
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.recycler_view_frag, container, false);
-        rootView.setTag(TAG);
-
-        // BEGIN_INCLUDE(initializeRecyclerView)
-        mRecyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerView);
-
-        // LinearLayoutManager is used here, this will layout the elements in a similar fashion
-        // to the way ListView would layout elements. The RecyclerView.LayoutManager defines how
-        // elements are laid out.
-        mLayoutManager = new LinearLayoutManager(getActivity());
-
-        mCurrentLayoutManagerType = LayoutManagerType.LINEAR_LAYOUT_MANAGER;
-
-        if (savedInstanceState != null) {
-            // Restore saved layout manager type.
-            mCurrentLayoutManagerType = (LayoutManagerType) savedInstanceState
-                    .getSerializable(KEY_LAYOUT_MANAGER);
-        }
-        setRecyclerViewLayoutManager(mCurrentLayoutManagerType);
-
-        mAdapter = new RecyclerViewAdapter(projectList);
-        // Set CustomAdapter as the adapter for RecyclerView.
-        mRecyclerView.setAdapter(mAdapter);
-        // END_INCLUDE(initializeRecyclerView)
-
-        mLinearLayoutRadioButton = (RadioButton) rootView.findViewById(R.id.linear_layout_rb);
-        mLinearLayoutRadioButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setRecyclerViewLayoutManager(LayoutManagerType.LINEAR_LAYOUT_MANAGER);
-            }
-        });
-
-        mGridLayoutRadioButton = (RadioButton) rootView.findViewById(R.id.grid_layout_rb);
-        mGridLayoutRadioButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setRecyclerViewLayoutManager(LayoutManagerType.GRID_LAYOUT_MANAGER);
-            }
-        });
-
-        return rootView;
-    }
+//    @Override
+//    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+//                             Bundle savedInstanceState) {
+//        View rootView = inflater.inflate(R.layout.recycler_view_frag, container, false);
+//        rootView.setTag(TAG);
+//
+//        // BEGIN_INCLUDE(initializeRecyclerView)
+//        mRecyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerView);
+//
+//        // LinearLayoutManager is used here, this will layout the elements in a similar fashion
+//        // to the way ListView would layout elements. The RecyclerView.LayoutManager defines how
+//        // elements are laid out.
+//        mLayoutManager = new LinearLayoutManager(getActivity());
+//
+//        mCurrentLayoutManagerType = LayoutManagerType.LINEAR_LAYOUT_MANAGER;
+//
+//        if (savedInstanceState != null) {
+//            // Restore saved layout manager type.
+//            mCurrentLayoutManagerType = (LayoutManagerType) savedInstanceState
+//                    .getSerializable(KEY_LAYOUT_MANAGER);
+//        }
+//        setRecyclerViewLayoutManager(mCurrentLayoutManagerType);
+//
+//        mAdapter = new RecyclerViewAdapter(projectList);
+//        // Set CustomAdapter as the adapter for RecyclerView.
+//        mRecyclerView.setAdapter(mAdapter);
+//        // END_INCLUDE(initializeRecyclerView)
+//
+//        return rootView;
+//    }
 
     /**
      * Set RecyclerView's LayoutManager to the one given.

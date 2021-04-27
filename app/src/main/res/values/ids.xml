@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="sample_content_fragment" type="id" />
+    <item name="menu_toggle_log" type="id" />
+    <item name="sample_output" type="id" />
+    <item name="log_fragment" type="id" />
+</resources>
