@@ -26,11 +26,11 @@
 
     <RadioGroup
         android:id="@+id/radioGroup"
-        android:layout_width="173dp"
-        android:layout_height="127dp"
-        android:layout_marginTop="236dp"
-        android:layout_marginEnd="36dp"
-        android:layout_marginRight="36dp"
+        android:layout_width="210dp"
+        android:layout_height="135dp"
+        android:layout_marginTop="196dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/settingsText">
@@ -42,7 +42,7 @@
             android:checked="false"
             android:clickable="true"
             android:text="local"
-            android:textSize="14sp" />
+            android:textSize="18sp" />
 
         <RadioButton
             android:id="@+id/driveRadioButtton"
@@ -50,16 +50,16 @@
             android:layout_height="wrap_content"
             android:clickable="true"
             android:text="google drive"
-            android:textSize="14sp" />
+            android:textSize="18sp" />
     </RadioGroup>
 
     <TextView
         android:id="@+id/weeklyWorkingTimeText"
-        android:layout_width="161dp"
-        android:layout_height="29dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="136dp"
+        android:layout_width="236dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="96dp"
         android:text="Weekly Working Time"
         app:autoSizeTextType="uniform"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,13 +67,40 @@
 
     <TextView
         android:id="@+id/saveLocationText"
-        android:layout_width="94dp"
-        android:layout_height="29dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="240dp"
+        android:layout_width="115dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="196dp"
         android:text="Location"
         app:autoSizeTextType="uniform"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settingsText" />
+
+    <EditText
+        android:id="@+id/targetHours"
+        android:layout_width="106dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="160dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.034"
+        app:layout_constraintStart_toEndOf="@+id/weeklyWorkingTimeText"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="160dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="376dp"
+        android:onClick="handleTargetHours"
+        android:text="Save"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/settingsText" />
 

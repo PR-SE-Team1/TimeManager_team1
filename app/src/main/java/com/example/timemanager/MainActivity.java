@@ -1,6 +1,7 @@
 package com.example.timemanager;
 
 import android.os.Bundle;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.view.View;
 import android.util.Log;
@@ -39,5 +40,6 @@ public class MainActivity extends AppCompatActivity {
         Log.d("MyLog", "message");
         Toast.makeText(this, "DELETED", Toast.LENGTH_LONG).show();
     }
+
 
 }

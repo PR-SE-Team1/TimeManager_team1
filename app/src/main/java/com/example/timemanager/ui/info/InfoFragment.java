@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.timemanager.R;
 
+
 public class InfoFragment extends Fragment {
 
     private InfoViewModel infoViewModel;
@@ -32,4 +33,6 @@ public class InfoFragment extends Fragment {
         });
         return root;
     }
+
+
 }

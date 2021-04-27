@@ -1,6 +1,7 @@
 package com.example.timemanager.ui.settings;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+
 
 import com.example.timemanager.R;
 
@@ -31,5 +33,14 @@ public class SettingsFragment extends Fragment {
             }
         });
         return root;
+    }
+
+    public void handleTargetHours(View v){
+        TextView t = null;
+        t = t.findViewById(R.id.targetHours);
+        String input = t.getText().toString();
+
+        Log.d("target hour", input);
+
     }
 }
