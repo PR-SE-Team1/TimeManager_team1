@@ -11,8 +11,16 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.timemanager.R;
+import com.example.timemanager.ui.projects.Project;
+import com.example.timemanager.ui.recycler.RecyclerViewAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class HomeFragment extends Fragment {
 
@@ -30,6 +38,23 @@ public class HomeFragment extends Fragment {
                 textView.setText(s);
             }
         });
+
+        //data to populate recycle view
+        List<Project> projectList = new ArrayList<>();
+        projectList.add(new Project ("Projekt1", "kurzbeschreibung 1", 11.1, "blue"));
+        projectList.add(new Project ("Projekt2", "kurzbeschreibung 2", 12.1, "blue"));
+        projectList.add(new Project ("Projekt3", "kurzbeschreibung 3", 13.1, "blue"));
+        projectList.add(new Project ("Projekt4", "kurzbeschreibung 4", 14.1, "blue"));
+        projectList.add(new Project ("Projekt5", "kurzbeschreibung 5", 15.1, "blue"));
+        projectList.add(new Project ("Projekt6", "kurzbeschreibung 6", 16.1, "blue"));
+
+        RecyclerView recyclerView = root.findViewById(R.id.recycler_view);
+
+        projectList = Project.getProjectList();
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setAdapter(new RecyclerViewAdapter(projectList));
+        recyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL));
+
         return root;
     }
 }

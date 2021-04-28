@@ -39,21 +39,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
-        //data to populate recycle view
-        List<Project> projectList = new ArrayList<>();
-        projectList.add(new Project ("Projekt1", "kurzbeschreibung 1", 11.1, "blue"));
-        projectList.add(new Project ("Projekt2", "kurzbeschreibung 2", 12.1, "blue"));
-        projectList.add(new Project ("Projekt3", "kurzbeschreibung 3", 13.1, "blue"));
-        projectList.add(new Project ("Projekt4", "kurzbeschreibung 4", 14.1, "blue"));
-        projectList.add(new Project ("Projekt5", "kurzbeschreibung 5", 15.1, "blue"));
-        projectList.add(new Project ("Projekt6", "kurzbeschreibung 6", 16.1, "blue"));
 
-        RecyclerView recyclerView = findViewById(R.id.recycler_view);
-
-        projectList = Project.getProjectList();
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new RecyclerViewAdapter(projectList));
-        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
     }
 
 
