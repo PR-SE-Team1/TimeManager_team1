@@ -13,8 +13,5 @@
     <string name="projekt_2">Projekt 2</string>
     <string name="projekt_3">Projekt 3</string>
     <string name="projekt_4">Projekt 4</string>
-    <string name="sample_hide_log" />
-    <string name="sample_show_log" />
-    <string name="linear_layout_manager" />
-    <string name="grid_layout_manager" />
+
 </resources>
