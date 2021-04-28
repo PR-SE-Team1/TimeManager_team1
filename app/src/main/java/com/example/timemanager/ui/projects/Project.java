@@ -3,6 +3,8 @@ package com.example.timemanager.ui.projects;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 
@@ -82,5 +84,10 @@ public class Project implements Parcelable {
         dest.writeString(description);
         dest.writeDouble(plannedHours);
         dest.writeString(color);
+    }
+
+    private static List<Project> projectList = new ArrayList<>();
+    public static List<Project> getProjectList(){
+        return projectList;
     }
 }

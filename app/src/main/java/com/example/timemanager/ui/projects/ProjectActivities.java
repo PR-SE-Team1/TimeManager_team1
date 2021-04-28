@@ -21,4 +21,5 @@ public class ProjectActivities {
         projectList.add(new Project ("Projekt 1", "dies ist ein Projekt. Es besteht aus mehreren Aufgaben", 12.5, "blue"));
     }
 
+
 }
