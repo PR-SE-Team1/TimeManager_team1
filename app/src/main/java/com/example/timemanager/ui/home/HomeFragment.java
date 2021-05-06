@@ -26,21 +26,15 @@ public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
-        final TextView textView = root.findViewById(R.id.textView4);
-        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+    View v;
+    private RecyclerView recyclerView;
+    private List<Project> projectList;
 
-        //data to populate recycle view
-        List<Project> projectList = new ArrayList<>();
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        projectList = new ArrayList<>();
         projectList.add(new Project ("Projekt1", "kurzbeschreibung 1", 11.1, "blue"));
         projectList.add(new Project ("Projekt2", "kurzbeschreibung 2", 12.1, "blue"));
         projectList.add(new Project ("Projekt3", "kurzbeschreibung 3", 13.1, "blue"));
@@ -48,13 +42,35 @@ public class HomeFragment extends Fragment {
         projectList.add(new Project ("Projekt5", "kurzbeschreibung 5", 15.1, "blue"));
         projectList.add(new Project ("Projekt6", "kurzbeschreibung 6", 16.1, "blue"));
 
+    }
+
+    /*
         RecyclerView recyclerView = root.findViewById(R.id.recycler_view);
 
         projectList = Project.getProjectList();
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(new RecyclerViewAdapter(projectList));
         recyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL));
+    */
 
-        return root;
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             ViewGroup container, Bundle savedInstanceState) {
+        homeViewModel =
+                new ViewModelProvider(this).get(HomeViewModel.class);
+        View v = inflater.inflate(R.layout.fragment_home, container, false);
+        recyclerView = (RecyclerView) v.findViewById(R.id.recycler_view);
+        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getContext(),projectList);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setAdapter(recyclerViewAdapter);
+        //final TextView textView = root.findViewById(R.id.textView4);
+        //homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+           // @Override
+           // public void onChanged(@Nullable String s) {
+            //    textView.setText(s);
+           // }
+       // });
+
+
+        return v;
     }
 }
