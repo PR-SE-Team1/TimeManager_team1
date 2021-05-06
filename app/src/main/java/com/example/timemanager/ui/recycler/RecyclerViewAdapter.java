@@ -38,8 +38,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(RecyclerViewAdapter.ViewHolder holder, int position){
         //holder.textView.setText(data.get(position).getClass().getName());
-
-        holder.projektname.setText(data.get(position).getClass().getName());
+        holder.projektName.setText(data.get(position).getProjName());
+        holder.beschreibung.setText(data.get(position).getDescription());
     }
 
     @Override
@@ -49,18 +49,19 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         //private TextView textView;
-        private TextView projektname;
-
+        private TextView projektName;
+        private TextView beschreibung;
         public ViewHolder(View view) {
             super(view);
-            projektname = (TextView) view.findViewById(R.id.name_projekt);
-
+            projektName = (TextView) view.findViewById(R.id.name_projekt);
+            beschreibung = (TextView) view.findViewById(R.id.beschreibung_projekt);
            // this.textView = view.findViewById(R.id.textview);
         }
 
         @Override
         public void onClick(View view) {
-            Toast.makeText(view.getContext(), "position : " + getLayoutPosition() + " text : " + this.projektname.getText(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(view.getContext(), "position : " + getLayoutPosition() + " text : " + this.projektName.getText(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(view.getContext(), "position : " + getLayoutPosition() + " text : " + this.beschreibung.getText(), Toast.LENGTH_SHORT).show();
         }
     }
 

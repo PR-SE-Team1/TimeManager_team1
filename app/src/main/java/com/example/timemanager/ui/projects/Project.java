@@ -10,10 +10,14 @@ import java.util.Scanner;
 
 // implements Parcelable to pass complex data from one activity to another activity
 public class Project implements Parcelable {
-    public String projName;
-    public String description;
-    public double plannedHours;
-    public String color;
+    //public String projName;
+    //public String description;
+    //public double plannedHours;
+    //public String color;
+    private String projName;
+    private String description;
+    private double plannedHours;
+    private String color;
     //tasks need to be implemented
 
 //  //insert input with scanner?
@@ -54,6 +58,24 @@ public class Project implements Parcelable {
         description = in.readString();
         plannedHours = in.readDouble();
         color = in.readString();
+    }
+
+    //GETTER
+
+    public String getProjName() {
+        return projName;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public double getPlannedHours() {
+        return plannedHours;
+    }
+
+    public String getColor() {
+        return color;
     }
 
     public static final Creator<Project> CREATOR = new Creator<Project>() {
