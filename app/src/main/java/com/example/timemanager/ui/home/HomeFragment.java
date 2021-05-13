@@ -4,19 +4,20 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.timemanager.R;
 import com.example.timemanager.ui.projects.Project;
+import com.example.timemanager.ui.projects.ProjectNew;
 import com.example.timemanager.ui.recycler.RecyclerViewAdapter;
 
 import java.util.ArrayList;
@@ -29,6 +30,7 @@ public class HomeFragment extends Fragment {
     View v;
     private RecyclerView recyclerView;
     private List<Project> projectList;
+    private Button addButton;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -62,6 +64,33 @@ public class HomeFragment extends Fragment {
         RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getContext(),projectList);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(recyclerViewAdapter);
+
+
+        addButton = (Button) v.findViewById(R.id.add_project);
+        addButton.setOnClickListener(new View.OnClickListener(){
+
+
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction ft = getParentFragmentManager().beginTransaction();
+                ft.replace(R.id.nav_host_fragment, new ProjectNew());
+                ft.commit();
+            }
+        });
+
+
+        return v;
+
+/*
+        addButton.setOnClickListener(v1 -> {
+            ProjectNew newProject = new ProjectNew();
+            FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+            transaction.replace(R.id.container,newProject);
+            transaction.commit();
+        });
+*/
+
+
         //final TextView textView = root.findViewById(R.id.textView4);
         //homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
            // @Override
@@ -71,6 +100,6 @@ public class HomeFragment extends Fragment {
        // });
 
 
-        return v;
+
     }
 }

@@ -7,11 +7,14 @@ import android.view.View;
 import android.util.Log;
 
 
+import com.example.timemanager.ui.home.HomeFragment;
 import com.example.timemanager.ui.projects.Project;
 import com.example.timemanager.ui.recycler.RecyclerViewAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -39,7 +42,11 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
-
+/*
+        FragmentTransaction fmt = getSupportFragmentManager().beginTransaction();
+        fmt.add(R.id.nav_host_fragment,new HomeFragment());
+        fmt.commit();
+*/
     }
 
 
