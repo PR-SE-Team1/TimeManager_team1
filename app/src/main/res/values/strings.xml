@@ -15,7 +15,8 @@
     <string name="projekt_4">Projekt 4</string>
     <string name="projectname">Projectname_hintText</string>
     <string name="Beschreibung">Beschreibung</string>
-    <string name="Projektname">Projektname</string>
+    <string name="Projektname">Projektname:</string>
     <string name="add_item_homeView">Add Item</string>
+    <string name="aufgabe">Aufgabe:</string>
 
 </resources>
