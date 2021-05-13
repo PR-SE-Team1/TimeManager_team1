@@ -46,15 +46,6 @@ public class HomeFragment extends Fragment {
 
     }
 
-    /*
-        RecyclerView recyclerView = root.findViewById(R.id.recycler_view);
-
-        projectList = Project.getProjectList();
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerView.setAdapter(new RecyclerViewAdapter(projectList));
-        recyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL));
-    */
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         homeViewModel =
@@ -77,29 +68,7 @@ public class HomeFragment extends Fragment {
                 ft.commit();
             }
         });
-
-
         return v;
-
-/*
-        addButton.setOnClickListener(v1 -> {
-            ProjectNew newProject = new ProjectNew();
-            FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-            transaction.replace(R.id.container,newProject);
-            transaction.commit();
-        });
-*/
-
-
-        //final TextView textView = root.findViewById(R.id.textView4);
-        //homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-           // @Override
-           // public void onChanged(@Nullable String s) {
-            //    textView.setText(s);
-           // }
-       // });
-
-
 
     }
 }

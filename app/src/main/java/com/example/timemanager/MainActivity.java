@@ -42,11 +42,6 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
-/*
-        FragmentTransaction fmt = getSupportFragmentManager().beginTransaction();
-        fmt.add(R.id.nav_host_fragment,new HomeFragment());
-        fmt.commit();
-*/
     }
 
 
