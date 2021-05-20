@@ -16,6 +16,10 @@ import com.example.timemanager.ui.projects.Project;
 
 import java.util.List;
 
+/**
+ * class used to create a recycler view of projects displayed on homescreen
+ * these projects open a new activity when clicked
+ */
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
     Context context;
@@ -24,6 +28,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private OnProjectListener onProjectListener;
 
 
+    /**
+     * constructor for a recycler view adapter
+     * @param context
+     * @param data
+     * @param onProjectListener
+     */
     public RecyclerViewAdapter(Context context, List<Project> data, OnProjectListener onProjectListener){
         this.context = context;
         this.data = data;
@@ -31,8 +41,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         this.onProjectListener = onProjectListener;
 
     }
-
-
 
     @Override
     public RecyclerViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) throws NullPointerException {
@@ -49,11 +57,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.beschreibung.setText(data.get(position).getDescription());
     }
 
+
     @Override
     public int getItemCount() {
         return this.data.size();
     }
 
+    /**
+     * static class ViewHolder for different views (elements) of a recycler view
+     */
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private TextView projektName, beschreibung;
         OnProjectListener onProjectListener;
@@ -64,7 +76,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             view.setOnClickListener(this);
             this.onProjectListener = onProjectListener;
         }
-
         @Override
         public void onClick(View view) {
             onProjectListener.onProjectClick(getAdapterPosition());

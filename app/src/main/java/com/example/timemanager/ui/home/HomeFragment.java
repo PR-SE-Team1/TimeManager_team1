@@ -2,7 +2,6 @@ package com.example.timemanager.ui.home;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,7 +28,6 @@ public class HomeFragment extends Fragment implements RecyclerViewAdapter.OnProj
 
     private static final String TAG = "ProjectActivity";
     private HomeViewModel homeViewModel;
-
     View v;
     private RecyclerView recyclerView;
     private List<Project> projectList;
@@ -70,6 +68,10 @@ public class HomeFragment extends Fragment implements RecyclerViewAdapter.OnProj
 
     }
 
+    /**
+     * implemented to start a new activity when recycler item is clicked
+     * @param position
+     */
     @Override
     public void onProjectClick(int position) {
         Intent intent = new Intent(getContext(), ProjectActivity.class);

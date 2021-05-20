@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="textview" type="id" />
+
+    <!-- activity_edit_projects -->
+    <item name="tvEditProj" type="id" />
+    <item name="tvEditDescription" type="id" />
+    <item name="tvEditHours" type="id" />
+    <item name="tvEditDefTask" type="id" />
+    <item name="tvEditColor" type="id" />
+    <item name="spinnerEditChangeProj" type="id" />
+    <item name="mltEditDescription" type="id" />
+    <item name="ptEditHours" type="id" />
+    <item name="spinnerEditDefTask" type="id" />
+    <item name="spinnerEditColor" type="id" />
+    <item name="btnEditDelete" type="id" />
+
+
+
 </resources>
