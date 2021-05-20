@@ -19,6 +19,7 @@ public class Project implements Parcelable {
     private double plannedHours;
     private String color;
     //tasks need to be implemented
+    private static List<Project> projectList = new ArrayList<>();
 
 //  //insert input with scanner?
 //    Scanner input = new Scanner(System.in);
@@ -60,22 +61,28 @@ public class Project implements Parcelable {
         color = in.readString();
     }
 
-    //GETTER
+    /**
+     * delete after parcel is working
+     */
+    public Project() {
 
+    }
+
+    //GETTER
     public String getProjName() {
         return projName;
     }
-
     public String getDescription() {
         return description;
     }
-
     public double getPlannedHours() {
         return plannedHours;
     }
-
     public String getColor() {
         return color;
+    }
+    public static List<Project> getProjectList(){
+        return projectList;
     }
 
     public static final Creator<Project> CREATOR = new Creator<Project>() {
@@ -108,8 +115,5 @@ public class Project implements Parcelable {
         dest.writeString(color);
     }
 
-    private static List<Project> projectList = new ArrayList<>();
-    public static List<Project> getProjectList(){
-        return projectList;
-    }
+
 }

@@ -1,22 +1,38 @@
 <resources>
+    <!-- fragment titles -->
     <string name="app_name">TimeManager</string>
     <string name="title_home">Home</string>
     <string name="title_info">Info</string>
     <string name="title_settings">Settings</string>
+
+
+    <!-- not sure?? -->
     <string name="projektansicht">Projektansicht</string>
     <string name="projekt_ndern">Projekt ändern:</string>
     <string name="kurzbeschreibung">Kurzbeschreibung:</string>
     <string name="sollstunden">Sollstunden:</string>
     <string name="standardaufgabe">Standardaufgabe:</string>
     <string name="farbe">Farbe:</string>
-    <string name="projekt_1">Projekt 1</string>
-    <string name="projekt_2">Projekt 2</string>
-    <string name="projekt_3">Projekt 3</string>
-    <string name="projekt_4">Projekt 4</string>
+
     <string name="projectname">Projectname_hintText</string>
     <string name="Beschreibung">Beschreibung</string>
     <string name="Projektname">Projektname:</string>
     <string name="add_item_homeView">Add Item</string>
     <string name="aufgabe">Aufgabe:</string>
+
+    <!-- projects for testing purposes (spinner) do not delete -->
+    <string name="projekt_1">Projekt 1</string>
+    <string name="projekt_2">Projekt 2</string>
+    <string name="projekt_3">Projekt 3</string>
+    <string name="projekt_4">Projekt 4</string>
+
+    <!-- activity_edit_projects -->
+    <string name="editProj">Projekt ändern:</string>
+    <string name="editDescription">Kurzbeschreibung:</string>
+    <string name="editHours">Sollstunden:</string>
+    <string name="editDefTask">Standardaufgabe:</string>
+    <string name="editColor">Farbe:</string>
+    <string name="editEnterHours">Stunden eingeben:</string>
+    <string name="btnEditDelete">Projekt löschen</string>
 
 </resources>

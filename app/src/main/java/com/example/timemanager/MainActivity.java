@@ -1,37 +1,40 @@
 package com.example.timemanager;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TextView;
+import android.view.LayoutInflater;
 import android.widget.Toast;
 import android.view.View;
 import android.util.Log;
 
 
-import com.example.timemanager.ui.home.HomeFragment;
 import com.example.timemanager.ui.projects.Project;
 import com.example.timemanager.ui.recycler.RecyclerViewAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
+
+private static final String TAG = "PorjectActivity";
+private List<Project> projectList = new ArrayList<>();
+private RecyclerViewAdapter recyclerViewAdapter;
+private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -45,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
+
     public void handleText(View v){
 
         v.setEnabled(false);
@@ -52,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d("MyLog", "message");
         Toast.makeText(this, "DELETED", Toast.LENGTH_LONG).show();
     }
+
 
 
 }
