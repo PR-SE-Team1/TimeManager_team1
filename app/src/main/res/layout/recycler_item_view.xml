@@ -10,8 +10,10 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="186dp"
-        android:layout_height="75dp"
+        android:layout_width="374dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="150dp"
         android:layout_marginRight="150dp"
@@ -19,8 +21,10 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <TextView
             android:id="@+id/name_projekt"
@@ -36,40 +40,5 @@
             android:text="@string/Beschreibung" />
 
     </LinearLayout>
-
-    <Button
-        android:id="@+id/edit_project"
-        android:layout_width="60dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="43dp"
-        android:layout_marginLeft="43dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginRight="100dp"
-        android:layout_marginBottom="58dp"
-        app:backgroundTint="#8BC34A"
-        app:icon="@android:drawable/ic_menu_edit"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout2"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/delete_project"
-        android:layout_width="60dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:layout_marginBottom="58dp"
-        android:text=""
-        app:backgroundTint="#F44336"
-        app:icon="@android:drawable/ic_menu_delete"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/add_projekt"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
