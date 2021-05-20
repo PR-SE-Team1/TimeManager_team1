@@ -60,6 +60,13 @@ public class Project implements Parcelable {
         color = in.readString();
     }
 
+    /**
+     * delete after parcel is working
+     */
+    public Project() {
+
+    }
+
     //GETTER
 
     public String getProjName() {
@@ -109,6 +116,7 @@ public class Project implements Parcelable {
     }
 
     private static List<Project> projectList = new ArrayList<>();
+
     public static List<Project> getProjectList(){
         return projectList;
     }
