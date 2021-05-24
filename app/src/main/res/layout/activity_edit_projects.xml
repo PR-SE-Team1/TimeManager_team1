@@ -20,24 +20,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvEditDescription"
-        android:layout_width="150dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="64dp"
-        android:text="@string/editDescription"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvEditProj" />
-
-    <TextView
         android:id="@+id/tvEditHours"
         android:layout_width="150dp"
         android:layout_height="35dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="112dp"
         android:text="@string/editHours"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,7 +37,7 @@
         android:layout_height="35dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="44dp"
         android:text="@string/editDefTask"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -61,7 +49,7 @@
         android:layout_height="35dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="28dp"
         android:text="@string/editColor"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -83,7 +71,7 @@
         android:layout_height="32dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintStart_toEndOf="@+id/tvEditDefTask"
         app:layout_constraintTop_toBottomOf="@+id/ptEditHours" />
 
@@ -93,7 +81,7 @@
         android:layout_height="27dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintStart_toEndOf="@+id/tvEditColor"
         app:layout_constraintTop_toBottomOf="@+id/spinnerEditDefTask" />
 
@@ -103,12 +91,24 @@
         android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="32dp"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
         app:layout_constraintStart_toEndOf="@+id/tvEditDescription"
         app:layout_constraintTop_toBottomOf="@+id/spinnerEditChangeProj" />
+
+    <TextView
+        android:id="@+id/tvEditDescription"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/editDescription"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEditProj" />
 
     <EditText
         android:id="@+id/ptEditHours"
@@ -133,6 +133,20 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:rippleColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/btnGoToTasks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="120dp"
+        android:onClick="sendMessage"
+        android:text="@string/btnGoToTasks"
+        app:backgroundTint="#2E4BDD"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:rippleColor="#FFFFFF" />
 

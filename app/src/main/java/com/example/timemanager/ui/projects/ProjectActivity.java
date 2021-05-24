@@ -1,8 +1,12 @@
 package com.example.timemanager.ui.projects;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 
 import androidx.annotation.Nullable;
@@ -10,9 +14,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.timemanager.R;
 import com.example.timemanager.ui.tasks.Task;
+import com.example.timemanager.ui.tasks.TaskActivity;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class ProjectActivity extends AppCompatActivity {
 
@@ -20,6 +26,10 @@ public class ProjectActivity extends AppCompatActivity {
     public List<String> taskList = new ArrayList<>();
     public List<String> colorList = new ArrayList<>();
 
+    TaskActivity ta;
+    Button taskButton;
+    View v;
+    Context context;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -57,5 +67,20 @@ public class ProjectActivity extends AppCompatActivity {
         ArrayAdapter arrayAdapterC = new ArrayAdapter(this,android.R.layout.simple_spinner_item,colorList);
         arrayAdapterC.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerC.setAdapter(arrayAdapterC);
+
+
+//        taskButton = (Button) v.findViewById(R.id.btnGoToTasks);
+//        taskButton.setOnClickListener(v1 -> {
+//
+//            Intent intent = new Intent(context, TaskActivity.class);
+//            context.startActivity(intent);
+//        });
+
     }
+
+    public void sendMessage(View view) {
+        Intent intent = new Intent(this, TaskActivity.class);
+        startActivity(intent);
+    }
+
 }

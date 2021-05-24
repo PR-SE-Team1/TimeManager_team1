@@ -14,8 +14,13 @@
     <item name="spinnerEditDefTask" type="id" />
     <item name="spinnerEditColor" type="id" />
     <item name="btnEditDelete" type="id" />
+    <item name="btnGoToTasks" type="id" />
 
     <!-- recycler_item_view_tasks -->
     <item name="linearRecyclerTask" type="id" />
+    <item name="taskName" type="id" />
+
+    <!-- activity_tasks -->
+    <item name="recyclerViewTasks" type="id" />
 
 </resources>
