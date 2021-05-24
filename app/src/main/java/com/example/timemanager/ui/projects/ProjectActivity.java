@@ -9,6 +9,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.timemanager.R;
+import com.example.timemanager.ui.tasks.Task;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,9 +28,9 @@ public class ProjectActivity extends AppCompatActivity {
         setContentView(R.layout.activity_edit_projects);
 
         // spinner edit PROJECT
-        projectList.add(new Project ("Projekt1", "kurzbeschreibung 1", 11.1, "blue").getProjName());
-        projectList.add(new Project ("Projekt2", "kurzbeschreibung 2", 12.1, "blue").getProjName());
-        projectList.add(new Project ("Projekt3", "kurzbeschreibung 3", 13.1, "blue").getProjName());
+        projectList.add(new Project (1, "Projekt1", "kurzbeschreibung 1", 11.1, "blue").getProjName());
+        projectList.add(new Project (2, "Projekt2", "kurzbeschreibung 2", 12.1, "blue").getProjName());
+        projectList.add(new Project (3, "Projekt3", "kurzbeschreibung 3", 13.1, "blue").getProjName());
         Spinner spinnerP;
         spinnerP = findViewById(R.id.spinnerEditChangeProj);
         ArrayAdapter arrayAdapterP = new ArrayAdapter(this,android.R.layout.simple_spinner_item,projectList);
@@ -38,9 +39,8 @@ public class ProjectActivity extends AppCompatActivity {
 
 
         //spinner edit TASK
-        taskList.add(new Project ("Aufgabe1", "kurzbeschreibung 1", 11.1, "blue").getProjName());
-        taskList.add(new Project ("Augabe2", "kurzbeschreibung 2", 12.1, "blue").getProjName());
-        taskList.add(new Project ("Aufgabe3", "kurzbeschreibung 3", 13.1, "blue").getProjName());
+        taskList.add(new Task("Aufgabe1", new Project(11, "Projekt11", "kurzbeschreibung 11", 11.1, "blue"), true).getTaskName());
+        taskList.add(new Task("Aufgabe2", new Project(12, "Projekt12", "kurzbeschreibung 12", 11.1, "blue"), false).getTaskName());
         Spinner spinnerT;
         spinnerT = findViewById(R.id.spinnerEditDefTask);
         ArrayAdapter arrayAdapterT = new ArrayAdapter(this,android.R.layout.simple_spinner_item,taskList);

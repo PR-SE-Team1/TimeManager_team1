@@ -35,4 +35,7 @@
     <string name="editEnterHours">Stunden eingeben:</string>
     <string name="btnEditDelete">Projekt löschen</string>
 
+    <!-- recycler_item_view_task -->
+    <string name="taskname">Aufgabe:</string>
+
 </resources>

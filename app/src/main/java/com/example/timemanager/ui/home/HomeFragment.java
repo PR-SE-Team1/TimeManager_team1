@@ -38,12 +38,12 @@ public class HomeFragment extends Fragment implements RecyclerViewAdapter.OnProj
         super.onCreate(savedInstanceState);
 
         projectList = new ArrayList<>();
-        projectList.add(new Project ("Projekt1", "kurzbeschreibung 1", 11.1, "blue"));
-        projectList.add(new Project ("Projekt2", "kurzbeschreibung 2", 12.1, "blue"));
-        projectList.add(new Project ("Projekt3", "kurzbeschreibung 3", 13.1, "blue"));
-        projectList.add(new Project ("Projekt4", "kurzbeschreibung 4", 14.1, "blue"));
-        projectList.add(new Project ("Projekt5", "kurzbeschreibung 5", 15.1, "blue"));
-        projectList.add(new Project ("Projekt6", "kurzbeschreibung 6", 16.1, "blue"));
+        projectList.add(new Project (1, "Projekt1", "kurzbeschreibung 1", 11.1, "blue"));
+        projectList.add(new Project (2, "Projekt2", "kurzbeschreibung 2", 12.1, "blue"));
+        projectList.add(new Project (3, "Projekt3", "kurzbeschreibung 3", 13.1, "blue"));
+        projectList.add(new Project (4, "Projekt4", "kurzbeschreibung 4", 14.1, "blue"));
+        projectList.add(new Project (5, "Projekt5", "kurzbeschreibung 5", 15.1, "blue"));
+        projectList.add(new Project (6, "Projekt6", "kurzbeschreibung 6", 16.1, "blue"));
 
     }
 

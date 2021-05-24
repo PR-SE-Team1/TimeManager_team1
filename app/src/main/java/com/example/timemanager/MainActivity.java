@@ -25,11 +25,6 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity  {
 
-private static final String TAG = "PorjectActivity";
-private List<Project> projectList = new ArrayList<>();
-private RecyclerViewAdapter recyclerViewAdapter;
-private RecyclerView recyclerView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
