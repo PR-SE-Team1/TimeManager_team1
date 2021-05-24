@@ -15,6 +15,7 @@
     <item name="spinnerEditColor" type="id" />
     <item name="btnEditDelete" type="id" />
 
-
+    <!-- recycler_item_view_tasks -->
+    <item name="linearRecyclerTask" type="id" />
 
 </resources>

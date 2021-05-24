@@ -1,7 +1,6 @@
 package com.example.timemanager.ui.recycler;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -71,7 +70,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         OnProjectListener onProjectListener;
         public ViewHolder(@NonNull View view, OnProjectListener onProjectListener) {
             super(view);
-            projektName = (TextView) view.findViewById(R.id.name_projekt);
+            projektName = (TextView) view.findViewById(R.id.name_task);
             beschreibung = (TextView) view.findViewById(R.id.beschreibung_projekt);
             view.setOnClickListener(this);
             this.onProjectListener = onProjectListener;

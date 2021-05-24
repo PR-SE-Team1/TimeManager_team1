@@ -25,8 +25,6 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity  {
 
-private List<Project> projectList = new ArrayList<>();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
