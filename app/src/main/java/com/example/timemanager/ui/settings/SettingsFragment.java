@@ -35,12 +35,5 @@ public class SettingsFragment extends Fragment {
         return root;
     }
 
-    public void handleTargetHours(View v){
-        TextView t = null;
-        t = t.findViewById(R.id.targetHours);
-        String input = t.getText().toString();
 
-        Log.d("target hour", input);
-
-    }
 }
