@@ -112,4 +112,14 @@ public class Project implements Parcelable {
     public static List<Project> getProjectList(){
         return projectList;
     }
+
+
+    //public static String getPath(){ //Speicherung
+    //    return configPath;
+    //}
+
+    //public static void setPath(String path){ //Speicherung
+    //    ProjectService.path = path;
+    //}
+
 }

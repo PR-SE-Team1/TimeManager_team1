@@ -39,6 +39,11 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
+        //SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE); // Speicherung
+        //ProjectService.setPath(sharedPreferances.getString("storageXML", "")); //Speicherung
+        //ProjectService.initializeList();
+
+
 
     }
 
