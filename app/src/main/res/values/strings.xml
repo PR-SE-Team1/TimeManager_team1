@@ -34,6 +34,7 @@
     <string name="editColor">Farbe:</string>
     <string name="editEnterHours">Stunden eingeben:</string>
     <string name="btnEditDelete">Projekt löschen</string>
+    <string name="btnGoToTasks">Aufgaben anzeigen</string>
 
     <!-- recycler_item_view_task -->
     <string name="taskname">Aufgabe:</string>

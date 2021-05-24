@@ -70,8 +70,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         OnProjectListener onProjectListener;
         public ViewHolder(@NonNull View view, OnProjectListener onProjectListener) {
             super(view);
-            projektName = (TextView) view.findViewById(R.id.name_task);
-            beschreibung = (TextView) view.findViewById(R.id.beschreibung_projekt);
+            projektName = (TextView) view.findViewById(R.id.projName);
+            beschreibung = (TextView) view.findViewById(R.id.projDescr);
             view.setOnClickListener(this);
             this.onProjectListener = onProjectListener;
         }

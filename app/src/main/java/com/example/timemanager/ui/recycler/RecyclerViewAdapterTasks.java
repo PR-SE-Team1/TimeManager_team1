@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.timemanager.R;
 import com.example.timemanager.ui.tasks.Task;
+import com.example.timemanager.ui.tasks.TaskActivity;
 
 import java.util.List;
 
@@ -62,6 +63,9 @@ public class RecyclerViewAdapterTasks extends RecyclerView.Adapter<RecyclerViewA
         return this.data.size();
     }
 
+    public void setClickListener(TaskActivity taskActivity) {
+    }
+
     /**
      * static class ViewHolder for different views (elements) of a recycler view
      */
@@ -70,7 +74,7 @@ public class RecyclerViewAdapterTasks extends RecyclerView.Adapter<RecyclerViewA
         OnTaskListener onTaskListener;
         public ViewHolder(@NonNull View view, OnTaskListener onTaskListener) {
             super(view);
-            taskName = (TextView) view.findViewById(R.id.name_task);
+            taskName = (TextView) view.findViewById(R.id.taskName);
             view.setOnClickListener(this);
             this.onTaskListener = onTaskListener;
         }
