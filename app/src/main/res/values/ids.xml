@@ -16,6 +16,14 @@
     <item name="btnEditDelete" type="id" />
     <item name="btnGoToTasks" type="id" />
 
+    <!-- activity_edit_tasks -->
+    <item name="tvEditTask" type="id" />
+    <item name="tvEditStart" type="id" />
+    <item name="tvEditEnd" type="id" />
+    <item name="spinnerEditTask" type="id" />
+    <item name="ptEditEnd" type="id" />
+    <item name="btnEditDeleteTask" type="id" />
+
     <!-- recycler_item_view_tasks -->
     <item name="linearRecyclerTask" type="id" />
     <item name="taskName" type="id" />

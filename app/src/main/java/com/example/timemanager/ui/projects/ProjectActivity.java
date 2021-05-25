@@ -26,11 +26,6 @@ public class ProjectActivity extends AppCompatActivity {
     public List<String> taskList = new ArrayList<>();
     public List<String> colorList = new ArrayList<>();
 
-    TaskActivity ta;
-    Button taskButton;
-    View v;
-    Context context;
-
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,13 +63,6 @@ public class ProjectActivity extends AppCompatActivity {
         arrayAdapterC.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerC.setAdapter(arrayAdapterC);
 
-
-//        taskButton = (Button) v.findViewById(R.id.btnGoToTasks);
-//        taskButton.setOnClickListener(v1 -> {
-//
-//            Intent intent = new Intent(context, TaskActivity.class);
-//            context.startActivity(intent);
-//        });
 
     }
 
