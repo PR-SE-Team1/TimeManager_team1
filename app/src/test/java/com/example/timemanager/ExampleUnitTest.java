@@ -20,7 +20,6 @@ public class ExampleUnitTest {
     public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
     }
-
     Project p;
     List<Project> list;
     List<Project> list1;
@@ -55,12 +54,12 @@ public class ExampleUnitTest {
         assertNotEquals("Kurzbeschreibung 1", p.getDescription());
     }
 
-    @Test
-    public void testGetPlannedHours() {
-        assertNotNull(p.getPlannedHours());
-        assertEquals("11.1", p.getPlannedHours());
-        assertNotEquals("0", p.getPlannedHours());
-    }
+//    @Test
+//    public void testGetPlannedHours() {
+//        assertNotNull(p.getPlannedHours());
+//        assertEquals("11.1", p.getPlannedHours());
+//        assertNotEquals("0", p.getPlannedHours());
+//    }
 
     @Test
     public void testGetColor() {
@@ -69,10 +68,10 @@ public class ExampleUnitTest {
         assertNotEquals("red", p.getColor());
     }
 
-    @Test
-    public void testGetProjectList() {
-        assertNotNull(p.getProjectList());
-        assertEquals(list, p.getProjectList());
-        assertNotEquals(null, p.getProjectList());
-    }
+//    @Test
+//    public void testGetProjectList() {
+//        assertNotNull(p.getProjectList());
+//        assertEquals(list, p.getProjectList());
+//        assertNotEquals(null, p.getProjectList());
+//    }
 }
