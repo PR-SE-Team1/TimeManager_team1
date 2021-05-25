@@ -7,7 +7,7 @@
     tools:context=".ui.info.InfoFragment">
 
     <Button
-        android:id="@+id/overview"
+        android:id="@+id/btn_overview"
         android:layout_width="174dp"
         android:layout_height="64dp"
         android:layout_marginStart="118dp"
@@ -21,10 +21,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/workingHours" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_workingHours" />
 
     <Button
-        android:id="@+id/workingHours"
+        android:id="@+id/btn_workingHours"
         android:layout_width="174dp"
         android:layout_height="64dp"
         android:layout_marginStart="118dp"
@@ -33,10 +33,9 @@
         android:layout_marginEnd="119dp"
         android:layout_marginRight="119dp"
         android:layout_marginBottom="21dp"
-        android:onClick="workingHours"
         android:text="Working Hours"
         app:backgroundTint="@color/purple_500"
-        app:layout_constraintBottom_toTopOf="@+id/overview"
+        app:layout_constraintBottom_toTopOf="@+id/btn_overview"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -57,7 +56,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/overview" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_overview" />
 
     <TextView
         android:id="@+id/infoText"
@@ -69,7 +68,7 @@
         android:text="Info"
         android:textSize="20sp"
         app:autoSizeTextType="uniform"
-        app:layout_constraintBottom_toTopOf="@+id/workingHours"
+        app:layout_constraintBottom_toTopOf="@+id/btn_workingHours"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
