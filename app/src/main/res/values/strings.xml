@@ -36,7 +36,17 @@
     <string name="btnEditDelete">Projekt löschen</string>
     <string name="btnGoToTasks">Aufgaben anzeigen</string>
 
+    <!-- activity_edit_tasks -->
+    <string name="editTask">Aufgabe wechseln:</string>
+    <string name="editStart">Start:</string>
+    <string name="editEnd">Ende:</string>
+    <string name="pteditStart">Zeit eingeben</string>
+    <string name="pteditEnd">Zeit eingeben</string>
+    <string name="btnEditDeleteTask">Aufgabe löschen</string>
+
     <!-- recycler_item_view_task -->
     <string name="taskname">Aufgabe:</string>
+
+
 
 </resources>

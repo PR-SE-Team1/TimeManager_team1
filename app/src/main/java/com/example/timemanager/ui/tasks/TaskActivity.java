@@ -34,7 +34,7 @@ public class TaskActivity extends AppCompatActivity implements RecyclerViewAdapt
 
     private List<Task> taskList;
     RecyclerViewAdapterTasks recyclerViewAdapterTasks;
-    RecyclerViewAdapterTasks.OnTaskListener onTaskListener;
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -49,8 +49,8 @@ public class TaskActivity extends AppCompatActivity implements RecyclerViewAdapt
         // set up the RecyclerView
         RecyclerView recyclerView = findViewById(R.id.recyclerViewTasks);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerViewAdapterTasks = new RecyclerViewAdapterTasks(this, taskList, onTaskListener);
-        recyclerViewAdapterTasks.setClickListener(this);
+        recyclerViewAdapterTasks = new RecyclerViewAdapterTasks(this, taskList, this);
+        //recyclerViewAdapterTasks.setClickListener(this);
         recyclerView.setAdapter(recyclerViewAdapterTasks);
 
     }
@@ -59,6 +59,8 @@ public class TaskActivity extends AppCompatActivity implements RecyclerViewAdapt
     //get to another activity by clicking on the task
     @Override
     public void onTaskClick(int position) {
+        Intent intent = new Intent(this, TaskDetailActivity.class);
+        startActivity(intent);
 
     }
 }

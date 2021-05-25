@@ -63,8 +63,6 @@ public class RecyclerViewAdapterTasks extends RecyclerView.Adapter<RecyclerViewA
         return this.data.size();
     }
 
-    public void setClickListener(TaskActivity taskActivity) {
-    }
 
     /**
      * static class ViewHolder for different views (elements) of a recycler view
