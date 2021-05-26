@@ -7,7 +7,7 @@
     tools:context=".ui.info.InfoFragment">
 
     <Button
-        android:id="@+id/btn_overview"
+        android:id="@+id/btnInfoOverview"
         android:layout_width="174dp"
         android:layout_height="64dp"
         android:layout_marginStart="118dp"
@@ -16,15 +16,15 @@
         android:layout_marginEnd="119dp"
         android:layout_marginRight="119dp"
         android:layout_marginBottom="21dp"
-        android:text="Overview"
-        app:layout_constraintBottom_toTopOf="@+id/bookingList"
+        android:text="@string/btnInfoOverview"
+        app:layout_constraintBottom_toTopOf="@+id/btnInfoBookingList"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_workingHours" />
+        app:layout_constraintTop_toBottomOf="@+id/btnInfoWorkingHours" />
 
     <Button
-        android:id="@+id/btn_workingHours"
+        android:id="@+id/btnInfoWorkingHours"
         android:layout_width="174dp"
         android:layout_height="64dp"
         android:layout_marginStart="118dp"
@@ -33,16 +33,16 @@
         android:layout_marginEnd="119dp"
         android:layout_marginRight="119dp"
         android:layout_marginBottom="21dp"
-        android:text="Working Hours"
+        android:text="@string/btnInfoWorkingHours"
         app:backgroundTint="@color/purple_500"
-        app:layout_constraintBottom_toTopOf="@+id/btn_overview"
+        app:layout_constraintBottom_toTopOf="@+id/btnInfoOverview"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/bookingList"
+        android:id="@+id/btnInfoBookingList"
         android:layout_width="174dp"
         android:layout_height="64dp"
         android:layout_marginStart="118dp"
@@ -51,28 +51,13 @@
         android:layout_marginEnd="119dp"
         android:layout_marginRight="119dp"
         android:layout_marginBottom="249dp"
-        android:text="Booking List"
+        android:text="@string/btnInfoBookingList"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_overview" />
+        app:layout_constraintTop_toBottomOf="@+id/btnInfoOverview" />
 
-    <TextView
-        android:id="@+id/infoText"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="169dp"
-        android:gravity="center"
-        android:text="Info"
-        android:textSize="20sp"
-        app:autoSizeTextType="uniform"
-        app:layout_constraintBottom_toTopOf="@+id/btn_workingHours"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

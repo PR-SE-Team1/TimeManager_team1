@@ -47,6 +47,15 @@
     <!-- recycler_item_view_task -->
     <string name="taskname">Aufgabe:</string>
 
+    <!-- fragment_info -->
+    <string name="btnInfoOverview">Übersicht</string>
+    <string name="btnInfoWorkingHours">Arbeitszeiten</string>
+    <string name="btnInfoBookingList">Buchungsliste</string>
 
+    <!-- activity_info_workinghours -->
+    <string name="tvInfoDailyHours">Arbeitsstunden pro Tag:</string>
+    <string name="tvInfoTargetHoursDaily">Geplante Arbeitsstunden/Tag:</string>
+    <string name="tvInfoReachedHoursDaily">Erreichte Arbeitsstunden/Tag:</string>
+    <string name="btnInfoWorkingHoursWeekly">Wochenansicht</string>
 
 </resources>

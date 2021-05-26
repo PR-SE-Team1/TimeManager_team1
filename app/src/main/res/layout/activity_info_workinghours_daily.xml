@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/tv_info_dailyworkinghours"
+        android:id="@+id/tvInfoDailyHours"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="101dp"
@@ -15,44 +15,45 @@
         android:layout_marginTop="116dp"
         android:layout_marginEnd="101dp"
         android:layout_marginRight="101dp"
-        android:text="Daily working hours"
+        android:text="@string/tvInfoDailyHours"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_info_targethours_daily"
+        android:id="@+id/tvInfoTargetHoursDaily"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
         android:layout_marginLeft="60dp"
         android:layout_marginTop="124dp"
-        android:text="Target hours"
+        android:text="@string/tvInfoTargetHoursDaily"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_info_dailyworkinghours" />
+        app:layout_constraintTop_toBottomOf="@+id/tvInfoDailyHours" />
 
     <TextView
-        android:id="@+id/tv_info_reachedhours_daily"
+        android:id="@+id/tvInfoReachedHoursDaily"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
         android:layout_marginLeft="60dp"
         android:layout_marginTop="39dp"
-        android:text="Reached hours"
+        android:text="@string/tvInfoTargetHoursDaily"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_info_targethours_daily" />
+        app:layout_constraintTop_toBottomOf="@+id/tvInfoTargetHoursDaily" />
 
     <Button
-        android:id="@+id/btn_info_weekly"
+        android:id="@+id/btnInfoWorkingHoursWeekly"
         android:layout_width="147dp"
         android:layout_height="56dp"
         android:layout_marginStart="132dp"
         android:layout_marginLeft="132dp"
         android:layout_marginBottom="160dp"
-        android:text="Weekly"
+        android:text="@string/btnInfoWorkingHoursWeekly"
+        android:onClick="openWorkingHoursWeekly"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

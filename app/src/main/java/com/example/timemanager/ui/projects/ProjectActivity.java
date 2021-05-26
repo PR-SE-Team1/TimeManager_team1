@@ -66,7 +66,7 @@ public class ProjectActivity extends AppCompatActivity {
 
     }
 
-    public void sendMessage(View view) {
+    public void openTaskActivity(View view) {
         Intent intent = new Intent(this, TaskActivity.class);
         startActivity(intent);
     }

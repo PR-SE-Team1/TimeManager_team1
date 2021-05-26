@@ -31,38 +31,6 @@ public class MainActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        Button btn_overview = (Button) findViewById(R.id.btn_overview);
-        btn_overview.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setContentView(R.layout.info_overview);
-            }
-        });
-
-        Button btn_workingHours = (Button) findViewById(R.id.btn_workingHours);
-        btn_workingHours.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setContentView(R.layout.info_workinghours_weekly);
-            }
-        });
-
-        Button btn_info_daily = (Button) findViewById(R.id.btn_info_daily);
-        btn_info_daily.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setContentView(R.layout.info_workinghours_daily);
-            }
-        });
-
-        Button btn_info_weekly = (Button) findViewById(R.id.btn_info_weekly);
-        btn_info_weekly.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setContentView(R.layout.info_workinghours_weekly);
-            }
-        });
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -74,8 +42,6 @@ public class MainActivity extends AppCompatActivity  {
         NavigationUI.setupWithNavController(navView, navController);
 
     }
-
-
 
 
     public void handleText(View v){
