@@ -47,22 +47,6 @@
     <!-- recycler_item_view_task -->
     <string name="taskname">Aufgabe:</string>
 
-    <!-- fragment_info -->
-    <string name="btn_workinghours"> Working Hours</string>
-    <string name="btn_overview"> Overview</string>
-
-
-    <!-- fragment_worinkinghours_weekly -->
-    <string name="tv_workinghours_weekly">Weekly working hours</string>
-    <string name="tv_info_targethours_weekly"> Target Hours </string>
-    <string name="tv_info_reachedhours_weekly"> Reached hours </string>
-    <string name="btn_info_daily"> Daily </string>
-
-    <!-- fragment_workinghours_daily -->
-    <string name="tv_info_dailyworkinghours"> Daily working hours</string>
-    <string name="tv_info_targethours_daily"> Target Hours </string>
-    <string name="tv_info_reachedhours_daily"> Reached hours</string>
-    <string name="btn_info_weekly"> Weekly</string>
 
 
 </resources>

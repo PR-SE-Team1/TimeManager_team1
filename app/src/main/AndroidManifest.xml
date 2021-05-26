@@ -9,9 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TimeManager">
-        <activity android:name=".ui.info.OverviewActivity"></activity>
-        <activity android:name=".ui.info.WorkingHoursDailyActivity" />
-        <activity android:name=".ui.info.WorkingHoursWeeklyActivity" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name">
@@ -24,7 +21,6 @@
         <activity android:name=".ui.projects.ProjectActivity" />
         <activity android:name=".ui.tasks.TaskActivity" />
         <activity android:name=".ui.tasks.TaskDetailActivity" />
-        <activity android:name=".ui.info.InfoFragment" />
     </application>
 
 </manifest>

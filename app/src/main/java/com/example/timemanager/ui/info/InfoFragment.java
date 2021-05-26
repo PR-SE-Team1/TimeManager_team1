@@ -1,6 +1,5 @@
 package com.example.timemanager.ui.info;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,12 +8,10 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.timemanager.MainActivity;
 import com.example.timemanager.R;
 
 
@@ -36,15 +33,6 @@ public class InfoFragment extends Fragment {
         });
         return root;
     }
-    public void openOverview(View v){
-//        Intent intent = new Intent(this, OverviewActivity.class);
-        Intent intent = new Intent(getActivity(), OverviewActivity.class);
-        startActivity(intent);
-    }
 
-    public void openWorkinghours(View view){
-//        Intent intent = new Intent(this, WorkingHoursWeeklyActivity.class);
-        Intent intent = new Intent(getActivity(), OverviewActivity.class);
-        startActivity(intent);
-    }
+
 }
