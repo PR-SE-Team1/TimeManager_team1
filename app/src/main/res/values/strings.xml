@@ -28,11 +28,13 @@
 
     <!-- activity_edit_projects -->
     <string name="editProj">Projekt ändern:</string>
-    <string name="editDescription">Kurzbeschreibung:</string>
+    <string name="tvEditDescription">Kurzbeschreibung:</string>
+    <string name="editDescription">Verwaltung von Projekten und dazugehörigen Aufgaben in einem Time Manager</string>
     <string name="editHours">Sollstunden:</string>
     <string name="editDefTask">Standardaufgabe:</string>
     <string name="editColor">Farbe:</string>
-    <string name="editEnterHours">Stunden eingeben:</string>
+    <string name="tvEditEnterHours">Stunden eingeben:</string>
+    <string name="editEnterHours">450</string>
     <string name="btnEditDelete">Projekt löschen</string>
     <string name="btnGoToTasks">Aufgaben anzeigen</string>
 

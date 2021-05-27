@@ -33,9 +33,9 @@ public class ProjectActivity extends AppCompatActivity {
         setContentView(R.layout.activity_edit_projects);
 
         // spinner edit PROJECT
-        projectList.add(new Project (1, "Projekt1", "kurzbeschreibung 1", 11.1, "blue").getProjName());
-        projectList.add(new Project (2, "Projekt2", "kurzbeschreibung 2", 12.1, "blue").getProjName());
-        projectList.add(new Project (3, "Projekt3", "kurzbeschreibung 3", 13.1, "blue").getProjName());
+        projectList.add(new Project (1, "Time Manager", "Verwaltung von Projekten und dazugehörigen Aufgaben in einem Time Manager", 450, "blue").getProjName());
+        projectList.add(new Project (2, "Bookend", "Erstellung einer App, in der gelesene Bücher organisiert werden können", 12.1, "blue").getProjName());
+        projectList.add(new Project (3, "Calculator", "Taschenrechner-App mit der Berechnungen durchgeführt werden können", 13.1, "blue").getProjName());
         Spinner spinnerP;
         spinnerP = findViewById(R.id.spinnerEditChangeProj);
         ArrayAdapter arrayAdapterP = new ArrayAdapter(this,android.R.layout.simple_spinner_item,projectList);
@@ -44,8 +44,8 @@ public class ProjectActivity extends AppCompatActivity {
 
 
         //spinner edit TASK
-        taskList.add(new Task("Aufgabe1", new Project(11, "Projekt11", "kurzbeschreibung 11", 11.1, "blue"), true).getTaskName());
-        taskList.add(new Task("Aufgabe2", new Project(12, "Projekt12", "kurzbeschreibung 12", 11.1, "blue"), false).getTaskName());
+        taskList.add(new Task("PROJ01", new Project(11, "Time Manager", "kurzbeschreibung 11", 11.1, "blue"), true).getTaskName());
+        taskList.add(new Task("PROJ02", new Project(12, "Time Manager", "kurzbeschreibung 12", 11.1, "blue"), false).getTaskName());
         Spinner spinnerT;
         spinnerT = findViewById(R.id.spinnerEditDefTask);
         ArrayAdapter arrayAdapterT = new ArrayAdapter(this,android.R.layout.simple_spinner_item,taskList);

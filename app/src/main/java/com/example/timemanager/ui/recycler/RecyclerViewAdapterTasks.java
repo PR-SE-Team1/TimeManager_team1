@@ -40,7 +40,6 @@ public class RecyclerViewAdapterTasks extends RecyclerView.Adapter<RecyclerViewA
         this.data = data;
         inflater = LayoutInflater.from(context);
         this.onTaskListener = onTaskListener;
-
     }
 
     @Override

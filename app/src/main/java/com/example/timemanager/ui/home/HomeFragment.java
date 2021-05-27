@@ -38,12 +38,12 @@ public class HomeFragment extends Fragment implements RecyclerViewAdapter.OnProj
         super.onCreate(savedInstanceState);
 
         projectList = new ArrayList<>();
-        projectList.add(new Project (1, "Projekt1", "kurzbeschreibung 1", 11.1, "blue"));
-        projectList.add(new Project (2, "Projekt2", "kurzbeschreibung 2", 12.1, "blue"));
-        projectList.add(new Project (3, "Projekt3", "kurzbeschreibung 3", 13.1, "blue"));
-        projectList.add(new Project (4, "Projekt4", "kurzbeschreibung 4", 14.1, "blue"));
-        projectList.add(new Project (5, "Projekt5", "kurzbeschreibung 5", 15.1, "blue"));
-        projectList.add(new Project (6, "Projekt6", "kurzbeschreibung 6", 16.1, "blue"));
+        projectList.add(new Project (1, "Time Manager", "Verwaltung von Projekten und dazugehörigen Aufgaben in einem Time Manager", 450, "blue"));
+        projectList.add(new Project (2, "Bookend", "Erstellung einer App, in der gelesene Bücher organisiert werden können", 12.1, "blue"));
+        projectList.add(new Project (3, "Calculator", "Taschenrechner-App mit der Berechnungen durchgeführt werden können", 13.1, "blue"));
+        projectList.add(new Project (4, "PhotoProject", "Web-App zum Teilen von Fotos mit anderen Benutzern", 14.1, "blue"));
+        projectList.add(new Project (5, "Schachspiel", "Erstellung eines Schachspiels, in dem Benutzer ihre Erfolge teilen können", 15.1, "blue"));
+        projectList.add(new Project (6, "Wecker", "Weckerapp, die die Weckzeit mithilfe der im Kalender eingetragenen Termine berechnet", 16.1, "blue"));
 
     }
 

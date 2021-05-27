@@ -44,14 +44,5 @@ public class MainActivity extends AppCompatActivity  {
     }
 
 
-    public void handleText(View v){
-
-        v.setEnabled(false);
-
-        Log.d("MyLog", "message");
-        Toast.makeText(this, "DELETED", Toast.LENGTH_LONG).show();
-    }
-
-
 
 }

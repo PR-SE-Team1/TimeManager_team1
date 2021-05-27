@@ -42,8 +42,8 @@ public class TaskActivity extends AppCompatActivity implements RecyclerViewAdapt
         setContentView(R.layout.activity_tasks);
 
         taskList = new ArrayList<>();
-        taskList.add(new Task("Aufgabe1", new Project(11, "Projekt11", "kurzbeschreibung 11", 11.1, "blue"), true));
-        taskList.add(new Task("Aufgabe2", new Project(12, "Projekt12", "kurzbeschreibung 12", 11.1, "blue"), false));
+        taskList.add(new Task("PROJ01", new Project(11, "Projekt11", "kurzbeschreibung 11", 11.1, "blue"), true));
+        taskList.add(new Task("PROJ02", new Project(12, "Projekt12", "kurzbeschreibung 12", 11.1, "blue"), false));
 
 
         // set up the RecyclerView
