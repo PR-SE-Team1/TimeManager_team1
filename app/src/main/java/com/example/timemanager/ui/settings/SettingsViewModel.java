@@ -1,8 +1,14 @@
 package com.example.timemanager.ui.settings;
 
+import android.view.View;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
+
+import com.example.timemanager.ui.projects.Project;
+
+import java.util.ArrayList;
 
 public class SettingsViewModel extends ViewModel {
 
