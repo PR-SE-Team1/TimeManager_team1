@@ -43,6 +43,13 @@ public class RecyclerViewAdapterTasks extends RecyclerView.Adapter<RecyclerViewA
 
     }
 
+    /**
+     *
+     * @param parent
+     * @param viewType
+     * @return
+     * @throws NullPointerException
+     */
     @Override
     public RecyclerViewAdapterTasks.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) throws NullPointerException {
         View v = LayoutInflater.from(context).inflate(R.layout.recycler_item_view_tasks, parent, false);
@@ -51,13 +58,22 @@ public class RecyclerViewAdapterTasks extends RecyclerView.Adapter<RecyclerViewA
         return viewHolder;
     }
 
+    /**
+     *
+     * @param holder
+     * @param position
+     */
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewAdapterTasks.ViewHolder holder, int position){
         //holder.textView.setText(data.get(position).getClass().getName());
-        holder.taskName.setText(data.get(position).getTaskName());
+        Task currentItem = data.get(position);
+        holder.taskName.setText(currentItem.getTaskName());
     }
 
-
+    /**
+     *
+     * @return number of items in list
+     */
     @Override
     public int getItemCount() {
         return this.data.size();

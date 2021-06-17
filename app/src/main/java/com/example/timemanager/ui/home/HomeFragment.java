@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,6 +22,7 @@ import com.example.timemanager.ui.projects.Project;
 import com.example.timemanager.ui.projects.ProjectActivity;
 import com.example.timemanager.ui.projects.ProjectNew;
 import com.example.timemanager.ui.recycler.RecyclerViewAdapter;
+import com.example.timemanager.ui.tasks.Task;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,18 +35,20 @@ public class HomeFragment extends Fragment implements RecyclerViewAdapter.OnProj
     private RecyclerView recyclerView;
     private List<Project> projectList;
     private Button addButton;
+    private Button btnAddP;
+    private EditText etAddP;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        projectList = new ArrayList<>();
-        projectList.add(new Project (1, "Projekt1", "kurzbeschreibung 1", 11.1, "blue"));
-        projectList.add(new Project (2, "Projekt2", "kurzbeschreibung 2", 12.1, "blue"));
-        projectList.add(new Project (3, "Projekt3", "kurzbeschreibung 3", 13.1, "blue"));
-        projectList.add(new Project (4, "Projekt4", "kurzbeschreibung 4", 14.1, "blue"));
-        projectList.add(new Project (5, "Projekt5", "kurzbeschreibung 5", 15.1, "blue"));
-        projectList.add(new Project (6, "Projekt6", "kurzbeschreibung 6", 16.1, "blue"));
+        createProjectList();
+        buildRecyclerView();
+
+
+
+
+
 
     }
 
@@ -64,6 +69,22 @@ public class HomeFragment extends Fragment implements RecyclerViewAdapter.OnProj
             ft.replace(R.id.nav_host_fragment, new ProjectNew());
             ft.commit();
         });
+
+//        btnAddP.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                String getInput = etAddP.getText().toString();
+//
+//                if (projectList.contains(getInput)){
+//                    Toast.makeText(getBaseContext(), "Aufgabe existiert bereits", Toast.LENGTH_LONG).show();
+//                } else if (getInput == null || getInput.trim().equals("")){
+//                    Toast.makeText(getBaseContext(), "Kein Name eingegeben", Toast.LENGTH_LONG).show();
+//                }else {
+//                    projectList.add(new Project(getInput));
+//
+//                }
+//            }
+//        });
         return v;
 
     }
@@ -77,4 +98,20 @@ public class HomeFragment extends Fragment implements RecyclerViewAdapter.OnProj
         Intent intent = new Intent(getContext(), ProjectActivity.class);
         startActivity(intent);
     }
+
+
+    public void createProjectList(){
+        projectList = new ArrayList<>();
+        projectList.add(new Project ("Projekt1", "kurzbeschreibung 1", 11.1, "blue"));
+        projectList.add(new Project ("Projekt2", "kurzbeschreibung 2", 12.1, "blue"));
+        projectList.add(new Project ( "Projekt3", "kurzbeschreibung 3", 13.1, "blue"));
+        projectList.add(new Project ( "Projekt4", "kurzbeschreibung 4", 14.1, "blue"));
+        projectList.add(new Project ("Projekt5", "kurzbeschreibung 5", 15.1, "blue"));
+
+    }
+
+    public void buildRecyclerView(){
+
+    }
+
 }

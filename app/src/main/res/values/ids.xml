@@ -30,5 +30,10 @@
 
     <!-- activity_tasks -->
     <item name="recyclerViewTasks" type="id" />
+    <item name="btnAddNewTask" type="id" />
+    <item name="etAddNewTask" type="id" />
 
+    <!-- activity_main -->
+    <item name="btnAddNewProject" type="id" />
+    <item name="etAddNewProject" type="id" />
 </resources>

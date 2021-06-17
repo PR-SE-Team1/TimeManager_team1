@@ -29,12 +29,16 @@ public class Project  implements Parcelable{
      * @param plannedHours
      * @param color
      */
-    public Project (int projId, String projName, String description, double plannedHours, String color){
+    public Project ( String projName, String description, double plannedHours, String color){
         this.projId = projId;
         this.projName = projName;
         this.description = description;
         this.plannedHours = plannedHours;
         this.color = color;
+    }
+
+    public Project ( String projName){
+        this.projName = projName;
     }
 
     /**

@@ -28,8 +28,8 @@ public class TaskDetailActivity extends AppCompatActivity {
 
         //spinner TASK
         taskList = new ArrayList<>();
-        taskList.add(new Task("Aufgabe1", new Project(11, "Projekt11", "kurzbeschreibung 11", 11.1, "blue"), true).getTaskName());
-        taskList.add(new Task("Aufgabe2", new Project(12, "Projekt12", "kurzbeschreibung 12", 11.1, "blue"), false).getTaskName());
+        taskList.add(new Task("Aufgabe1", new Project( "Projekt11", "kurzbeschreibung 11", 11.1, "blue"), true).getTaskName());
+        taskList.add(new Task("Aufgabe2", new Project( "Projekt12", "kurzbeschreibung 12", 11.1, "blue"), false).getTaskName());
 
         Spinner spinnerT;
         spinnerT = findViewById(R.id.spinnerEditTask);

@@ -8,7 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -33,7 +35,13 @@ import java.util.zip.Inflater;
 public class TaskActivity extends AppCompatActivity implements RecyclerViewAdapterTasks.OnTaskListener {
 
     private List<Task> taskList;
-    RecyclerViewAdapterTasks recyclerViewAdapterTasks;
+
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter recyclerViewAdapterTasks;
+    private RecyclerView.LayoutManager mLayoutManager;
+
+    private Button btnAddT;
+    private EditText etAddT;
 
 
     @Override
@@ -41,18 +49,55 @@ public class TaskActivity extends AppCompatActivity implements RecyclerViewAdapt
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tasks);
 
-        taskList = new ArrayList<>();
-        taskList.add(new Task("Aufgabe1", new Project(11, "Projekt11", "kurzbeschreibung 11", 11.1, "blue"), true));
-        taskList.add(new Task("Aufgabe2", new Project(12, "Projekt12", "kurzbeschreibung 12", 11.1, "blue"), false));
+        createActivityList();
+        buildRecyclerView();
+
+        btnAddT = findViewById(R.id.btnAddNewTask);
+        etAddT = findViewById(R.id.etAddNewTask);
+
+        btnAddT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String getInput = etAddT.getText().toString();
+
+                if (taskList.contains(getInput)){
+                    Toast.makeText(getBaseContext(), "Aufgabe existiert bereits", Toast.LENGTH_LONG).show();
+                } else if (getInput == null || getInput.trim().equals("")){
+                    Toast.makeText(getBaseContext(), "Kein Name eingegeben", Toast.LENGTH_LONG).show();
+                }else {
+                    taskList.add(new Task (getInput));
+                    
+                }
+            }
+        });
 
 
+
+    }
+
+    /**
+     * add items to list
+     * @param position
+     */
+    private void insertItem(int position) {
+        taskList.add(position, new Task("Aufgabe3", new Project("Projekt11", "kurzbeschreibung 11", 11.1, "blue"), true));
+        recyclerViewAdapterTasks.notifyItemInserted(position);
+    }
+
+    private void buildRecyclerView() {
         // set up the RecyclerView
-        RecyclerView recyclerView = findViewById(R.id.recyclerViewTasks);
+        recyclerView = findViewById(R.id.recyclerViewTasks);
+        recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerViewAdapterTasks = new RecyclerViewAdapterTasks(this, taskList, this);
         //recyclerViewAdapterTasks.setClickListener(this);
         recyclerView.setAdapter(recyclerViewAdapterTasks);
+    }
 
+    private void createActivityList() {
+        taskList = new ArrayList<>();
+        taskList.add(new Task("Aufgabe1", new Project( "Projekt11", "kurzbeschreibung 11", 11.1, "blue"), true));
+        taskList.add(new Task("Aufgabe2", new Project("Projekt12", "kurzbeschreibung 12", 11.1, "blue"), false));
     }
 
 

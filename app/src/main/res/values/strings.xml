@@ -47,6 +47,12 @@
     <!-- recycler_item_view_task -->
     <string name="taskname">Aufgabe:</string>
 
+    <!-- activity_main -->
+    <string name="btnAddNewProject">hinzufügen</string>
+    <string name="etAddNewProject">Neues Projekt</string>
 
+    <!-- activity_tasks -->
+    <string name="btnAddNewTask">hinzufügen</string>
+    <string name="etAddNewTask">Neue Aufgabe</string>
 
 </resources>

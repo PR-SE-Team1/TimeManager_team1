@@ -30,6 +30,10 @@ public class Task {
         this.defaultTask = defaultTask;
         this.project = project;
     }
+    public Task (String taskName){
+        this.taskName = taskName;
+
+    }
 
 //    /**
 //     * retrieving task-data

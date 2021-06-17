@@ -1,9 +1,11 @@
 package com.example.timemanager.ui.recycler;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.timemanager.R;
 import com.example.timemanager.ui.projects.Project;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -41,6 +44,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     }
 
+
+    /**
+     *
+     * @param parent
+     * @param viewType
+     * @return
+     * @throws NullPointerException
+     */
     @Override
     public RecyclerViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) throws NullPointerException {
         View v = LayoutInflater.from(context).inflate(R.layout.recycler_item_view, parent, false);
@@ -49,14 +60,23 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return viewHolder;
     }
 
+    /**
+     * passing values
+     * @param holder
+     * @param position to know the item
+     */
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewAdapter.ViewHolder holder, int position){
+        Project currentItem = data.get(position);
         //holder.textView.setText(data.get(position).getClass().getName());
-        holder.projektName.setText(data.get(position).getProjName());
-        holder.beschreibung.setText(data.get(position).getDescription());
+        holder.projektName.setText(currentItem.getProjName());
+        holder.beschreibung.setText(currentItem.getDescription());
     }
 
-
+    /**
+     *
+     * @return number of items in list
+     */
     @Override
     public int getItemCount() {
         return this.data.size();
@@ -67,7 +87,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
      */
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private TextView projektName, beschreibung;
+
         OnProjectListener onProjectListener;
+
         public ViewHolder(@NonNull View view, OnProjectListener onProjectListener) {
             super(view);
             projektName = (TextView) view.findViewById(R.id.projName);
@@ -78,12 +100,19 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         @Override
         public void onClick(View view) {
             onProjectListener.onProjectClick(getAdapterPosition());
+            //TextView text = (TextView) view.findViewById(R.id.projName);
+            //String name = text.getText().toString();
             Toast.makeText(view.getContext(), "position : " + getLayoutPosition() + " text : " + this.projektName.getText(), Toast.LENGTH_SHORT).show();
             Toast.makeText(view.getContext(), "position : " + getLayoutPosition() + " text : " + this.beschreibung.getText(), Toast.LENGTH_SHORT).show();
             Toast.makeText(view.getContext(), "The Item Clicked is: "+getLayoutPosition(),Toast.LENGTH_SHORT).show();
 
+
+
         }
     }
+
+
+
 
     /**
      * interface to detect a click
