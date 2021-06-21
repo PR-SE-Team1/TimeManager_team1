@@ -88,5 +88,9 @@ public class Task {
 //        dest.writeString(color);
 //    }
 
+    public void changeText1 (String text){
+        taskName = text;
+    }
+
 
 }

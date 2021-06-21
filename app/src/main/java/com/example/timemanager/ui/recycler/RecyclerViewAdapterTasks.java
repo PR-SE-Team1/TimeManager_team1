@@ -5,6 +5,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,6 +44,72 @@ public class RecyclerViewAdapterTasks extends RecyclerView.Adapter<RecyclerViewA
 
     }
 
+
+    public void setOnItemClickListener (OnTaskListener listener){
+        onTaskListener = listener;
+    }
+
+
+    /**
+     * interface to detect a click
+     */
+    public interface OnTaskListener{
+        //used in the activity to send position of clicked item
+        void onTaskClick(int position);
+        void onDeleteClick(int position);
+    }
+
+
+    /**
+     * static class ViewHolder for different views (elements) of a recycler view
+     */
+    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        public TextView taskName;
+        public ImageView deleteImage;
+        OnTaskListener onTaskListener;
+
+        public ViewHolder(@NonNull View view, OnTaskListener onTaskListener) {
+            super(view);
+            taskName = (TextView) view.findViewById(R.id.taskName);
+            deleteImage = itemView.findViewById(R.id.image_deleteTask);
+
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (onTaskListener != null) {
+                        int position = getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION) {
+                            onTaskListener.onTaskClick(position);
+                        }
+                    }
+                }
+            });
+            this.onTaskListener = onTaskListener;
+
+            deleteImage.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (onTaskListener != null) {
+                        int position = getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION) {
+                            onTaskListener.onDeleteClick(position);
+                        }
+                    }
+                }
+            });
+
+        }
+        @Override
+        public void onClick(View view) {
+            onTaskListener.onTaskClick(getAdapterPosition());
+            Toast.makeText(view.getContext(), "position : " + getLayoutPosition() + " text : " + this.taskName.getText(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(view.getContext(), "The Item Clicked is: "+getLayoutPosition(),Toast.LENGTH_SHORT).show();
+
+        }
+    }
+
+
+
     /**
      *
      * @param parent
@@ -80,33 +147,8 @@ public class RecyclerViewAdapterTasks extends RecyclerView.Adapter<RecyclerViewA
     }
 
 
-    /**
-     * static class ViewHolder for different views (elements) of a recycler view
-     */
-    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        private TextView taskName;
-        OnTaskListener onTaskListener;
-        public ViewHolder(@NonNull View view, OnTaskListener onTaskListener) {
-            super(view);
-            taskName = (TextView) view.findViewById(R.id.taskName);
-            view.setOnClickListener(this);
-            this.onTaskListener = onTaskListener;
-        }
-        @Override
-        public void onClick(View view) {
-            onTaskListener.onTaskClick(getAdapterPosition());
-            Toast.makeText(view.getContext(), "position : " + getLayoutPosition() + " text : " + this.taskName.getText(), Toast.LENGTH_SHORT).show();
-            Toast.makeText(view.getContext(), "The Item Clicked is: "+getLayoutPosition(),Toast.LENGTH_SHORT).show();
 
-        }
-    }
 
-    /**
-     * interface to detect a click
-     */
-    public interface OnTaskListener{
-        //used in the activity to send position of clicked item
-        void onTaskClick(int position);
-    }
+
 
 }

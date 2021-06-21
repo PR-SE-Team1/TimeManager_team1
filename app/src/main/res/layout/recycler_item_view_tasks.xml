@@ -14,7 +14,7 @@
 
     <RelativeLayout
         android:id="@+id/linearRecyclerTask"
-        android:layout_width="115dp"
+        android:layout_width="360dp"
         android:layout_height="74dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
@@ -37,15 +37,18 @@
             android:text="@string/taskname"
             android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/taskName"
-            android:text="Button"
-            />
 
-
+        <ImageView
+            android:id="@+id/image_deleteTask"
+            android:layout_width="56dp"
+            android:layout_height="47dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginRight="1dp"
+            android:src="@drawable/ic_delete" />
     </RelativeLayout>
 
 
