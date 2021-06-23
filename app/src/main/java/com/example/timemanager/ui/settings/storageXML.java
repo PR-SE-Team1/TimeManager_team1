@@ -13,7 +13,8 @@ import java.util.List;
 
 public class storageXML {
 
-    private static final String XML_PROJECT = "project", XML_PROJECTLIST = "projectlist", XML_PROJECTNAME = "projectname", XML_PROJECTDESCRIPTION = "projectdescription", XML_PROJECTHOURS_WEEK = "hours per week";
+    private static final String XML_PROJECT = "project", XML_PROJECTLIST = "projectlist", XML_PROJECTNAME = "projectname";
+    private static final String XML_PROJECTDESCRIPTION = "projectdescription", XML_PROJECTHOURS_WEEK = "hours per week";
     private static final String XML_COLOR = "coulor", XML_TASK = "task", XML_TASKNAME = "taskname";
     private static final String XML_START = "starttime", XML_END = "endtime", XML_HOURS_WORKED = "hours worked";
 
@@ -22,10 +23,8 @@ public class storageXML {
     FileOutputStream fileOutputStream = null;
 
 
-    public void writeConfigFile(List<Project> projects, String path) throws IOException
-    {
-        try
-        {
+    public void writeConfigFile(List<Project> projects, String path) throws IOException {
+        try {
             File file = new File(path + XML_FILE);
             fileOutputStream = new FileOutputStream(file);
 
@@ -34,8 +33,7 @@ public class storageXML {
             serializer.startDocument("UTF-8", true);
             serializer.startTag("", XML_PROJECTLIST);
 
-            for(Project project : projects)
-            {
+            for(Project project : projects) {
                 serializer.startTag("", XML_PROJECT);
                 serializeProject(serializer, project);
                 //serializeTasks(serializer, project.getTasks());
@@ -46,21 +44,17 @@ public class storageXML {
             serializer.endTag("", XML_PROJECTLIST);
             serializer.endDocument();
         }
-        catch(Exception ex)
-        {
+        catch(Exception ex) {
             ex.printStackTrace();
         }
-        finally
-        {
-            if(fileOutputStream != null)
-            {
+        finally {
+            if(fileOutputStream != null) {
                 fileOutputStream.close();
             }
         }
     }
 
-    private void serializeProject(XmlSerializer serializer, Project project) throws IOException
-    {
+    private void serializeProject(XmlSerializer serializer, Project project) throws IOException {
         serializer.startTag("", XML_PROJECTNAME);
         serializer.text(project.getProjName());
         serializer.endTag("", XML_PROJECTNAME);
