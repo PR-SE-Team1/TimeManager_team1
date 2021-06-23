@@ -150,9 +150,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:rippleColor="#FFFFFF" />
 
-
-
-
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="68dp"
+        android:layout_height="41dp"
+        android:onClick="save"
+        android:text="save"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnGoToTasks"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.848"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerEditColor"
+        app:layout_constraintVertical_bias="0.583" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
