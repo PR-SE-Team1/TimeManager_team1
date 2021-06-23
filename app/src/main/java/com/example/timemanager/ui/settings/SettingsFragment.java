@@ -1,7 +1,6 @@
 package com.example.timemanager.ui.settings;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +25,8 @@ public class SettingsFragment extends Fragment {
     private SettingsViewModel notificationsViewModel;
     private List<Project> projectList;
     private String filePath;
+    private String targetHours;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -40,7 +41,7 @@ public class SettingsFragment extends Fragment {
                 textView.setText(s);
             }
         });
-        Button saveButton = (Button) root.findViewById(R.id.saveButton);
+        Button saveButton = (Button) root.findViewById(R.id.btn_search);
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,12 +54,18 @@ public class SettingsFragment extends Fragment {
 
     public void handleTargetHours(View v){
         TextView t = null;
-        t = t.findViewById(R.id.targetHours);
-        String input = t.getText().toString();
+        t = t.findViewById(R.id.tv_targetHours);
+        targetHours = t.getText().toString();
+        //String input = t.getText().toString();
 
-        Log.d("target hour", input);
+        //Log.d("target hour", input);
 
     }
+
+    public String getTargetHours(){
+        return targetHours;
+    }
+
 
     public void clickedSaveButton(View v)
     {
@@ -78,4 +85,5 @@ public class SettingsFragment extends Fragment {
             ex.printStackTrace();
         }
     }
+    
 }
