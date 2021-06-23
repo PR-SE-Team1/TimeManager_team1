@@ -3,6 +3,7 @@ package com.example.timemanager.ui.projects;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -12,7 +13,7 @@ import java.util.Scanner;
 //https://stackoverflow.com/questions/34503724/adding-data-to-a-parcelable-object-passed-to-another-activity
 
 //dokumentation https://developer.android.com/reference/android/os/Parcelable
-public class Project  implements Parcelable{
+public class Project  implements Serializable {
     public int projId;
     private String projName;
     private String description;
@@ -80,35 +81,35 @@ public class Project  implements Parcelable{
         return projectList;
     }
 
-    public static final Creator<Project> CREATOR = new Creator<Project>() {
-        @Override
-        public Project createFromParcel(Parcel in) {
-            return new Project(in);
-        }
-
-        @Override
-        public Project[] newArray(int size) {
-            return new Project[size];
-        }
-    };
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    /**
-     * storing the project data to a parcel-object
-     * @param dest
-     * @param flags
-     */
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(projName);
-        dest.writeString(description);
-        dest.writeDouble(plannedHours);
-        dest.writeString(color);
-    }
+//    public static final Creator<Project> CREATOR = new Creator<Project>() {
+//        @Override
+//        public Project createFromParcel(Parcel in) {
+//            return new Project(in);
+//        }
+//
+//        @Override
+//        public Project[] newArray(int size) {
+//            return new Project[size];
+//        }
+//    };
+//
+//    @Override
+//    public int describeContents() {
+//        return 0;
+//    }
+//
+//    /**
+//     * storing the project data to a parcel-object
+//     * @param dest
+//     * @param flags
+//     */
+//    @Override
+//    public void writeToParcel(Parcel dest, int flags) {
+//        dest.writeString(projName);
+//        dest.writeString(description);
+//        dest.writeDouble(plannedHours);
+//        dest.writeString(color);
+//    }
 
 
 }

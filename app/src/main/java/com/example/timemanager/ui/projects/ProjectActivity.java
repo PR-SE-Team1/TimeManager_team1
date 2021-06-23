@@ -23,7 +23,7 @@ import java.util.List;
 
 public class ProjectActivity extends AppCompatActivity implements RecyclerViewAdapter.OnProjectListener {
 
-    List<Project> projectList ;
+    List<Project> projectList;
 
     private RecyclerView recyclerView;
     private RecyclerViewAdapter recyclerViewAdapter;
@@ -115,15 +115,17 @@ public class ProjectActivity extends AppCompatActivity implements RecyclerViewAd
     }
 
 
-    //get to another activity by clicking on the task
+//    //get to another activity by clicking on the task
+//    @Override
+//    public void onProjectClick(int position) {
+//        Intent intent = new Intent(this, ProjectDetailActivity.class);
+//        startActivity(intent);
+//    }
+
+
     @Override
-    public void onProjectClick(int position) {
-        Intent intent = new Intent(this, ProjectDetailActivity.class);
-        startActivity(intent);
+    public void onProjectClick(Project project) {
+        startActivity(new Intent(ProjectActivity.this, ProjectDetailActivity.class).putExtra("data", project));
+
     }
-
-
-
-
-
 }

@@ -36,7 +36,6 @@ public class TaskActivity extends AppCompatActivity implements RecyclerViewAdapt
 
 
 
-
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +44,8 @@ public class TaskActivity extends AppCompatActivity implements RecyclerViewAdapt
         createTaskList();
         buildRecyclerView();
         setButtons();
+
+
 
     }
 
