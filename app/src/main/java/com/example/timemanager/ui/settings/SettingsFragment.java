@@ -76,18 +76,12 @@ public class SettingsFragment extends Fragment {
         TextView t = null;
         t = t.findViewById(R.id.tv_targetHours);
         targetHours = t.getText().toString();
-        //String input = t.getText().toString();
-        //Log.d("target hour", input);
 
     }
 
     public String getTargetHours(){
         return targetHours;
     }
-
-
-
-
 
 
     public void clickedSearchButton(View v) {
@@ -108,45 +102,4 @@ public class SettingsFragment extends Fragment {
         }
     }
 
-    //public void clickedSaveButton(View v){
-        //performFileSearch();
-    //}
-
-    //public void performFileSearch(){
-        //startActivityForResult(intent, PICKFILE_REQUEST_CODE);
-    //}
-
-
-    //@Override
-    //public void onActivityResult(int requestCode, int resultCode, Intent data){
-        //projectList = new ArrayList<>();
-        //projectList.add(new Project ("Projekt1", "kurzbeschreibung 1", 11.1, "blue"));
-        //projectList.add(new Project ("Projekt2", "kurzbeschreibung 2", 12.1, "blue"));
-        //projectList.add(new Project ("Projekt3", "kurzbeschreibung 3", 13.1, "blue"));
-        //projectList.add(new Project ("Projekt4", "kurzbeschreibung 4", 14.1, "blue"));
-        //projectList.add(new Project ("Projekt5", "kurzbeschreibung 5", 15.1, "blue"));
-        //projectList.add(new Project ("Projekt6", "kurzbeschreibung 6", 16.1, "blue"));
-        //storageXML writer = new storageXML();
-        //filePath = data.getDataString();
-
-        //Uri uri = data.getData();
-
-        //try {
-            //writer.writeConfigFile(projectList, filePath);
-        //}
-        //catch(Exception ex){
-          //  ex.printStackTrace();
-        //}
-    //}
-
-    //public String getPath(Uri uri) {
-    //  String[] projection = { MediaStore.Images.Media.DATA };
-    //  Cursor cursor = this.getContext().getContentResolver().query(uri, projection, null, null, null);
-    //  if (cursor == null) return null;
-    //  int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
-    //  cursor.moveToFirst();
-    //  String s=cursor.getString(column_index);
-    //  cursor.close();
-    //  return s;
-    //}
 }
