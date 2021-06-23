@@ -96,7 +96,7 @@ public class ProjectDetailActivity extends AppCompatActivity {
 
     }
 
-    public void save(View view) {
+    public void save() {
         String savedDescription = editDescription.getText().toString();
         String savedHours = editHours.getText().toString();
         SharedPreferences.Editor editor = sharedPreferences.edit();

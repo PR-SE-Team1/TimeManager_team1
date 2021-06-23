@@ -23,7 +23,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     Context context;
     private List<Project> data;
-    private LayoutInflater inflater;
+    LayoutInflater inflater;
     private OnProjectListener onProjectListener;
 
 
@@ -42,7 +42,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     @Override
-    public RecyclerViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) throws NullPointerException {
+    public RecyclerViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) throws IllegalArgumentException{
         View v = LayoutInflater.from(context).inflate(R.layout.recycler_item_view, parent, false);
         ViewHolder viewHolder = new ViewHolder(v, onProjectListener);
 

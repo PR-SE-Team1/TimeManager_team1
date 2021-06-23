@@ -22,9 +22,9 @@ import java.util.List;
 
 public class HomeFragment extends Fragment implements View.OnClickListener{
 
-    private static final String TAG = "ProjectActivity";
+    //private static final String TAG = "ProjectActivity";
     private HomeViewModel homeViewModel;
-    View v;
+    //View v;
     private List<Project> projectList;
     private Button btnProjects;
     private Button btnTasks;
