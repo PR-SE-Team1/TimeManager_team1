@@ -33,7 +33,12 @@
     <item name="btnAddNewTask" type="id" />
     <item name="etAddNewTask" type="id" />
 
-    <!-- activity_main -->
+    <!-- activity_projects -->
+    <item name="recyclerViewProjects" type="id" />
     <item name="btnAddNewProject" type="id" />
     <item name="etAddNewProject" type="id" />
+
+    <!-- fragment_home -->
+    <item name="btnProjects" type="id" />
+
 </resources>

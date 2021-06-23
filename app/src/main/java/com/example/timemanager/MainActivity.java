@@ -10,7 +10,9 @@ import android.util.Log;
 
 
 import com.example.timemanager.ui.projects.Project;
+import com.example.timemanager.ui.projects.ProjectActivity;
 import com.example.timemanager.ui.recycler.RecyclerViewAdapter;
+import com.example.timemanager.ui.tasks.TaskDetailActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -52,6 +54,7 @@ public class MainActivity extends AppCompatActivity  {
         Log.d("MyLog", "message");
         Toast.makeText(this, "DELETED", Toast.LENGTH_LONG).show();
     }
+
 
 
 

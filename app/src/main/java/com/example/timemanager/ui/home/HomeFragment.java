@@ -2,6 +2,7 @@ package com.example.timemanager.ui.home;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,77 +28,47 @@ import com.example.timemanager.ui.tasks.Task;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeFragment extends Fragment implements RecyclerViewAdapter.OnProjectListener {
+public class HomeFragment extends Fragment implements View.OnClickListener{
 
     private static final String TAG = "ProjectActivity";
     private HomeViewModel homeViewModel;
     View v;
-    private RecyclerView recyclerView;
     private List<Project> projectList;
-    private Button addButton;
-    private Button btnAddP;
-    private EditText etAddP;
+    private Button btnProjects;
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    //chronometer
+    private Chronometer chronometer;
+    private long pauseOffset;
+    private boolean running;
 
-        createProjectList();
-        buildRecyclerView();
-
-
-
-
-
-
-    }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         homeViewModel =
                 new ViewModelProvider(this).get(HomeViewModel.class);
 
+        //inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_home, container, false);
-        recyclerView = (RecyclerView) v.findViewById(R.id.recycler_view);
-        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getContext(),projectList, this);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerView.setAdapter(recyclerViewAdapter);
 
-        addButton = (Button) v.findViewById(R.id.add_project);
-        addButton.setOnClickListener(v1 -> {
-            FragmentTransaction ft = getParentFragmentManager().beginTransaction();
-            ft.replace(R.id.nav_host_fragment, new ProjectNew());
-            ft.commit();
+
+        btnProjects = (Button) v.findViewById(R.id.btnProjects);
+        btnProjects.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), ProjectActivity.class);
+                startActivity(intent);
+            }
+
         });
 
-//        btnAddP.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                String getInput = etAddP.getText().toString();
-//
-//                if (projectList.contains(getInput)){
-//                    Toast.makeText(getBaseContext(), "Aufgabe existiert bereits", Toast.LENGTH_LONG).show();
-//                } else if (getInput == null || getInput.trim().equals("")){
-//                    Toast.makeText(getBaseContext(), "Kein Name eingegeben", Toast.LENGTH_LONG).show();
-//                }else {
-//                    projectList.add(new Project(getInput));
-//
-//                }
-//            }
-//        });
+
+
+
         return v;
 
     }
 
-    /**
-     * implemented to start a new activity when recycler item is clicked
-     * @param position
-     */
-    @Override
-    public void onProjectClick(int position) {
-        Intent intent = new Intent(getContext(), ProjectActivity.class);
-        startActivity(intent);
-    }
+
 
 
     public void createProjectList(){
@@ -110,8 +81,8 @@ public class HomeFragment extends Fragment implements RecyclerViewAdapter.OnProj
 
     }
 
-    public void buildRecyclerView(){
+    @Override
+    public void onClick(View v) {
 
     }
-
 }

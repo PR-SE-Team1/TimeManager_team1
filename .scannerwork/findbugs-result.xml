@@ -121,7 +121,7 @@
     <PackageStats package="com.example.timemanager.ui.projects" total_bugs="0" total_types="4" total_size="94">
       <ClassStats class="com.example.timemanager.ui.projects.Project" sourceFile="Project.java" interface="false" size="45" bugs="0"/>
       <ClassStats class="com.example.timemanager.ui.projects.Project$1" sourceFile="Project.java" interface="false" size="9" bugs="0"/>
-      <ClassStats class="com.example.timemanager.ui.projects.ProjectActivity" sourceFile="ProjectActivity.java" interface="false" size="34" bugs="0"/>
+      <ClassStats class="com.example.timemanager.ui.projects.ProjectDetailActivity" sourceFile="ProjectActivity.java" interface="false" size="34" bugs="0"/>
       <ClassStats class="com.example.timemanager.ui.projects.ProjectNew" sourceFile="ProjectNew.java" interface="false" size="6" bugs="0"/>
     </PackageStats>
     <PackageStats package="com.example.timemanager.ui.recycler" total_bugs="0" total_types="3" total_size="47">

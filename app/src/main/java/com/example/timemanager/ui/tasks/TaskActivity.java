@@ -26,7 +26,6 @@ public class TaskActivity extends AppCompatActivity implements RecyclerViewAdapt
 
     private RecyclerView recyclerView;
     private RecyclerViewAdapterTasks recyclerViewAdapterTasks;
-    private RecyclerView.LayoutManager mLayoutManager;
 
     private Button btnAddT;
     private EditText etAddT;

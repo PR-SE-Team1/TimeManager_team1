@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -85,18 +86,32 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     /**
      * static class ViewHolder for different views (elements) of a recycler view
      */
-    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         private TextView projektName, beschreibung;
-
+        public ImageView deleteImage;
         OnProjectListener onProjectListener;
 
         public ViewHolder(@NonNull View view, OnProjectListener onProjectListener) {
             super(view);
             projektName = (TextView) view.findViewById(R.id.projName);
             beschreibung = (TextView) view.findViewById(R.id.projDescr);
+            deleteImage = itemView.findViewById(R.id.image_delete);
             view.setOnClickListener(this);
             this.onProjectListener = onProjectListener;
+
+            deleteImage.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (onProjectListener != null) {
+                        int position = getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION) {
+                            onProjectListener.onDeleteClick(position);
+                        }
+                    }
+                }
+            });
         }
+
         @Override
         public void onClick(View view) {
             onProjectListener.onProjectClick(getAdapterPosition());
@@ -109,8 +124,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
 
         }
+
+
     }
 
+    public void setOnItemClickListener (RecyclerViewAdapter.OnProjectListener listener){
+        onProjectListener = listener;
+    }
 
 
 
@@ -120,6 +140,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public interface OnProjectListener{
         //used in the activity to send position of clicked item
         void onProjectClick(int position);
+
+        void onDeleteClick(int position);
     }
 
 }
