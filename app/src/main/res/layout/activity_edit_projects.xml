@@ -142,7 +142,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="120dp"
-        android:onClick="openTaskActivity"
         android:text="@string/btnGoToTasks"
         app:backgroundTint="#2E4BDD"
         app:layout_constraintBottom_toBottomOf="parent"

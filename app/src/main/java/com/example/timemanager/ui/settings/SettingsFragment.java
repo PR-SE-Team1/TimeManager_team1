@@ -16,6 +16,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -34,6 +35,8 @@ public class SettingsFragment extends Fragment {
     private List<Project> projectList;
     private String filePath;
     private String targetHours;
+    private Button btnsave;
+
 
 
 
@@ -58,14 +61,13 @@ public class SettingsFragment extends Fragment {
             }
         });
 
-        Button btnsave = (Button) root.findViewById(R.id.btn_save);
-        btnsave.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), HomeFragment.class);
-                startActivity(intent);
-            }
+        btnsave = (Button) root.findViewById(R.id.btn_save);
+        btnsave.setOnClickListener(v1 -> {
+            FragmentTransaction ft = getParentFragmentManager().beginTransaction();
+            ft.replace(this.getId(), new HomeFragment());
+            ft.commit();
         });
+
 
 
         return root;
@@ -86,12 +88,12 @@ public class SettingsFragment extends Fragment {
 
     public void clickedSearchButton(View v) {
         projectList = new ArrayList<>();
-        projectList.add(new Project (1,"Projekt1", "kurzbeschreibung 1", 11.1, "blue"));
-        projectList.add(new Project (2,"Projekt2", "kurzbeschreibung 2", 12.1, "blue"));
-        projectList.add(new Project (3,"Projekt3", "kurzbeschreibung 3", 13.1, "blue"));
-        projectList.add(new Project (4,"Projekt4", "kurzbeschreibung 4", 14.1, "blue"));
-        projectList.add(new Project (5,"Projekt5", "kurzbeschreibung 5", 15.1, "blue"));
-        projectList.add(new Project (6,"Projekt6", "kurzbeschreibung 6", 16.1, "blue"));
+        projectList.add(new Project ("Projekt1", "kurzbeschreibung 1", 11.1, "blue"));
+        projectList.add(new Project ("Projekt2", "kurzbeschreibung 2", 12.1, "blue"));
+        projectList.add(new Project ("Projekt3", "kurzbeschreibung 3", 13.1, "blue"));
+        projectList.add(new Project ("Projekt4", "kurzbeschreibung 4", 14.1, "blue"));
+        projectList.add(new Project ("Projekt5", "kurzbeschreibung 5", 15.1, "blue"));
+        projectList.add(new Project ("Projekt6", "kurzbeschreibung 6", 16.1, "blue"));
         storageXML writer = new storageXML();
         try {
             writer.writeConfigFile(projectList, filePath);

@@ -37,15 +37,15 @@ public class ProjectDetailActivity extends AppCompatActivity {
         //opening activity
         setContentView(R.layout.activity_edit_projects);
 
-        // spinner edit PROJECT
-        projectList.add(new Project ("Projekt1", "kurzbeschreibung 1", 11.1, "blue").getProjName());
-        projectList.add(new Project ( "Projekt2", "kurzbeschreibung 2", 12.1, "blue").getProjName());
-        projectList.add(new Project ( "Projekt3", "kurzbeschreibung 3", 13.1, "blue").getProjName());
-        Spinner spinnerP;
-        spinnerP = findViewById(R.id.spinnerEditChangeProj);
-        ArrayAdapter arrayAdapterP = new ArrayAdapter(this,android.R.layout.simple_spinner_item,projectList);
-        arrayAdapterP.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerP.setAdapter(arrayAdapterP);
+//        // spinner edit PROJECT
+//        projectList.add(new Project ("Projekt1", "kurzbeschreibung 1", 11.1, "blue").getProjName());
+//        projectList.add(new Project ( "Projekt2", "kurzbeschreibung 2", 12.1, "blue").getProjName());
+//        projectList.add(new Project ( "Projekt3", "kurzbeschreibung 3", 13.1, "blue").getProjName());
+//        Spinner spinnerP;
+//        spinnerP = findViewById(R.id.spinnerEditChangeProj);
+//        ArrayAdapter arrayAdapterP = new ArrayAdapter(this,android.R.layout.simple_spinner_item,projectList);
+//        arrayAdapterP.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        spinnerP.setAdapter(arrayAdapterP);
 
 
         //spinner edit TASK
