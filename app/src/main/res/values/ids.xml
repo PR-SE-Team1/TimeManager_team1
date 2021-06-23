@@ -1,4 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="textview" type="id" />
+
+    <!-- activity_edit_projects -->
+    <item name="tvEditProj" type="id" />
+    <item name="tvEditDescription" type="id" />
+    <item name="tvEditHours" type="id" />
+    <item name="tvEditDefTask" type="id" />
+    <item name="tvEditColor" type="id" />
+    <item name="spinnerEditChangeProj" type="id" />
+    <item name="mltEditDescription" type="id" />
+    <item name="ptEditHours" type="id" />
+    <item name="spinnerEditDefTask" type="id" />
+    <item name="spinnerEditColor" type="id" />
+    <item name="btnEditDelete" type="id" />
+    <item name="btnGoToTasks" type="id" />
+
+    <!-- activity_edit_tasks -->
+    <item name="tvEditTask" type="id" />
+    <item name="tvEditStart" type="id" />
+    <item name="tvEditEnd" type="id" />
+    <item name="spinnerEditTask" type="id" />
+    <item name="ptEditEnd" type="id" />
+    <item name="btnEditDeleteTask" type="id" />
+
+    <!-- recycler_item_view_tasks -->
+    <item name="linearRecyclerTask" type="id" />
+    <item name="taskName" type="id" />
+
+    <!-- activity_tasks -->
+    <item name="recyclerViewTasks" type="id" />
+
+    <!-- fragment_info -->
+    <item name="btnInfoOverview" type="id" />
+    <item name="btnInfoWorkingHours" type="id" />
+    <item name="btnInfoBookingList" type="id" />
+
+    <!-- activity_info_overview -->
+    <item name="cvInfoCalendar" type="id" />
+
+    <!-- activity_info_workinghours -->
+    <item name="tvInfoDailyHours" type="id" />
+    <item name="tvInfoTargetHoursDaily" type="id" />
+    <item name="tvInfoReachedHoursDaily" type="id" />
+    <item name="btnInfoWorkingHoursWeekly" type="id" />
+
 </resources>

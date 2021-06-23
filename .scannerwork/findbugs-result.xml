@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="4.2.0" sequence="0" timestamp="1621670105155" analysisTimestamp="1621845540669" release="">
+  <Project>
+    <Jar>C:\Users\tomto\Desktop\Tom\JKU\2021 SS\02 SE [PR]\TimeManager_Team1\app\build\intermediates\javac\debug\classes\com\example\timemanager\BuildConfig.class</Jar>
+    <Jar>C:\Users\tomto\Desktop\Tom\JKU\2021 SS\02 SE [PR]\TimeManager_Team1\app\build\intermediates\javac\debug\classes\com\example\timemanager\MainActivity.class</Jar>
+    <Jar>C:\Users\tomto\Desktop\Tom\JKU\2021 SS\02 SE [PR]\TimeManager_Team1\app\build\intermediates\javac\debug\classes\com\example\timemanager\logger\Log.class</Jar>
+    <Jar>C:\Users\tomto\Desktop\Tom\JKU\2021 SS\02 SE [PR]\TimeManager_Team1\app\build\intermediates\javac\debug\classes\com\example\timemanager\logger\LogFragment$1.class</Jar>
+    <Jar>C:\Users\tomto\Desktop\Tom\JKU\2021 SS\02 SE [PR]\TimeManager_Team1\app\build\intermediates\javac\debug\classes\com\example\timemanager\logger\LogFragment.class</Jar>
+    <Jar>C:\Users\tomto\Desktop\Tom\JKU\2021 SS\02 SE [PR]\TimeManager_Team1\app\build\intermediates\javac\debug\classes\com\example\timemanager\logger\LogNode.class</Jar>
+    <Jar>C:\Users\tomto\Desktop\Tom\JKU\2021 SS\02 SE [PR]\TimeManager_Team1\app\build\intermediates\javac\debug\classes\com\example\timemanager\logger\LogView$1.class</Jar>
+    <Jar>C:\Users\tomto\Desktop\Tom\JKU\2021 SS\02 SE [PR]\TimeManager_Team1\app\build\intermediates\javac\debug\classes\com\example\timemanager\logger\LogView.class</Jar>
+    <Jar>C:\Users\tomto\Desktop\Tom\JKU\2021 SS\02 SE [PR]\TimeManager_Team1\app\build\intermediates\javac\debug\classes\com\example\timemanager\logger\LogWrapper.class</Jar>
+    <Jar>C:\Users\tomto\Desktop\Tom\JKU\2021 SS\02 SE [PR]\TimeManager_Team1\app\build\intermediates\javac\debug\classes\com\example\timemanager\logger\MessageOnlyLogFilter.class</Jar>
+    <Jar>C:\Users\tomto\Desktop\Tom\JKU\2021 SS\02 SE [PR]\TimeManager_Team1\app\build\intermediates\javac\debug\classes\com\example\timemanager\ui\home\HomeFragment.class</Jar>
+    <Jar>C:\Users\tomto\Desktop\Tom\JKU\2021 SS\02 SE [PR]\TimeManager_Team1\app\build\intermediates\javac\debug\classes\com\example\timemanager\ui\home\HomeViewModel.class</Jar>
+    <Jar>C:\Users\tomto\Desktop\Tom\JKU\2021 SS\02 SE [PR]\TimeManager_Team1\app\build\intermediates\javac\debug\classes\com\example\timemanager\ui\info\InfoFragment$1.class</Jar>
+    <Jar>C:\Users\tomto\Desktop\Tom\JKU\2021 SS\02 SE [PR]\TimeManager_Team1\app\build\intermediates\javac\debug\classes\com\example\timemanager\ui\info\InfoFragment.class</Jar>
+    <Jar>C:\Users\tomto\Desktop\Tom\JKU\2021 SS\02 SE [PR]\TimeManager_Team1\app\build\intermediates\javac\debug\classes\com\example\timemanager\ui\info\InfoViewModel.class</Jar>
+    <Jar>C:\Users\tomto\Desktop\Tom\JKU\2021 SS\02 SE [PR]\TimeManager_Team1\app\build\intermediates\javac\debug\classes\com\example\timemanager\ui\projects\Project$1.class</Jar>
+    <Jar>C:\Users\tomto\Desktop\Tom\JKU\2021 SS\02 SE [PR]\TimeManager_Team1\app\build\intermediates\javac\debug\classes\com\example\timemanager\ui\projects\Project.class</Jar>
+    <Jar>C:\Users\tomto\Desktop\Tom\JKU\2021 SS\02 SE [PR]\TimeManager_Team1\app\build\intermediates\javac\debug\classes\com\example\timemanager\ui\projects\ProjectActivity.class</Jar>
+    <Jar>C:\Users\tomto\Desktop\Tom\JKU\2021 SS\02 SE [PR]\TimeManager_Team1\app\build\intermediates\javac\debug\classes\com\example\timemanager\ui\projects\ProjectNew.class</Jar>
+    <Jar>C:\Users\tomto\Desktop\Tom\JKU\2021 SS\02 SE [PR]\TimeManager_Team1\app\build\intermediates\javac\debug\classes\com\example\timemanager\ui\recycler\RecyclerViewAdapter$OnProjectListener.class</Jar>
+    <Jar>C:\Users\tomto\Desktop\Tom\JKU\2021 SS\02 SE [PR]\TimeManager_Team1\app\build\intermediates\javac\debug\classes\com\example\timemanager\ui\recycler\RecyclerViewAdapter$ViewHolder.class</Jar>
+    <Jar>C:\Users\tomto\Desktop\Tom\JKU\2021 SS\02 SE [PR]\TimeManager_Team1\app\build\intermediates\javac\debug\classes\com\example\timemanager\ui\recycler\RecyclerViewAdapter.class</Jar>
+    <Jar>C:\Users\tomto\Desktop\Tom\JKU\2021 SS\02 SE [PR]\TimeManager_Team1\app\build\intermediates\javac\debug\classes\com\example\timemanager\ui\settings\SettingsFragment$1.class</Jar>
+    <Jar>C:\Users\tomto\Desktop\Tom\JKU\2021 SS\02 SE [PR]\TimeManager_Team1\app\build\intermediates\javac\debug\classes\com\example\timemanager\ui\settings\SettingsFragment.class</Jar>
+    <Jar>C:\Users\tomto\Desktop\Tom\JKU\2021 SS\02 SE [PR]\TimeManager_Team1\app\build\intermediates\javac\debug\classes\com\example\timemanager\ui\settings\SettingsViewModel.class</Jar>
+    <AuxClasspathEntry>C:\Users\tomto\Desktop\Tom\JKU\2021 SS\02 SE [PR]\TimeManager_Team1\app\build\intermediates\javac\debug</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\tomto\Desktop\Tom\JKU\2021 SS\02 SE [PR]\TimeManager_Team1\.scannerwork\findbugs\annotations.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\tomto\Desktop\Tom\JKU\2021 SS\02 SE [PR]\TimeManager_Team1\.scannerwork\findbugs\jsr305.jar</AuxClasspathEntry>
+    <WrkDir>C:\Users\tomto\Desktop\Tom\JKU\2021 SS\02 SE [PR]\TimeManager_Team1\.scannerwork</WrkDir>
+  </Project>
+  <Errors errors="0" missingClasses="42">
+    <MissingClass>android.app.Activity</MissingClass>
+    <MissingClass>android.content.Intent</MissingClass>
+    <MissingClass>android.content.res.Resources</MissingClass>
+    <MissingClass>android.graphics.Typeface</MissingClass>
+    <MissingClass>android.os.Parcel</MissingClass>
+    <MissingClass>android.os.Parcelable</MissingClass>
+    <MissingClass>android.os.Parcelable$Creator</MissingClass>
+    <MissingClass>android.text.TextWatcher</MissingClass>
+    <MissingClass>android.util.DisplayMetrics</MissingClass>
+    <MissingClass>android.util.Log</MissingClass>
+    <MissingClass>android.view.LayoutInflater</MissingClass>
+    <MissingClass>android.view.View</MissingClass>
+    <MissingClass>android.view.View$OnClickListener</MissingClass>
+    <MissingClass>android.view.ViewGroup</MissingClass>
+    <MissingClass>android.view.ViewGroup$LayoutParams</MissingClass>
+    <MissingClass>android.widget.ArrayAdapter</MissingClass>
+    <MissingClass>android.widget.Button</MissingClass>
+    <MissingClass>android.widget.ScrollView</MissingClass>
+    <MissingClass>android.widget.Spinner</MissingClass>
+    <MissingClass>android.widget.TextView</MissingClass>
+    <MissingClass>android.widget.Toast</MissingClass>
+    <MissingClass>androidx.appcompat.app.AppCompatActivity</MissingClass>
+    <MissingClass>androidx.fragment.app.Fragment</MissingClass>
+    <MissingClass>androidx.fragment.app.FragmentActivity</MissingClass>
+    <MissingClass>androidx.fragment.app.FragmentManager</MissingClass>
+    <MissingClass>androidx.fragment.app.FragmentTransaction</MissingClass>
+    <MissingClass>androidx.lifecycle.LiveData</MissingClass>
+    <MissingClass>androidx.lifecycle.MutableLiveData</MissingClass>
+    <MissingClass>androidx.lifecycle.Observer</MissingClass>
+    <MissingClass>androidx.lifecycle.ViewModel</MissingClass>
+    <MissingClass>androidx.lifecycle.ViewModelProvider</MissingClass>
+    <MissingClass>androidx.navigation.NavController</MissingClass>
+    <MissingClass>androidx.navigation.Navigation</MissingClass>
+    <MissingClass>androidx.navigation.ui.AppBarConfiguration</MissingClass>
+    <MissingClass>androidx.navigation.ui.AppBarConfiguration$Builder</MissingClass>
+    <MissingClass>androidx.navigation.ui.NavigationUI</MissingClass>
+    <MissingClass>androidx.recyclerview.widget.LinearLayoutManager</MissingClass>
+    <MissingClass>androidx.recyclerview.widget.RecyclerView</MissingClass>
+    <MissingClass>androidx.recyclerview.widget.RecyclerView$Adapter</MissingClass>
+    <MissingClass>androidx.recyclerview.widget.RecyclerView$ViewHolder</MissingClass>
+    <MissingClass>com.google.android.material.bottomnavigation.BottomNavigationView</MissingClass>
+    <MissingClass>onClick</MissingClass>
+  </Errors>
+  <FindBugsSummary timestamp="Sat, 22 May 2021 09:55:05 +0200" total_classes="25" referenced_classes="50" total_bugs="0" total_size="494" num_packages="7" java_version="11.0.3" vm_version="11.0.3+7" cpu_seconds="14.12" clock_seconds="4.35" peak_mbytes="282.93" alloc_mbytes="2010.00" gc_seconds="0.06">
+    <FileStats path="com/example/timemanager/BuildConfig.java" bugCount="0" size="10"/>
+    <FileStats path="com/example/timemanager/MainActivity.java" bugCount="0" size="23"/>
+    <FileStats path="com/example/timemanager/logger/Log.java" bugCount="0" size="65"/>
+    <FileStats path="com/example/timemanager/logger/LogFragment.java" bugCount="0" size="44"/>
+    <FileStats path="com/example/timemanager/logger/LogNode.java" bugCount="0" size="2"/>
+    <FileStats path="com/example/timemanager/logger/LogView.java" bugCount="0" size="61"/>
+    <FileStats path="com/example/timemanager/logger/LogWrapper.java" bugCount="0" size="19"/>
+    <FileStats path="com/example/timemanager/logger/MessageOnlyLogFilter.java" bugCount="0" size="18"/>
+    <FileStats path="com/example/timemanager/ui/home/HomeFragment.java" bugCount="0" size="39"/>
+    <FileStats path="com/example/timemanager/ui/home/HomeViewModel.java" bugCount="0" size="9"/>
+    <FileStats path="com/example/timemanager/ui/info/InfoFragment.java" bugCount="0" size="20"/>
+    <FileStats path="com/example/timemanager/ui/info/InfoViewModel.java" bugCount="0" size="9"/>
+    <FileStats path="com/example/timemanager/ui/projects/Project.java" bugCount="0" size="54"/>
+    <FileStats path="com/example/timemanager/ui/projects/ProjectActivity.java" bugCount="0" size="34"/>
+    <FileStats path="com/example/timemanager/ui/projects/ProjectNew.java" bugCount="0" size="6"/>
+    <FileStats path="com/example/timemanager/ui/recycler/RecyclerViewAdapter.java" bugCount="0" size="47"/>
+    <FileStats path="com/example/timemanager/ui/settings/SettingsFragment.java" bugCount="0" size="26"/>
+    <FileStats path="com/example/timemanager/ui/settings/SettingsViewModel.java" bugCount="0" size="8"/>
+    <PackageStats package="com.example.timemanager" total_bugs="0" total_types="2" total_size="33">
+      <ClassStats class="com.example.timemanager.BuildConfig" sourceFile="BuildConfig.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="com.example.timemanager.MainActivity" sourceFile="MainActivity.java" interface="false" size="23" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.example.timemanager.logger" total_bugs="0" total_types="8" total_size="209">
+      <ClassStats class="com.example.timemanager.logger.Log" sourceFile="Log.java" interface="false" size="65" bugs="0"/>
+      <ClassStats class="com.example.timemanager.logger.LogFragment" sourceFile="LogFragment.java" interface="false" size="33" bugs="0"/>
+      <ClassStats class="com.example.timemanager.logger.LogFragment$1" sourceFile="LogFragment.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="com.example.timemanager.logger.LogNode" sourceFile="LogNode.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="com.example.timemanager.logger.LogView" sourceFile="LogView.java" interface="false" size="53" bugs="0"/>
+      <ClassStats class="com.example.timemanager.logger.LogView$1" sourceFile="LogView.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="com.example.timemanager.logger.LogWrapper" sourceFile="LogWrapper.java" interface="false" size="19" bugs="0"/>
+      <ClassStats class="com.example.timemanager.logger.MessageOnlyLogFilter" sourceFile="MessageOnlyLogFilter.java" interface="false" size="18" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.example.timemanager.ui.home" total_bugs="0" total_types="2" total_size="48">
+      <ClassStats class="com.example.timemanager.ui.home.HomeFragment" sourceFile="HomeFragment.java" interface="false" size="39" bugs="0"/>
+      <ClassStats class="com.example.timemanager.ui.home.HomeViewModel" sourceFile="HomeViewModel.java" interface="false" size="9" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.example.timemanager.ui.info" total_bugs="0" total_types="3" total_size="29">
+      <ClassStats class="com.example.timemanager.ui.info.InfoFragment" sourceFile="InfoFragment.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="com.example.timemanager.ui.info.InfoFragment$1" sourceFile="InfoFragment.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="com.example.timemanager.ui.info.InfoViewModel" sourceFile="InfoViewModel.java" interface="false" size="9" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.example.timemanager.ui.projects" total_bugs="0" total_types="4" total_size="94">
+      <ClassStats class="com.example.timemanager.ui.projects.Project" sourceFile="Project.java" interface="false" size="45" bugs="0"/>
+      <ClassStats class="com.example.timemanager.ui.projects.Project$1" sourceFile="Project.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="com.example.timemanager.ui.projects.ProjectActivity" sourceFile="ProjectActivity.java" interface="false" size="34" bugs="0"/>
+      <ClassStats class="com.example.timemanager.ui.projects.ProjectNew" sourceFile="ProjectNew.java" interface="false" size="6" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.example.timemanager.ui.recycler" total_bugs="0" total_types="3" total_size="47">
+      <ClassStats class="com.example.timemanager.ui.recycler.RecyclerViewAdapter" sourceFile="RecyclerViewAdapter.java" interface="false" size="25" bugs="0"/>
+      <ClassStats class="com.example.timemanager.ui.recycler.RecyclerViewAdapter$OnProjectListener" sourceFile="RecyclerViewAdapter.java" interface="true" size="2" bugs="0"/>
+      <ClassStats class="com.example.timemanager.ui.recycler.RecyclerViewAdapter$ViewHolder" sourceFile="RecyclerViewAdapter.java" interface="false" size="20" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.example.timemanager.ui.settings" total_bugs="0" total_types="3" total_size="34">
+      <ClassStats class="com.example.timemanager.ui.settings.SettingsFragment" sourceFile="SettingsFragment.java" interface="false" size="17" bugs="0"/>
+      <ClassStats class="com.example.timemanager.ui.settings.SettingsFragment$1" sourceFile="SettingsFragment.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="com.example.timemanager.ui.settings.SettingsViewModel" sourceFile="SettingsViewModel.java" interface="false" size="8" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="425" invocations="520" avgMicrosecondsPerInvocation="817" maxMicrosecondsPerInvocation="21560" standardDeviationMicrosecondsPerInvocation="1788"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="178" invocations="543" avgMicrosecondsPerInvocation="328" maxMicrosecondsPerInvocation="4653" standardDeviationMicrosecondsPerInvocation="280"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="100" invocations="104" avgMicrosecondsPerInvocation="963" maxMicrosecondsPerInvocation="25681" standardDeviationMicrosecondsPerInvocation="3437"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="98" invocations="203" avgMicrosecondsPerInvocation="484" maxMicrosecondsPerInvocation="26077" standardDeviationMicrosecondsPerInvocation="2795"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="78" invocations="50" avgMicrosecondsPerInvocation="1575" maxMicrosecondsPerInvocation="17714" standardDeviationMicrosecondsPerInvocation="3163"/>
+      <ClassProfile name="com.mebigfatguy.fbcontrib.collect.CollectStatistics" totalMilliseconds="71" invocations="50" avgMicrosecondsPerInvocation="1437" maxMicrosecondsPerInvocation="22123" standardDeviationMicrosecondsPerInvocation="3482"/>
+      <ClassProfile name="com.mebigfatguy.fbcontrib.collect.CollectNullableMethodStatus" totalMilliseconds="65" invocations="50" avgMicrosecondsPerInvocation="1312" maxMicrosecondsPerInvocation="26405" standardDeviationMicrosecondsPerInvocation="4026"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="60" invocations="106" avgMicrosecondsPerInvocation="571" maxMicrosecondsPerInvocation="43084" standardDeviationMicrosecondsPerInvocation="4155"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.taintanalysis.TaintDataflowEngine" totalMilliseconds="58" invocations="104" avgMicrosecondsPerInvocation="563" maxMicrosecondsPerInvocation="11189" standardDeviationMicrosecondsPerInvocation="1243"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="58" invocations="50" avgMicrosecondsPerInvocation="1171" maxMicrosecondsPerInvocation="9335" standardDeviationMicrosecondsPerInvocation="2069"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="55" invocations="106" avgMicrosecondsPerInvocation="526" maxMicrosecondsPerInvocation="18855" standardDeviationMicrosecondsPerInvocation="1847"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="55" invocations="104" avgMicrosecondsPerInvocation="529" maxMicrosecondsPerInvocation="13277" standardDeviationMicrosecondsPerInvocation="1421"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="48" invocations="104" avgMicrosecondsPerInvocation="466" maxMicrosecondsPerInvocation="17088" standardDeviationMicrosecondsPerInvocation="1692"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="47" invocations="50" avgMicrosecondsPerInvocation="941" maxMicrosecondsPerInvocation="14322" standardDeviationMicrosecondsPerInvocation="2489"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="45" invocations="192" avgMicrosecondsPerInvocation="235" maxMicrosecondsPerInvocation="3864" standardDeviationMicrosecondsPerInvocation="471"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="43" invocations="98" avgMicrosecondsPerInvocation="444" maxMicrosecondsPerInvocation="6094" standardDeviationMicrosecondsPerInvocation="763"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="43" invocations="426" avgMicrosecondsPerInvocation="101" maxMicrosecondsPerInvocation="1735" standardDeviationMicrosecondsPerInvocation="176"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="34" invocations="103" avgMicrosecondsPerInvocation="336" maxMicrosecondsPerInvocation="5654" standardDeviationMicrosecondsPerInvocation="644"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="23" invocations="80" avgMicrosecondsPerInvocation="291" maxMicrosecondsPerInvocation="2500" standardDeviationMicrosecondsPerInvocation="407"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CalledMethods" totalMilliseconds="23" invocations="50" avgMicrosecondsPerInvocation="465" maxMicrosecondsPerInvocation="2893" standardDeviationMicrosecondsPerInvocation="681"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="22" invocations="50" avgMicrosecondsPerInvocation="456" maxMicrosecondsPerInvocation="12909" standardDeviationMicrosecondsPerInvocation="1811"/>
+      <ClassProfile name="com.mebigfatguy.fbcontrib.detect.DeletingWhileIterating" totalMilliseconds="22" invocations="25" avgMicrosecondsPerInvocation="904" maxMicrosecondsPerInvocation="13337" standardDeviationMicrosecondsPerInvocation="2575"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="22" invocations="50" avgMicrosecondsPerInvocation="447" maxMicrosecondsPerInvocation="5027" standardDeviationMicrosecondsPerInvocation="950"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="20" invocations="50" avgMicrosecondsPerInvocation="411" maxMicrosecondsPerInvocation="2758" standardDeviationMicrosecondsPerInvocation="629"/>
+      <ClassProfile name="edu.umd.cs.findbugs.DetectorToDetector2Adapter" totalMilliseconds="20" invocations="9525" avgMicrosecondsPerInvocation="2" maxMicrosecondsPerInvocation="191" standardDeviationMicrosecondsPerInvocation="2"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.TypeQualifierNullnessAnnotationDatabase" totalMilliseconds="18" invocations="838" avgMicrosecondsPerInvocation="22" maxMicrosecondsPerInvocation="1820" standardDeviationMicrosecondsPerInvocation="98"/>
+      <ClassProfile name="com.mebigfatguy.fbcontrib.collect.CollectMethodsReturningImmutableCollections" totalMilliseconds="17" invocations="50" avgMicrosecondsPerInvocation="342" maxMicrosecondsPerInvocation="4061" standardDeviationMicrosecondsPerInvocation="785"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindInconsistentSync2" totalMilliseconds="16" invocations="25" avgMicrosecondsPerInvocation="676" maxMicrosecondsPerInvocation="8423" standardDeviationMicrosecondsPerInvocation="1615"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.UnreadFields" totalMilliseconds="16" invocations="25" avgMicrosecondsPerInvocation="665" maxMicrosecondsPerInvocation="5380" standardDeviationMicrosecondsPerInvocation="1052"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CheckRelaxingNullnessAnnotation" totalMilliseconds="14" invocations="25" avgMicrosecondsPerInvocation="597" maxMicrosecondsPerInvocation="7202" standardDeviationMicrosecondsPerInvocation="1426"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildStringPassthruGraph" totalMilliseconds="14" invocations="50" avgMicrosecondsPerInvocation="294" maxMicrosecondsPerInvocation="4556" standardDeviationMicrosecondsPerInvocation="704"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueRangeAnalysisFactory" totalMilliseconds="13" invocations="106" avgMicrosecondsPerInvocation="130" maxMicrosecondsPerInvocation="7414" standardDeviationMicrosecondsPerInvocation="762"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.ReflectiveClasses" totalMilliseconds="13" invocations="50" avgMicrosecondsPerInvocation="265" maxMicrosecondsPerInvocation="2761" standardDeviationMicrosecondsPerInvocation="581"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.asm.ClassReaderAnalysisEngine" totalMilliseconds="12" invocations="450" avgMicrosecondsPerInvocation="28" maxMicrosecondsPerInvocation="6591" standardDeviationMicrosecondsPerInvocation="310"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.DumbMethods" totalMilliseconds="12" invocations="25" avgMicrosecondsPerInvocation="511" maxMicrosecondsPerInvocation="3868" standardDeviationMicrosecondsPerInvocation="758"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.LoadOfKnownNullValue" totalMilliseconds="11" invocations="25" avgMicrosecondsPerInvocation="453" maxMicrosecondsPerInvocation="1756" standardDeviationMicrosecondsPerInvocation="453"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ConstantDataflowFactory" totalMilliseconds="11" invocations="104" avgMicrosecondsPerInvocation="105" maxMicrosecondsPerInvocation="2619" standardDeviationMicrosecondsPerInvocation="263"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

@@ -62,7 +62,6 @@ public class SettingsFragment extends Fragment {
     }
 
 
-
     public void handleTargetHours(View v){
         TextView t = null;
         t = t.findViewById(R.id.tv_targetHours);

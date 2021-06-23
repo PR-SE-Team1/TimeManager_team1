@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,74 +8,147 @@
     tools:context=".ui.projects.ProjectActivity">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/projektansicht"
-        android:textSize="32sp"
+        android:id="@+id/tvEditProj"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="108dp"
+        android:text="@string/editProj"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tvEditHours"
         android:layout_width="150dp"
         android:layout_height="35dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="50dp"
-        android:text="@string/projekt_ndern"
+        android:layout_marginTop="112dp"
+        android:text="@string/editHours"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/tvEditDescription" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/tvEditDefTask"
         android:layout_width="150dp"
         android:layout_height="35dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="148dp"
-        android:text="@string/kurzbeschreibung"
+        android:layout_marginTop="44dp"
+        android:text="@string/editDefTask"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/tvEditHours" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/tvEditColor"
         android:layout_width="150dp"
         android:layout_height="35dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="244dp"
-        android:text="@string/sollstunden"
+        android:layout_marginTop="28dp"
+        android:text="@string/editColor"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/tvEditDefTask" />
+
+    <Spinner
+        android:id="@+id/spinnerEditChangeProj"
+        android:layout_width="152dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="108dp"
+        app:layout_constraintStart_toEndOf="@+id/tvEditProj"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinnerEditDefTask"
+        android:layout_width="169dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toEndOf="@+id/tvEditDefTask"
+        app:layout_constraintTop_toBottomOf="@+id/ptEditHours" />
+
+    <Spinner
+        android:id="@+id/spinnerEditColor"
+        android:layout_width="167dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintStart_toEndOf="@+id/tvEditColor"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerEditDefTask" />
+
+    <EditText
+        android:id="@+id/mltEditDescription"
+        android:layout_width="160dp"
+        android:layout_height="136dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:text="@string/editDescription"
+        app:layout_constraintStart_toEndOf="@+id/tvEditDescription"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerEditChangeProj" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/tvEditDescription"
         android:layout_width="150dp"
         android:layout_height="35dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="352dp"
-        android:text="@string/standardaufgabe"
+        android:layout_marginTop="32dp"
+        android:text="@string/tvEditDescription"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/tvEditProj" />
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="150dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="456dp"
-        android:text="@string/farbe"
-        android:textSize="18sp"
+    <EditText
+        android:id="@+id/ptEditHours"
+        android:layout_width="149dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="324dp"
+        android:ems="10"
+        android:text="@string/editEnterHours"
+        android:inputType="time"
+        app:layout_constraintStart_toEndOf="@+id/tvEditHours"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnEditDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="56dp"
+        android:text="@string/btnEditDelete"
+        app:backgroundTint="#DD2E2E"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:rippleColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/btnGoToTasks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="120dp"
+        android:onClick="openTaskActivity"
+        android:text="@string/btnGoToTasks"
+        app:backgroundTint="#2E4BDD"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:rippleColor="#FFFFFF" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

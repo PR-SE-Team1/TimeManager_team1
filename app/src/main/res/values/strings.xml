@@ -1,21 +1,63 @@
 <resources>
+    <!-- fragment titles -->
     <string name="app_name">TimeManager</string>
     <string name="title_home">Home</string>
     <string name="title_info">Info</string>
     <string name="title_settings">Settings</string>
+
+
+    <!-- not sure?? -->
     <string name="projektansicht">Projektansicht</string>
     <string name="projekt_ndern">Projekt ändern:</string>
     <string name="kurzbeschreibung">Kurzbeschreibung:</string>
     <string name="sollstunden">Sollstunden:</string>
     <string name="standardaufgabe">Standardaufgabe:</string>
     <string name="farbe">Farbe:</string>
+
+    <string name="projectname">Projectname_hintText</string>
+    <string name="Beschreibung">Beschreibung</string>
+    <string name="Projektname">Projektname:</string>
+    <string name="add_item_homeView">Add Item</string>
+    <string name="aufgabe">Aufgabe:</string>
+
+    <!-- projects for testing purposes (spinner) do not delete -->
     <string name="projekt_1">Projekt 1</string>
     <string name="projekt_2">Projekt 2</string>
     <string name="projekt_3">Projekt 3</string>
     <string name="projekt_4">Projekt 4</string>
-    <string name="projectname">Projectname_hintText</string>
-    <string name="Beschreibung">Beschreibung</string>
-    <string name="Projektname">Projektname</string>
-    <string name="add_item_homeView">Add Item</string>
+
+    <!-- activity_edit_projects -->
+    <string name="editProj">Projekt ändern:</string>
+    <string name="tvEditDescription">Kurzbeschreibung:</string>
+    <string name="editDescription">Verwaltung von Projekten und dazugehörigen Aufgaben in einem Time Manager</string>
+    <string name="editHours">Sollstunden:</string>
+    <string name="editDefTask">Standardaufgabe:</string>
+    <string name="editColor">Farbe:</string>
+    <string name="tvEditEnterHours">Stunden eingeben:</string>
+    <string name="editEnterHours">450</string>
+    <string name="btnEditDelete">Projekt löschen</string>
+    <string name="btnGoToTasks">Aufgaben anzeigen</string>
+
+    <!-- activity_edit_tasks -->
+    <string name="editTask">Aufgabe wechseln:</string>
+    <string name="editStart">Start:</string>
+    <string name="editEnd">Ende:</string>
+    <string name="pteditStart">Zeit eingeben</string>
+    <string name="pteditEnd">Zeit eingeben</string>
+    <string name="btnEditDeleteTask">Aufgabe löschen</string>
+
+    <!-- recycler_item_view_task -->
+    <string name="taskname">Aufgabe:</string>
+
+    <!-- fragment_info -->
+    <string name="btnInfoOverview">Übersicht</string>
+    <string name="btnInfoWorkingHours">Arbeitszeiten</string>
+    <string name="btnInfoBookingList">Buchungsliste</string>
+
+    <!-- activity_info_workinghours -->
+    <string name="tvInfoDailyHours">Arbeitsstunden pro Tag:</string>
+    <string name="tvInfoTargetHoursDaily">Geplante Arbeitsstunden/Tag:</string>
+    <string name="tvInfoReachedHoursDaily">Erreichte Arbeitsstunden/Tag:</string>
+    <string name="btnInfoWorkingHoursWeekly">Wochenansicht</string>
 
 </resources>

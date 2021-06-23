@@ -9,7 +9,7 @@
 
 
     <LinearLayout
-        android:id="@+id/linearRecyclerProject"
+        android:id="@+id/linearRecyclerTask"
         android:layout_width="374dp"
         android:layout_height="64dp"
         android:layout_marginStart="8dp"
@@ -27,17 +27,11 @@
         app:layout_constraintVertical_bias="0.0">
 
         <TextView
-            android:id="@+id/projName"
+            android:id="@+id/taskName"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:text="@string/Projektname"
+            android:text="@string/taskname"
             android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/projDescr"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:text="@string/Beschreibung" />
 
     </LinearLayout>
 
