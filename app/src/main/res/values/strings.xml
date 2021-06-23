@@ -46,6 +46,8 @@
 
     <!-- recycler_item_view_task -->
     <string name="taskname">Aufgabe:</string>
+    <string name="tbtnChronoTask">Aufgabe starten:</string>
+
 
     <!-- activity_tasks -->
     <string name="btnAddNewTask">hinzufügen</string>

@@ -27,6 +27,9 @@
     <!-- recycler_item_view_tasks -->
     <item name="linearRecyclerTask" type="id" />
     <item name="taskName" type="id" />
+    <item name="tbtnChronometerTask" type="id" />
+    <item name="etTime" type="id" />
+    <item name="chronometer" type="id" />
 
     <!-- activity_tasks -->
     <item name="recyclerViewTasks" type="id" />

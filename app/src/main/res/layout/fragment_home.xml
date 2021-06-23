@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -10,38 +10,26 @@
 
     <Button
         android:id="@+id/btnProjects"
-        android:layout_width="202dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="300dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginRight="100dp"
+        android:layout_width="293dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="156dp"
+        android:layout_marginEnd="1dp"
         android:text="@string/btnProjects"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.544" />
-
-
-    <Chronometer
-        android:id="@+id/chronometer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="30sp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/startChrono"
+        android:id="@+id/btnTasks"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="startChronometer"
-        android:text="Start" />
-    <Button
-        android:id="@+id/pauseChrono"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="pauseChronometer"
-        android:text="Pause" />
+        android:layout_marginTop="280dp"
+        android:text="Aufgaben anzeigen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

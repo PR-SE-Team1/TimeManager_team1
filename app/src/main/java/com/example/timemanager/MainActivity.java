@@ -3,10 +3,13 @@ package com.example.timemanager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.LayoutInflater;
+import android.widget.Chronometer;
 import android.widget.Toast;
 import android.view.View;
 import android.util.Log;
+import android.widget.ToggleButton;
 
 
 import com.example.timemanager.ui.projects.Project;
@@ -27,6 +30,8 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity  {
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +46,8 @@ public class MainActivity extends AppCompatActivity  {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
+
+
 
     }
 

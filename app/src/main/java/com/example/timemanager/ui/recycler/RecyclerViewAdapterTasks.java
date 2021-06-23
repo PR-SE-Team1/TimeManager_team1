@@ -2,12 +2,16 @@ package com.example.timemanager.ui.recycler;
 
 
 import android.content.Context;
+import android.os.SystemClock;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Chronometer;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -28,6 +32,8 @@ public class RecyclerViewAdapterTasks extends RecyclerView.Adapter<RecyclerViewA
     private List<Task> data;
     private LayoutInflater inflater;
     private OnTaskListener onTaskListener;
+
+
 
 
     /**
@@ -68,6 +74,11 @@ public class RecyclerViewAdapterTasks extends RecyclerView.Adapter<RecyclerViewA
         public ImageView deleteImage;
         OnTaskListener onTaskListener;
 
+        private ToggleButton toggleButton;
+        private Chronometer chrono;
+
+        long timeElapsed = 0;
+
         public ViewHolder(@NonNull View view, OnTaskListener onTaskListener) {
             super(view);
             taskName = (TextView) view.findViewById(R.id.taskName);
@@ -98,6 +109,44 @@ public class RecyclerViewAdapterTasks extends RecyclerView.Adapter<RecyclerViewA
                 }
             });
 
+            toggleButton = (ToggleButton) view.findViewById(R.id.tbtnChronometerTask);
+            chrono = (Chronometer) view.findViewById(R.id.chronometer);
+
+            chrono.setOnChronometerTickListener(new Chronometer.OnChronometerTickListener() {
+                @Override
+                public void onChronometerTick(Chronometer chronometer) {
+                    timeElapsed = SystemClock.elapsedRealtime() - chronometer.getBase();
+                }
+            });
+
+            toggleButton.setOnCheckedChangeListener(new ToggleButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    if(isChecked == true)
+                    {
+                        if(timeElapsed == 0){
+                            chrono.setBase(SystemClock.elapsedRealtime());
+                            chrono.start();
+                        }
+
+                        Toast.makeText(buttonView.getContext(), "ON State",
+                                Toast.LENGTH_SHORT).show();
+                    }
+
+                    else
+                    {
+                        if(timeElapsed != 0){
+                            timeElapsed = 0;
+                            chrono.stop();
+                        }
+                        Toast.makeText(buttonView.getContext(), "OFF State",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+
+            });
+
         }
         @Override
         public void onClick(View view) {
@@ -107,6 +156,11 @@ public class RecyclerViewAdapterTasks extends RecyclerView.Adapter<RecyclerViewA
 
         }
     }
+
+
+
+
+
 
 
 

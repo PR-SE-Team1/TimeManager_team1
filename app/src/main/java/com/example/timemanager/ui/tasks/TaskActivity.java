@@ -2,10 +2,13 @@ package com.example.timemanager.ui.tasks;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Chronometer;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,6 +34,9 @@ public class TaskActivity extends AppCompatActivity implements RecyclerViewAdapt
     private EditText etAddT;
 
 
+
+
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +45,10 @@ public class TaskActivity extends AppCompatActivity implements RecyclerViewAdapt
         createTaskList();
         buildRecyclerView();
         setButtons();
+
+
+
+
     }
 
     /**

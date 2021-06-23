@@ -2,28 +2,20 @@ package com.example.timemanager.ui.home;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.SystemClock;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.timemanager.R;
 import com.example.timemanager.ui.projects.Project;
 import com.example.timemanager.ui.projects.ProjectActivity;
-import com.example.timemanager.ui.projects.ProjectNew;
-import com.example.timemanager.ui.recycler.RecyclerViewAdapter;
-import com.example.timemanager.ui.tasks.Task;
+import com.example.timemanager.ui.projects.ProjectDetailActivity;
+import com.example.timemanager.ui.tasks.TaskActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,9 +27,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
     View v;
     private List<Project> projectList;
     private Button btnProjects;
+    private Button btnTasks;
 
     //chronometer
-    private Chronometer chronometer;
     private long pauseOffset;
     private boolean running;
 
@@ -62,6 +54,15 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         });
 
 
+        btnTasks = (Button) v.findViewById(R.id.btnTasks);
+        btnTasks.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), TaskActivity.class);
+                startActivity(intent);
+            }
+
+        });
 
 
         return v;

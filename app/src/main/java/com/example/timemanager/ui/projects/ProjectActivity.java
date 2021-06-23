@@ -93,19 +93,8 @@ public class ProjectActivity extends AppCompatActivity implements RecyclerViewAd
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerViewAdapter = new RecyclerViewAdapter(this, projectList, this);
+        //recyclerViewAdapterTasks.setClickListener(this);
         recyclerView.setAdapter(recyclerViewAdapter);
-
-        recyclerViewAdapter.setOnItemClickListener((new RecyclerViewAdapter.OnProjectListener() {
-            @Override
-            public void onProjectClick(int position) {
-                onProjectClick(position);
-            }
-
-            @Override
-            public void onDeleteClick(int position) {
-                deleteItem(position);
-            }
-        }));
     }
 
 
@@ -131,10 +120,7 @@ public class ProjectActivity extends AppCompatActivity implements RecyclerViewAd
         startActivity(intent);
     }
 
-    @Override
-    public void onDeleteClick(int position) {
-        deleteItem(position);
-    }
+
 
 
 

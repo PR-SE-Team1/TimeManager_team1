@@ -4,10 +4,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
+import android.os.SystemClock;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Chronometer;
 import android.widget.Spinner;
+import android.widget.ToggleButton;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,6 +28,8 @@ public class ProjectDetailActivity extends AppCompatActivity {
     public List<String> projectList = new ArrayList<>();
     public List<String> taskList = new ArrayList<>();
     public List<String> colorList = new ArrayList<>();
+
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -64,10 +69,14 @@ public class ProjectDetailActivity extends AppCompatActivity {
         spinnerC.setAdapter(arrayAdapterC);
 
 
+
+
+
+
     }
 
     public void sendMessage(View view) {
-        Intent intent = new Intent(this, ProjectActivity.class);
+        Intent intent = new Intent(this, TaskActivity.class);
         startActivity(intent);
     }
 
