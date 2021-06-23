@@ -86,35 +86,5 @@ public class Project  {
         return projectList;
     }
 
-//    public static final Creator<Project> CREATOR = new Creator<Project>() {
-//        @Override
-//        public Project createFromParcel(Parcel in) {
-//            return new Project(in);
-//        }
-//
-//        @Override
-//        public Project[] newArray(int size) {
-//            return new Project[size];
-//        }
-//    };
-
-//    @Override
-//    public int describeContents() {
-//        return 0;
-//    }
-//
-//    /**
-//     * storing the project data to a parcel-object
-//     * @param dest
-//     * @param flags
-//     */
-//    @Override
-//    public void writeToParcel(Parcel dest, int flags) {
-//        dest.writeString(projName);
-//        dest.writeString(description);
-//        dest.writeDouble(plannedHours);
-//        dest.writeString(color);
-//    }
-
 
 }
