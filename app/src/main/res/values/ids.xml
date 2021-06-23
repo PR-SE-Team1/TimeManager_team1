@@ -27,9 +27,22 @@
     <!-- recycler_item_view_tasks -->
     <item name="linearRecyclerTask" type="id" />
     <item name="taskName" type="id" />
+    <item name="tbtnChronometerTask" type="id" />
+    <item name="etTime" type="id" />
+    <item name="chronometer" type="id" />
 
     <!-- activity_tasks -->
     <item name="recyclerViewTasks" type="id" />
+    <item name="btnAddNewTask" type="id" />
+    <item name="etAddNewTask" type="id" />
+
+    <!-- activity_projects -->
+    <item name="recyclerViewProjects" type="id" />
+    <item name="btnAddNewProject" type="id" />
+    <item name="etAddNewProject" type="id" />
+
+    <!-- fragment_home -->
+    <item name="btnProjects" type="id" />
 
     <!-- fragment_info -->
     <item name="btnInfoOverview" type="id" />

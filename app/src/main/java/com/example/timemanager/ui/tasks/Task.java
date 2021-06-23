@@ -30,6 +30,10 @@ public class Task {
         this.defaultTask = defaultTask;
         this.project = project;
     }
+    public Task (String taskName){
+        this.taskName = taskName;
+
+    }
 
 //    /**
 //     * retrieving task-data
@@ -83,6 +87,10 @@ public class Task {
 //        dest.writeDouble(plannedHours);
 //        dest.writeString(color);
 //    }
+
+    public void changeText1 (String text){
+        taskName = text;
+    }
 
 
 }

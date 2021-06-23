@@ -3,24 +3,24 @@ package com.example.timemanager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.LayoutInflater;
 import android.widget.Button;
 import android.widget.Toast;
 import android.view.View;
 import android.util.Log;
-
-
+import android.widget.ToggleButton;
 import com.example.timemanager.ui.projects.Project;
+import com.example.timemanager.ui.projects.ProjectActivity;
 import com.example.timemanager.ui.recycler.RecyclerViewAdapter;
+import com.example.timemanager.ui.tasks.TaskDetailActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,7 +42,5 @@ public class MainActivity extends AppCompatActivity  {
         NavigationUI.setupWithNavController(navView, navController);
 
     }
-
-
 
 }

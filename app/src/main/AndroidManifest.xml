@@ -18,8 +18,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.projects.ProjectActivity" />
+        <activity android:name=".ui.projects.ProjectDetailActivity" />
         <activity android:name=".ui.tasks.TaskActivity" />
+        <activity android:name=".ui.projects.ProjectActivity" />
         <activity android:name=".ui.tasks.TaskDetailActivity" />
         <activity android:name=".ui.info.OverviewActivity" />
         <activity android:name=".ui.info.BookingListActivity" />

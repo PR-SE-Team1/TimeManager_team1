@@ -48,11 +48,24 @@
 
     <!-- recycler_item_view_task -->
     <string name="taskname">Aufgabe:</string>
+    <string name="tbtnChronoTask">Aufgabe starten:</string>
 
     <!-- fragment_info -->
     <string name="btnInfoOverview">Übersicht</string>
     <string name="btnInfoWorkingHours">Arbeitszeiten</string>
     <string name="btnInfoBookingList">Buchungsliste</string>
+
+
+    <!-- activity_tasks -->
+    <string name="btnAddNewTask">hinzufügen</string>
+    <string name="etAddNewTask">Neue Aufgabe</string>
+
+    <!-- activity_projects -->
+    <string name="btnAddNewProject">hinzufügen</string>
+    <string name="etAddNewProject">Neues Projekt</string>
+
+    <!-- fragment_home -->
+    <string name="btnProjects">Projekte anzeigen</string>
 
     <!-- activity_info_workinghours -->
     <string name="tvInfoDailyHours">Arbeitsstunden pro Tag:</string>
