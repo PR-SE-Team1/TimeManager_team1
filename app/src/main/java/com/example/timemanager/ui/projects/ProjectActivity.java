@@ -34,6 +34,7 @@ public class ProjectActivity extends AppCompatActivity implements RecyclerViewAd
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+      
         setContentView(R.layout.activity_projects);
 
         createProjectList();
@@ -63,6 +64,7 @@ public class ProjectActivity extends AppCompatActivity implements RecyclerViewAd
             }
         });
     }
+
 
 
     /**

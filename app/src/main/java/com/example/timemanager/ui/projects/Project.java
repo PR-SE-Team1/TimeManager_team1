@@ -80,8 +80,6 @@ public class Project  implements Parcelable{
         return projectList;
     }
 
-
-
     public static final Creator<Project> CREATOR = new Creator<Project>() {
         @Override
         public Project createFromParcel(Parcel in) {

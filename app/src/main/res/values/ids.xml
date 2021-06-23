@@ -44,4 +44,18 @@
     <!-- fragment_home -->
     <item name="btnProjects" type="id" />
 
+    <!-- fragment_info -->
+    <item name="btnInfoOverview" type="id" />
+    <item name="btnInfoWorkingHours" type="id" />
+    <item name="btnInfoBookingList" type="id" />
+
+    <!-- activity_info_overview -->
+    <item name="cvInfoCalendar" type="id" />
+
+    <!-- activity_info_workinghours -->
+    <item name="tvInfoDailyHours" type="id" />
+    <item name="tvInfoTargetHoursDaily" type="id" />
+    <item name="tvInfoReachedHoursDaily" type="id" />
+    <item name="btnInfoWorkingHoursWeekly" type="id" />
+
 </resources>

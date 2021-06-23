@@ -13,8 +13,6 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="Settings"
-        android:textAlignment="center"
         android:textSize="20sp"
         app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -24,42 +22,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="210dp"
-        android:layout_height="135dp"
-        android:layout_marginTop="196dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/settingsText">
-
-        <RadioButton
-            android:id="@+id/localRadioButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:checked="false"
-            android:clickable="true"
-            android:text="local"
-            android:textSize="18sp" />
-
-        <RadioButton
-            android:id="@+id/driveRadioButtton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            android:text="google drive"
-            android:textSize="18sp" />
-    </RadioGroup>
-
     <TextView
         android:id="@+id/weeklyWorkingTimeText"
         android:layout_width="236dp"
         android:layout_height="42dp"
         android:layout_marginStart="12dp"
         android:layout_marginLeft="12dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="32dp"
         android:text="Weekly Working Time"
         app:autoSizeTextType="uniform"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,39 +38,53 @@
         android:id="@+id/saveLocationText"
         android:layout_width="115dp"
         android:layout_height="42dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="196dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="124dp"
         android:text="Location"
         app:autoSizeTextType="uniform"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/settingsText" />
 
     <EditText
-        android:id="@+id/targetHours"
+        android:id="@+id/tv_targetHours"
         android:layout_width="106dp"
         android:layout_height="42dp"
         android:layout_marginStart="28dp"
         android:layout_marginLeft="28dp"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="96dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:onClick="handleTargetHours"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.034"
         app:layout_constraintStart_toEndOf="@+id/weeklyWorkingTimeText"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/saveButton"
-        android:layout_width="160dp"
-        android:layout_height="67dp"
-        android:layout_marginTop="376dp"
-        android:onClick="handleTargetHours"
-        android:text="Save"
-        android:textSize="18sp"
+
+        android:id="@+id/btn_search"
+        android:layout_width="132dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="116dp"
+        android:onClick="clickedSearchButton"
+        android:text="Search"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.756"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/settingsText" />
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="142dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginLeft="136dp"
+        android:layout_marginTop="100dp"
+        android:text="Save"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/saveLocationText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -64,8 +64,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginTop="248dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/pteditStart"
+        android:inputType="time"
         app:layout_constraintStart_toEndOf="@+id/tvEditStart"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -77,8 +76,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginTop="312dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/pteditEnd"
+        android:inputType="time"
         app:layout_constraintStart_toEndOf="@+id/tvEditEnd"
         app:layout_constraintTop_toTopOf="parent" />
 

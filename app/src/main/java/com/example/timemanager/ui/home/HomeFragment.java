@@ -29,10 +29,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
     private Button btnProjects;
     private Button btnTasks;
 
-    //chronometer
-    private long pauseOffset;
-    private boolean running;
-
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {

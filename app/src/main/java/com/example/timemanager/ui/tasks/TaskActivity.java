@@ -46,10 +46,8 @@ public class TaskActivity extends AppCompatActivity implements RecyclerViewAdapt
         buildRecyclerView();
         setButtons();
 
-
-
-
     }
+
 
     /**
      * method setting up buttons
