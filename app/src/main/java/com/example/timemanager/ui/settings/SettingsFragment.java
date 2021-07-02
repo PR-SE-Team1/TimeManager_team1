@@ -1,12 +1,7 @@
 package com.example.timemanager.ui.settings;
 
 import android.content.Intent;
-import android.database.Cursor;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.DocumentsContract;
-import android.provider.MediaStore;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,14 +14,14 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-
 import com.example.timemanager.R;
 import com.example.timemanager.ui.home.HomeFragment;
-import com.example.timemanager.ui.info.OverviewActivity;
 import com.example.timemanager.ui.projects.Project;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import lib.folderpicker.FolderPicker;
 
 public class SettingsFragment extends Fragment {
 
@@ -87,10 +82,34 @@ public class SettingsFragment extends Fragment {
 
 
 
+//    public void clickedSearchButton(View v) {
+//        projectList = new ArrayList<>();
+//        projectList.add(new Project (1,"Projekt1", "kurzbeschreibung 1", 11.1, "blue"));
+//        projectList.add(new Project (2,"Projekt2", "kurzbeschreibung 2", 12.1, "blue"));
+//        projectList.add(new Project (3,"Projekt3", "kurzbeschreibung 3", 13.1, "blue"));
+//        projectList.add(new Project (4,"Projekt4", "kurzbeschreibung 4", 14.1, "blue"));
+//        projectList.add(new Project (5,"Projekt5", "kurzbeschreibung 5", 15.1, "blue"));
+//        projectList.add(new Project (6,"Projekt6", "kurzbeschreibung 6", 16.1, "blue"));
+//        storageXML writer = new storageXML();
+//        try {
+//            writer.writeConfigFile(projectList, filePath);
+//        }
+//        catch(Exception ex)
+//        {
+//            ex.printStackTrace();
+//        }
+//    }
+
+    public void clickedSearchButton(View v){
+        Intent pathPicker = new Intent(this.getActivity(), FolderPicker.class);
+        startActivityForResult(pathPicker, 10);
+    }
 
 
 
-    public void clickedSearchButton(View v) {
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data){
         projectList = new ArrayList<>();
         projectList.add(new Project (1,"Projekt1", "kurzbeschreibung 1", 11.1, "blue"));
         projectList.add(new Project (2,"Projekt2", "kurzbeschreibung 2", 12.1, "blue"));
@@ -99,54 +118,15 @@ public class SettingsFragment extends Fragment {
         projectList.add(new Project (5,"Projekt5", "kurzbeschreibung 5", 15.1, "blue"));
         projectList.add(new Project (6,"Projekt6", "kurzbeschreibung 6", 16.1, "blue"));
         storageXML writer = new storageXML();
+        filePath = data.getExtras().getString("data");
+
         try {
             writer.writeConfigFile(projectList, filePath);
         }
-        catch(Exception ex)
-        {
+        catch(Exception ex){
             ex.printStackTrace();
         }
     }
 
-    //public void clickedSaveButton(View v){
-        //performFileSearch();
-    //}
 
-    //public void performFileSearch(){
-        //startActivityForResult(intent, PICKFILE_REQUEST_CODE);
-    //}
-
-
-    //@Override
-    //public void onActivityResult(int requestCode, int resultCode, Intent data){
-        //projectList = new ArrayList<>();
-        //projectList.add(new Project ("Projekt1", "kurzbeschreibung 1", 11.1, "blue"));
-        //projectList.add(new Project ("Projekt2", "kurzbeschreibung 2", 12.1, "blue"));
-        //projectList.add(new Project ("Projekt3", "kurzbeschreibung 3", 13.1, "blue"));
-        //projectList.add(new Project ("Projekt4", "kurzbeschreibung 4", 14.1, "blue"));
-        //projectList.add(new Project ("Projekt5", "kurzbeschreibung 5", 15.1, "blue"));
-        //projectList.add(new Project ("Projekt6", "kurzbeschreibung 6", 16.1, "blue"));
-        //storageXML writer = new storageXML();
-        //filePath = data.getDataString();
-
-        //Uri uri = data.getData();
-
-        //try {
-            //writer.writeConfigFile(projectList, filePath);
-        //}
-        //catch(Exception ex){
-          //  ex.printStackTrace();
-        //}
-    //}
-
-    //public String getPath(Uri uri) {
-    //  String[] projection = { MediaStore.Images.Media.DATA };
-    //  Cursor cursor = this.getContext().getContentResolver().query(uri, projection, null, null, null);
-    //  if (cursor == null) return null;
-    //  int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
-    //  cursor.moveToFirst();
-    //  String s=cursor.getString(column_index);
-    //  cursor.close();
-    //  return s;
-    //}
 }
