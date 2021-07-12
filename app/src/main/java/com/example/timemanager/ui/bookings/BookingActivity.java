@@ -73,7 +73,7 @@ public class BookingActivity extends AppCompatActivity {
      * @param position
      */
     private void insertItem(int position) {
-        bookingList.add(position, new Booking("Buchung3"));
+        bookingList.add(position, new Booking("Buchung3", 3));
         recyclerViewAdapterBookings.notifyItemInserted(position);
     }
 
@@ -106,8 +106,8 @@ public class BookingActivity extends AppCompatActivity {
      */
     private void createBookingList() {
         bookingList = new ArrayList<>();
-        bookingList.add(new Booking("Buchung 1"));
-        bookingList.add(new Booking("Buching 2"));
+        bookingList.add(new Booking("Buchung 1", 1));
+        bookingList.add(new Booking("Buching 2", 2));
     }
 
 

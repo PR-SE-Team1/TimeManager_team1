@@ -2,23 +2,17 @@ package com.example.timemanager.ui.recycler;
 
 
 import android.content.Context;
-import android.os.SystemClock;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Chronometer;
-import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.ToggleButton;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.timemanager.R;
 import com.example.timemanager.ui.bookings.Booking;
-import com.example.timemanager.ui.tasks.Task;
 
 import java.util.List;
 
@@ -99,7 +93,7 @@ public class RecyclerViewAdapterBookings extends RecyclerView.Adapter<RecyclerVi
     public void onBindViewHolder(@NonNull RecyclerViewAdapterBookings.ViewHolder holder, int position){
         //holder.textView.setText(data.get(position).getClass().getName());
         Booking currentItem = data.get(position);
-        holder.taskName.setText(currentItem.getBooking());
+        holder.taskName.setText(currentItem.getBookingName());
     }
 
     /**

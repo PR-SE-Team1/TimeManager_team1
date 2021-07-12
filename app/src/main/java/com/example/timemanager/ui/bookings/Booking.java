@@ -1,91 +1,87 @@
 package com.example.timemanager.ui.bookings;
 
 
-import com.example.timemanager.ui.projects.Project;
-import com.example.timemanager.ui.tasks.Task;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 import java.util.ArrayList;
 import java.util.List;
 
 // implements Parcelable to pass complex data from one activity to another activity
-public class Booking {
-
-    private String booking;
-    private Project project;
-    private Task task;
-
-
-    private static List<Booking> bookingList = new ArrayList<>();
+public class Booking implements Parcelable {
+    //times need to be added
+    private String bookingName;
+    private int timeWorked;
 
 
     /**
      * constructor to initialize a task object
-     * @param booking
-     * @param project
+     * @param bookingName
+     * @param
      * @param
      */
-    public Booking(String booking, Project project, Task task){
-        this.booking = booking;
-        this.task = task;
-        this.project = project;
-    }
-    public Booking(String taskName){
-        this.booking = taskName;
+    public Booking(String bookingName, int timeWorked){
+        this.bookingName = bookingName;
+        this.timeWorked = timeWorked;
 
     }
 
-//    /**
-//     * retrieving task-data
-//     * this constructor is invoked by method createFromParcel(Parcel source)
-//     * @param in
-//     */
-//    protected Task(Parcel in) {
-//        taskName = in.readString();
-//        defaultTask = ;
-//        project = ;
-//    }
 
-//    /**
-//     * delete after parcel is working
-//     */
-//    public Project() {
-//
-//    }
+    /**
+     * retrieving task-data
+     * this constructor is invoked by method createFromParcel(Parcel source)
+     * @param in
+     */
+    protected Booking(Parcel in) {
+        bookingName = in.readString();
+        timeWorked = in.readInt();
+
+    }
+
+    /**
+     * delete after parcel is working
+     */
+    public Booking() {
+
+    }
+
+    public static final Creator<Booking> CREATOR = new Creator<Booking>() {
+        @Override
+        public Booking createFromParcel(Parcel in) {
+            return new Booking(in);
+        }
+
+        @Override
+        public Booking[] newArray(int size) {
+            return new Booking[size];
+        }
+    };
 
     //GETTER
-    public String getBooking() {
-        return booking;
-    }
-    public Task getBookingTask() {
-        return task;
-    }
-    public Project getBookingProject() {
-        return project;
+    public String getBookingName() {
+        return bookingName;
     }
 
-    public static List<Booking> getTaskList(){
-        return bookingList;
+    //SETTER
+    public void setBookingName(String bookingName){
+        this.bookingName = bookingName;
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
 
-//
-//    @Override
-//    public int describeContents() {
-//        return 0;
-//    }
-//
-//    /**
-//     * storing the project data to a parcel-object
-//     * @param dest
-//     * @param flags
-//     */
-//    @Override
-//    public void writeToParcel(Parcel dest, int flags) {
-//        dest.writeString(projName);
-//        dest.writeString(description);
-//        dest.writeDouble(plannedHours);
-//        dest.writeString(color);
-//    }
+    /**
+     * storing the project data to a parcel-object
+     * @param dest
+     * @param flags
+     */
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(bookingName);
+        dest.writeInt(timeWorked);
+    }
 
 
 }

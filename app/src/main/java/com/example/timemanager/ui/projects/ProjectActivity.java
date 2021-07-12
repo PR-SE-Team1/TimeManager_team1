@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.timemanager.R;
+import com.example.timemanager.ui.bookings.Booking;
 import com.example.timemanager.ui.recycler.RecyclerViewAdapter;
 import com.example.timemanager.ui.recycler.RecyclerViewAdapterTasks;
 import com.example.timemanager.ui.tasks.Task;
@@ -72,7 +73,7 @@ public class ProjectActivity extends AppCompatActivity implements RecyclerViewAd
      * @param position
      */
     private void insertItem(int position) {
-        projectList.add(position, new Project("Projekt11", "kurzbeschreibung 11", 11.1, "blue"));
+        projectList.add(position, new Project("Projekt11", "kurzbeschreibung 11", 11, "blue"));
         recyclerViewAdapter.notifyItemInserted(position);
     }
 
