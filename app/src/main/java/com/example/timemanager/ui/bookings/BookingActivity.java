@@ -34,7 +34,7 @@ public class BookingActivity extends AppCompatActivity {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tasks);
+        setContentView(R.layout.activity_bookings);
 
         createBookingList();
         buildRecyclerView();

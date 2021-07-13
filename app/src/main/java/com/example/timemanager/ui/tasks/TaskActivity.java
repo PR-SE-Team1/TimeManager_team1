@@ -78,7 +78,7 @@ public class TaskActivity extends AppCompatActivity implements RecyclerViewAdapt
      * @param position
      */
     private void insertItem(int position) {
-        taskList.add(position, new Task("Aufgabe3", new Project("Projekt11", "kurzbeschreibung 11", 11.1, "blue"), true));
+        taskList.add(position, new Task("Aufgabe3"));
         recyclerViewAdapterTasks.notifyItemInserted(position);
     }
 
@@ -122,8 +122,8 @@ public class TaskActivity extends AppCompatActivity implements RecyclerViewAdapt
      */
     private void createTaskList() {
         taskList = new ArrayList<>();
-        taskList.add(new Task("Aufgabe1", new Project( "Projekt11", "kurzbeschreibung 11", 11.1, "blue"), true));
-        taskList.add(new Task("Aufgabe2", new Project("Projekt12", "kurzbeschreibung 12", 11.1, "blue"), false));
+        taskList.add(new Task("Aufgabe1"));
+        taskList.add(new Task("Aufgabe2"));
     }
 
 

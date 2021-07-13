@@ -64,7 +64,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
 
 
         btnBookings = (Button) v.findViewById(R.id.btnBookings);
-        btnTasks.setOnClickListener(new View.OnClickListener() {
+        btnBookings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), BookingActivity.class);
@@ -72,6 +72,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
             }
 
         });
+
         return v;
 
     }

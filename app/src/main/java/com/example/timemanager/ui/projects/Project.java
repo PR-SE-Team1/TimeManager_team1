@@ -35,14 +35,16 @@ public class Project  implements Parcelable {
      * @param description
      * @param plannedHours
      * @param color
+     *
+     * to insert: , List<Task> tasks, List<Booking> bookings
      */
-    public Project (String projName, String description, double plannedHours, String color, List<Task> tasks, List<Booking> bookings){
+    public Project (String projName, String description, double plannedHours, String color){
         this.projName = projName;
         this.description = description;
         this.plannedHours = plannedHours;
         this.color = color;
-        this.tasks = new ArrayList<>();
-        this.bookings = new ArrayList<>();
+//        this.tasks = new ArrayList<>();
+//        this.bookings = new ArrayList<>();
     }
 
     public Project ( String projName){
@@ -59,8 +61,8 @@ public class Project  implements Parcelable {
         description = in.readString();
         plannedHours = in.readDouble();
         color = in.readString();
-        tasks = in.createTypedArrayList(Task.CREATOR);
-        bookings = in.createTypedArrayList(Booking.CREATOR);
+//        tasks = in.createTypedArrayList(Task.CREATOR);
+//        bookings = in.createTypedArrayList(Booking.CREATOR);
     }
 
     /**
@@ -119,7 +121,7 @@ public class Project  implements Parcelable {
         dest.writeString(description);
         dest.writeDouble(plannedHours);
         dest.writeString(color);
-        dest.writeTypedList(tasks);
+//        dest.writeTypedList(tasks);
     }
 
 

@@ -36,6 +36,11 @@
     <item name="btnAddNewTask" type="id" />
     <item name="etAddNewTask" type="id" />
 
+    <!-- activity_bookings -->
+    <item name="recyclerViewBookings" type="id" />
+    <item name="btnAddNewBooking" type="id" />
+    <item name="etAddNewBooking" type="id" />
+
     <!-- activity_projects -->
     <item name="recyclerViewProjects" type="id" />
     <item name="btnAddNewProject" type="id" />

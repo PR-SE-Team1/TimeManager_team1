@@ -20,7 +20,7 @@
         android:id="@+id/btnAddNewBooking"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/btnAddNewProject"
+        android:text="@string/btnAddNewBooking"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,7 +30,7 @@
         android:layout_height="39dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:text="@string/etAddNewProject"
+        android:text="@string/etAddNewBooking"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

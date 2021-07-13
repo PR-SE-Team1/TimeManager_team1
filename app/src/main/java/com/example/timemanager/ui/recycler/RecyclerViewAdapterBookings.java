@@ -45,13 +45,13 @@ public class RecyclerViewAdapterBookings extends RecyclerView.Adapter<RecyclerVi
      * static class ViewHolder for different views (elements) of a recycler view
      */
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView taskName;
+        public TextView bookingName;
         public ImageView deleteImage;
 
 
         public ViewHolder(@NonNull View view) {
             super(view);
-            taskName = (TextView) view.findViewById(R.id.bookingName);
+            bookingName = (TextView) view.findViewById(R.id.bookingName);
             deleteImage = itemView.findViewById(R.id.image_deleteTask);
 
 
@@ -93,7 +93,7 @@ public class RecyclerViewAdapterBookings extends RecyclerView.Adapter<RecyclerVi
     public void onBindViewHolder(@NonNull RecyclerViewAdapterBookings.ViewHolder holder, int position){
         //holder.textView.setText(data.get(position).getClass().getName());
         Booking currentItem = data.get(position);
-        holder.taskName.setText(currentItem.getBookingName());
+        holder.bookingName.setText(currentItem.getBookingName());
     }
 
     /**

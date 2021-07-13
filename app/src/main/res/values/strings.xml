@@ -56,6 +56,12 @@
     <string name="btnInfoBookingList">Buchungsliste</string>
 
 
+    <!-- activity_bookings -->
+    <string name="btnAddNewBooking">hinzufügen</string>
+    <string name="etAddNewBooking">Neue Aufgabe</string>
+
+
+
     <!-- activity_tasks -->
     <string name="btnAddNewTask">hinzufügen</string>
     <string name="etAddNewTask">Neue Aufgabe</string>

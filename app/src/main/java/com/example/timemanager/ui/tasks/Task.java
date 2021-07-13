@@ -21,19 +21,19 @@ public class Task implements Parcelable{
 
     /**
      * constructor to initialize a task object
+     * to insert: Project project, boolean defaultTask
      * @param taskName
-     * @param project
-     * @param defaultTask
+     * @param
      */
-    public Task (String taskName, Project project, boolean defaultTask){
+    public Task (String taskName ){
         this.taskName = taskName;
-        this.defaultTask = defaultTask;
-        this.project = project;
+//        this.defaultTask = defaultTask;
+//        this.project = project;
     }
-    public Task (String taskName){
-        this.taskName = taskName;
-
-    }
+//    public Task (String taskName){
+//        this.taskName = taskName;
+//
+//    }
 
     /**
      * retrieving task-data
