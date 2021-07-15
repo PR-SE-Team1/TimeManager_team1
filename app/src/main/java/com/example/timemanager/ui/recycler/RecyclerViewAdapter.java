@@ -42,6 +42,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     }
 
+
+
     @Override
     public RecyclerViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) throws NullPointerException {
         context = parent.getContext();
@@ -65,18 +67,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
 
-
-
-
-
-
-
     /**
      * static class ViewHolder for different views (elements) of a recycler view
      */
     public class ViewHolder extends RecyclerView.ViewHolder  {
         private TextView projektName, beschreibung;
         OnProjectListener onProjectListener;
+
         public ViewHolder(@NonNull View view, OnProjectListener onProjectListener) {
             super(view);
             projektName =  view.findViewById(R.id.projName);
@@ -86,10 +83,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
                 @Override
                 public void onClick(View v) {
-                    onProjectListener.onProjectClick(data.get(getAdapterPosition()));
+                    onProjectListener.onProjectClick(getAdapterPosition());
                 }
             });
             this.onProjectListener = onProjectListener;
+
         }
 //        @Override
 //        public void onClick(View view) {
@@ -108,7 +106,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
      */
     public interface OnProjectListener{
         //used in the activity to send position of clicked item
-        void onProjectClick(Project project);
+        void onProjectClick(int position);
+    }
+
+    public void setOnProjectListener(OnProjectListener listener) {
+        onProjectListener = listener;
     }
 
 

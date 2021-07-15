@@ -98,6 +98,25 @@ public class ProjectActivity extends AppCompatActivity implements RecyclerViewAd
         recyclerViewAdapter = new RecyclerViewAdapter(this, projectList, this);
         //recyclerViewAdapterTasks.setClickListener(this);
         recyclerView.setAdapter(recyclerViewAdapter);
+
+        recyclerViewAdapter.setOnProjectListener (new RecyclerViewAdapter.OnProjectListener(){
+            @Override
+            public void onProjectClick(int position) {
+                Intent intent = new Intent(ProjectActivity.this, ProjectDetailActivity.class);
+                intent.putExtra("Project", projectList.get(position));
+
+                startActivity(intent);
+
+            }
+
+//            @Override
+//            public void onProjectClick(Project project) {
+//                Intent intent = new Intent(ProjectActivity.this, ProjectDetailActivity.class);
+//                intent.putExtra("Project", projectList.get());
+//
+//                startActivity(intent);
+//            }
+        });
     }
 
 
@@ -124,9 +143,15 @@ public class ProjectActivity extends AppCompatActivity implements RecyclerViewAd
 //    }
 
 
-    @Override
-    public void onProjectClick(Project project) {
-        startActivity(new Intent(ProjectActivity.this, ProjectDetailActivity.class).putExtra("data", project));
+//    @Override
+//    public void onProjectClick(Project project) {
+//        startActivity(new Intent(ProjectActivity.this, ProjectDetailActivity.class).putExtra("data", project));
+//
+//    }
 
+    @Override
+    public void onProjectClick(int position) {
+        Intent intent = new Intent(this, ProjectDetailActivity.class);
+        startActivity(intent);
     }
 }

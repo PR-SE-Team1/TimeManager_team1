@@ -36,6 +36,8 @@ public class Project  implements Parcelable {
      * @param plannedHours
      * @param color
      *
+     * IMPORTANT: order has to be the same as in writeToParcel!
+     *
      * to insert: , List<Task> tasks, List<Booking> bookings
      */
     public Project (String projName, String description, double plannedHours, String color){
@@ -52,7 +54,7 @@ public class Project  implements Parcelable {
     }
 
     /**
-     * retrieving project-data
+     * retrieving/reading project-data
      * this constructor is invoked by method createFromParcel(Parcel source)
      * @param in
      */
@@ -93,6 +95,9 @@ public class Project  implements Parcelable {
         return bookings;
     }
 
+    /**
+     * creates project from parcel
+     */
     public static final Creator<Project> CREATOR = new Creator<Project>() {
         @Override
         public Project createFromParcel(Parcel in) {
@@ -111,7 +116,7 @@ public class Project  implements Parcelable {
     }
 
     /**
-     * storing the project data to a parcel-object
+     * storing/adding the project data to a parcel-object
      * @param dest
      * @param flags
      */

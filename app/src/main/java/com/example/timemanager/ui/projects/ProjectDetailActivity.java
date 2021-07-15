@@ -24,6 +24,7 @@ import com.example.timemanager.ui.tasks.TaskActivity;
 import java.util.ArrayList;
 import java.util.List;
 
+//zum speichern savedInstanceState
 
 public class ProjectDetailActivity extends AppCompatActivity {
 
@@ -41,28 +42,34 @@ public class ProjectDetailActivity extends AppCompatActivity {
 
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         //opening activity
         setContentView(R.layout.activity_edit_projects);
 
-        //---- getting Project
-        tvProject = findViewById(R.id.selectedProject);
         Intent intent = getIntent();
-        if (intent.getExtras() != null){
-            Project project = (Project) intent.getSerializableExtra("data");
-            tvProject.setText(project.getProjName());
-        }
+        Project project = intent.getParcelableExtra("Projekt");
 
-        editDescription = findViewById(R.id.mltEditDescription);
-        Intent intent2 = getIntent();
-        if (intent2.getExtras() != null){
-            Project project = (Project) intent.getSerializableExtra("data");
-            editDescription.setText(project.getDescription());
-        }
+        String name = project.getProjName();
+        String description = project.getDescription();
 
+        tvProject = findViewById(R.id.selectedProject);
+        tvProject.setText(name);
 
-
+//        //---- getting Project
+//        tvProject = findViewById(R.id.selectedProject);
+//        Intent intent = getIntent();
+//        if (intent.getExtras() != null){
+//            Project project = (Project) intent.getParcelableExtra("data");
+//            tvProject.setText(project.getProjName());
+//        }
+//
+//        editDescription = findViewById(R.id.mltEditDescription);
+//        Intent intent2 = getIntent();
+//        if (intent2.getExtras() != null){
+//            Project project = (Project) intent.getParcelableExtra("data");
+//            //editDescription.setText(project.getDescription());
+//        }
 
 
 //        //editText PROJECT
