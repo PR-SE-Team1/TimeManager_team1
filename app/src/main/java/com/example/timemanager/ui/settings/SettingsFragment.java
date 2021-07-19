@@ -1,12 +1,6 @@
 package com.example.timemanager.ui.settings;
 
-import android.content.Intent;
-import android.database.Cursor;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.DocumentsContract;
-import android.provider.MediaStore;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,10 +14,8 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-
 import com.example.timemanager.R;
 import com.example.timemanager.ui.home.HomeFragment;
-import com.example.timemanager.ui.info.OverviewActivity;
 import com.example.timemanager.ui.projects.Project;
 
 import java.util.ArrayList;
@@ -84,6 +76,7 @@ public class SettingsFragment extends Fragment {
     public String getTargetHours(){
         return targetHours;
     }
+
 
 
     public void clickedSearchButton(View v) {
