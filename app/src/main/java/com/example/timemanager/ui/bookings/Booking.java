@@ -55,15 +55,11 @@ public class Booking implements Parcelable {
     };
 
     //GETTER
-    public String getBookingName() {
-        return bookingName;
-    }
+    public String getBookingName() {return bookingName; }
     public int getTimeWorked(){return timeWorked;}
 
     //SETTER
-    public void setBookingName(String bookingName){
-        this.bookingName = bookingName;
-    }
+    public void setBookingName(String bookingName){this.bookingName = bookingName; }
     public void setTimeWorked(int timeWorked){this.timeWorked = timeWorked;}
 
     @Override
