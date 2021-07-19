@@ -1,6 +1,8 @@
 package com.example.timemanager;
 
+import com.example.timemanager.ui.bookings.Booking;
 import com.example.timemanager.ui.projects.Project;
+import com.example.timemanager.ui.tasks.Task;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -8,7 +10,9 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -23,22 +27,16 @@ public class ExampleUnitTest {
     Project p;
     List<Project> list;
     List<Project> list1;
-
-
-
+    Task t;
+    Booking b;
+    
     @Before
     public void setUp() throws Exception {
         list = new ArrayList<>();
-        this.p = new Project (1, "Projekt1", "kurzbeschreibung 1", 11.1, "blue");
+        this.p = new Project ( "Projekt1", "kurzbeschreibung 1", 11.1, "blue");
         list.add(p);
+        this.b = new Booking("test", 5);
     }
-
-    @Test
-    public void testGetProjId() {
-        assertNotNull(p.getProjId());
-        assertEquals(1, p.getProjId());
-    }
-
 
     @Test
     public void testGetProjName() {
@@ -74,4 +72,60 @@ public class ExampleUnitTest {
 //        assertEquals(list, p.getProjectList());
 //        assertNotEquals(null, p.getProjectList());
 //    }
+
+    //-------------Task-------------
+    @Test
+    public void testGetTaskName(){
+        assertNotNull(t.getTaskName());
+        assertEquals("Aufgabe1", t.getTaskName());
+        assertNotEquals("null", t.getTaskName());
+    }
+
+    @Test
+    public void testSetTaskName(){ //bin ma nd sicher ob des so funktioniert, habs vo stachoverflow
+        String input = "abc\n";
+        String expected = "abc";
+
+        Task task = new Task(input);
+        task.setTaskName(input);
+
+        assertEquals(expected, task.getTaskName());
+    }
+
+    //-------------Booking-------------
+    @Test
+    public void testGetBookingName(){
+        assertNotNull(b.getBookingName());
+        assertEquals("test", b.getBookingName());
+        assertNotEquals("null", b.getBookingName());
+    }
+
+    @Test
+    public void testGetTimeWorked(){
+        assertNotNull(b.getTimeWorked());
+        assertEquals(5, b.getTimeWorked());
+        assertNotEquals(0, b.getTimeWorked());
+    }
+
+    @Test
+    public void testSetBookingName(){ //bin ma nd sicher ob des so funktioniert, habs vo stachoverflow
+        String input = "abc\n";
+        String expected = "abc";
+
+        Booking booking = new Booking(input,5);
+        booking.setBookingName(input);
+
+        assertEquals(expected, booking.getBookingName());
+    }
+
+    @Test
+    public void testSetTimeWorked(){ //bin ma nd sicher ob des so funktioniert, habs vo stachoverflow
+        int input = 1;
+        int expected = 1;
+
+        Booking booking = new Booking("test",input);
+        booking.setTimeWorked(input);
+
+        assertEquals(expected, booking.getTimeWorked());
+    }
 }

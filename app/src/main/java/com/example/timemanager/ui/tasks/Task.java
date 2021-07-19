@@ -68,6 +68,9 @@ public class Task implements Parcelable{
         return taskName;
     }
 
+    //SETTER
+    public void setTaskName(String taskName){this.taskName = taskName;}
+
 
 
     @Override

@@ -4,9 +4,6 @@ package com.example.timemanager.ui.bookings;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.util.ArrayList;
-import java.util.List;
-
 // implements Parcelable to pass complex data from one activity to another activity
 public class Booking implements Parcelable {
     //times need to be added
@@ -61,11 +58,13 @@ public class Booking implements Parcelable {
     public String getBookingName() {
         return bookingName;
     }
+    public int getTimeWorked(){return timeWorked;}
 
     //SETTER
     public void setBookingName(String bookingName){
         this.bookingName = bookingName;
     }
+    public void setTimeWorked(int timeWorked){this.timeWorked = timeWorked;}
 
     @Override
     public int describeContents() {
