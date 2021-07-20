@@ -118,13 +118,19 @@ public class TaskActivity extends AppCompatActivity implements RecyclerViewAdapt
     }
 
 
-    //get to another activity by clicking on the task
+    /**
+     * get to another activity by clicking on the task
+     */
     @Override
     public void onTaskClick(int position) {
         Intent intent = new Intent(this, TaskDetailActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * delete task by clicking on deleteitem
+     * @param position
+     */
     @Override
     public void onDeleteClick(int position) {
         deleteItem(position);
