@@ -60,7 +60,10 @@ public class Booking implements Parcelable {
 
     //SETTER
     public void setBookingName(String bookingName){this.bookingName = bookingName; }
-    public void setTimeWorked(int timeWorked){this.timeWorked = timeWorked;}
+    public void setTimeWorked(int timeWorked){
+        if (timeWorked <= 0) return;
+        this.timeWorked = timeWorked;
+    }
 
     @Override
     public int describeContents() {
@@ -77,6 +80,5 @@ public class Booking implements Parcelable {
         dest.writeString(bookingName);
         dest.writeInt(timeWorked);
     }
-
 
 }

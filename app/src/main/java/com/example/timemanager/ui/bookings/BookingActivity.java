@@ -40,8 +40,6 @@ public class BookingActivity extends AppCompatActivity {
         buildRecyclerView();
         //setButtons();
 
-
-
     }
 
 

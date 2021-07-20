@@ -48,18 +48,18 @@ public class ProjectDetailActivity extends AppCompatActivity {
 
         //---- getting Project
         tvProject = findViewById(R.id.selectedProject);
-        Intent intent = getIntent();
-        if (intent.getExtras() != null){
-            Project project = (Project) intent.getSerializableExtra("data");
+        Intent intent1 = getIntent();
+        if (intent1.getExtras() != null){
+            Project project = (Project) intent1.getParcelableExtra("data");
             tvProject.setText(project.getProjName());
         }
 
-        editDescription = findViewById(R.id.mltEditDescription);
-        Intent intent2 = getIntent();
-        if (intent2.getExtras() != null){
-            Project project = (Project) intent.getSerializableExtra("data");
-            editDescription.setText(project.getDescription());
-        }
+//        editDescription = findViewById(R.id.mltEditDescription);
+//        Intent intent2 = getIntent();
+//        if (intent2.getExtras() != null){
+//            Project project = (Project) intent2.getSerializableExtra("data");
+//            editDescription.setText(project.getDescription());
+//        }
 
 
 
