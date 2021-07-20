@@ -25,10 +25,10 @@ public class Task implements Parcelable{
      * @param taskName
      * @param
      */
-    public Task (String taskName ){
+    public Task (String taskName, boolean defaultTask, Project project ){
         this.taskName = taskName;
-//        this.defaultTask = defaultTask;
-//        this.project = project;
+        this.defaultTask = defaultTask;
+        this.project = project;
     }
 //    public Task (String taskName){
 //        this.taskName = taskName;
@@ -44,12 +44,7 @@ public class Task implements Parcelable{
         taskName = in.readString();
     }
 
-    /**
-     * delete after parcel is working
-     */
-    public Task() {
 
-    }
 
     public static final Creator<Task> CREATOR = new Creator<Task>() {
         @Override
@@ -104,9 +99,6 @@ public class Task implements Parcelable{
         dest.writeString(taskName);
     }
 
-    public void changeText1 (String text){
-        taskName = text;
-    }
 
 
 }

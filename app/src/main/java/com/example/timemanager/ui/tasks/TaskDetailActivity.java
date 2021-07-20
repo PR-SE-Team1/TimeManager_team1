@@ -6,12 +6,9 @@ import android.widget.Spinner;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.timemanager.R;
 import com.example.timemanager.ui.projects.Project;
-import com.example.timemanager.ui.recycler.RecyclerViewAdapterTasks;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +16,7 @@ import java.util.List;
 public class TaskDetailActivity extends AppCompatActivity {
 
     public List<String> taskList = new ArrayList<>();
+    Project project = new Project("Project1", "Beschreibung", 20, "red");
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -28,8 +26,8 @@ public class TaskDetailActivity extends AppCompatActivity {
 
         //spinner TASK
         taskList = new ArrayList<>();
-        taskList.add(new Task("Aufgabe1").getTaskName());
-        taskList.add(new Task("Aufgabe2").getTaskName());
+        taskList.add(new Task("Aufgabe1", true, project).getTaskName());
+        taskList.add(new Task("Aufgabe2", false, project).getTaskName());
 
         Spinner spinnerT;
         spinnerT = findViewById(R.id.spinnerEditTask);

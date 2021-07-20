@@ -1,18 +1,12 @@
 package com.example.timemanager.ui.projects;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.os.SystemClock;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.Chronometer;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.ToggleButton;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -40,6 +34,8 @@ public class ProjectDetailActivity extends AppCompatActivity {
     public static final String mypreference = "mypref";
     public static final String Description = "descriptionKey";
     public static final String Hours = "hoursKey";
+
+    Project project = new Project("Project1", "Beschreibung", 20, "red");
 
 
     @Override
@@ -94,8 +90,8 @@ public class ProjectDetailActivity extends AppCompatActivity {
 
 
         //spinner edit TASK
-        taskList.add(new Task("Aufgabe1").getTaskName());
-        taskList.add(new Task("Aufgabe2").getTaskName());
+        taskList.add(new Task("Aufgabe1", true, project).getTaskName());
+        taskList.add(new Task("Aufgabe2", false, project).getTaskName());
         Spinner spinnerT;
         spinnerT = findViewById(R.id.spinnerEditDefTask);
         ArrayAdapter arrayAdapterT = new ArrayAdapter(this,android.R.layout.simple_spinner_item,taskList);
@@ -112,15 +108,6 @@ public class ProjectDetailActivity extends AppCompatActivity {
         arrayAdapterC.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerC.setAdapter(arrayAdapterC);
 
-    }
-
-    public void save(View view) {
-        String savedDescription = editDescription.getText().toString();
-        String savedHours = editHours.getText().toString();
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(Description, savedDescription);
-        editor.putString(Hours, savedHours);
-        editor.commit();
     }
 
     public void save(View view) {

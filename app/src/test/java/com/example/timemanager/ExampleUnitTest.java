@@ -2,7 +2,6 @@ package com.example.timemanager;
 
 import com.example.timemanager.ui.bookings.Booking;
 import com.example.timemanager.ui.projects.Project;
-import com.example.timemanager.ui.tasks.Task;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -27,7 +26,6 @@ public class ExampleUnitTest {
     Project p;
     List<Project> list;
     List<Project> list1;
-    Task t;
     Booking b;
     
     @Before
@@ -73,48 +71,8 @@ public class ExampleUnitTest {
 //        assertNotEquals(null, p.getProjectList());
 //    }
 
-    //-------------Task-------------
-    @Test
-    public void testGetTaskName(){
 
-    }
 
-    @Test
-    public void testSetTaskName(){ //bin ma nd sicher ob des so funktioniert, habs vo stachoverflow
-
-    }
-
-    //-------------Booking-------------
-    private final Booking b1 = new Booking ("Buchung 1", 11);
-
-    @Test
-    public void testGetBookingName(){
-        assertNotNull(b1.getBookingName());
-        assertEquals("Buchung 1", b1.getBookingName());
-        assertNotEquals("keine Buchung", b1.getBookingName());
-    }
-
-    @Test
-    public void testGetTimeWorked(){
-        assertNotNull(b1.getTimeWorked());
-        assertEquals(11, b1.getTimeWorked());
-        assertNotEquals(1, b1.getTimeWorked());
-    }
-
-    @Test
-    public void testSetBookingName(){
-        b1.setBookingName("Neue Buchung");
-        assertNotNull(b1.getBookingName());
-        assertEquals("Neue Buchung", b1.getBookingName());
-    }
-
-    @Test
-    public void testSetTimeWorked(){
-        b1.setTimeWorked(20);
-        assertNotNull(b1.getTimeWorked());
-        assertEquals(20, b1.getTimeWorked());
-        assertNotEquals(-1, b1.getTimeWorked());
-    }
 
 
 }
