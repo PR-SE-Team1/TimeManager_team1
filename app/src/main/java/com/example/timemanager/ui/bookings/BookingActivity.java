@@ -20,16 +20,13 @@ import com.example.timemanager.ui.recycler.RecyclerViewAdapterTasks;
 import java.util.ArrayList;
 import java.util.List;
 
+//implements RecyclerViewAdapterTasks.OnTaskListener
 
-public class BookingActivity extends AppCompatActivity {
+public class BookingActivity extends AppCompatActivity{
 
     private List<Booking> bookingList;
-
     private RecyclerView recyclerView;
     private RecyclerViewAdapterBookings recyclerViewAdapterBookings;
-
-
-
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {

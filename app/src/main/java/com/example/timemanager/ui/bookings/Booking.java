@@ -4,6 +4,8 @@ package com.example.timemanager.ui.bookings;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import org.jetbrains.annotations.NotNull;
+
 // implements Parcelable to pass complex data from one activity to another activity
 public class Booking implements Parcelable {
     //times need to be added

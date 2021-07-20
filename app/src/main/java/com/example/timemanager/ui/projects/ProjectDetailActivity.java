@@ -114,14 +114,6 @@ public class ProjectDetailActivity extends AppCompatActivity {
 
     }
 
-    public void save(View view) {
-        String savedDescription = editDescription.getText().toString();
-        String savedHours = editHours.getText().toString();
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(Description, savedDescription);
-        editor.putString(Hours, savedHours);
-        editor.commit();
-    }
 
     public void save(View view) {
         String savedDescription = editDescription.getText().toString();

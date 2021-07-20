@@ -12,6 +12,8 @@ Doku (optional):
         https://stackoverflow.com/questions/34503724/adding-data-to-a-parcelable-object-passed-to-another-activity
         https://developer.android.com/reference/android/os/Parcelable
         https://www.vogella.com/tutorials/AndroidParcelable/article.html
+    -RecyclerView
+    -Speicherung
     
     
 Important: 
@@ -22,6 +24,7 @@ Important:
     
     
 Sonar Scanner:
+    Properties Datei
     
 
 Gradle: 
