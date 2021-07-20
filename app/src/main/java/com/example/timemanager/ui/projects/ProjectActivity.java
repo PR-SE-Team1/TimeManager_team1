@@ -32,6 +32,8 @@ public class ProjectActivity extends AppCompatActivity implements RecyclerViewAd
     private Button btnAddP;
     private EditText etAddP;
 
+
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

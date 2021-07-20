@@ -1,5 +1,7 @@
 package com.example.timemanager.ui.settings;
 
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +12,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -21,14 +22,14 @@ import com.example.timemanager.ui.projects.Project;
 import java.util.ArrayList;
 import java.util.List;
 
+import lib.folderpicker.FolderPicker;
+
 public class SettingsFragment extends Fragment {
 
     private SettingsViewModel notificationsViewModel;
     private List<Project> projectList;
     private String filePath;
     private String targetHours;
-    private Button btnsave;
-
 
 
 
@@ -53,13 +54,14 @@ public class SettingsFragment extends Fragment {
             }
         });
 
-        btnsave = (Button) root.findViewById(R.id.btn_save);
-        btnsave.setOnClickListener(v1 -> {
-            FragmentTransaction ft = getParentFragmentManager().beginTransaction();
-            ft.replace(this.getId(), new HomeFragment());
-            ft.commit();
+        Button btnsave = (Button) root.findViewById(R.id.btn_save);
+        btnsave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), HomeFragment.class);
+                startActivity(intent);
+            }
         });
-
 
 
         return root;
@@ -70,6 +72,8 @@ public class SettingsFragment extends Fragment {
         TextView t = null;
         t = t.findViewById(R.id.tv_targetHours);
         targetHours = t.getText().toString();
+        //String input = t.getText().toString();
+        //Log.d("target hour", input);
 
     }
 
@@ -79,7 +83,17 @@ public class SettingsFragment extends Fragment {
 
 
 
-    public void clickedSearchButton(View v) {
+
+
+
+    public void clickedSearchButton(View v){
+        Intent pathPicker = new Intent(this.getActivity(), FolderPicker.class);
+        startActivityForResult(pathPicker, 10);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data){
+
         projectList = new ArrayList<>();
         projectList.add(new Project ("Projekt1", "kurzbeschreibung 1", 11.1, "blue"));
         projectList.add(new Project ("Projekt2", "kurzbeschreibung 2", 12.1, "blue"));
@@ -88,13 +102,15 @@ public class SettingsFragment extends Fragment {
         projectList.add(new Project ("Projekt5", "kurzbeschreibung 5", 15.1, "blue"));
         projectList.add(new Project ("Projekt6", "kurzbeschreibung 6", 16.1, "blue"));
         storageXML writer = new storageXML();
+        filePath = data.getExtras().getString("data");
+
         try {
             writer.writeConfigFile(projectList, filePath);
         }
-        catch(Exception ex)
-        {
+        catch(Exception ex){
             ex.printStackTrace();
         }
     }
+
 
 }

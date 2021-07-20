@@ -32,9 +32,11 @@ public class ProjectDetailActivity extends AppCompatActivity {
     public List<String> colorList = new ArrayList<>();
 
     SharedPreferences sharedPreferences;
+
     TextView tvProject;
     TextView editHours;;
     TextView editDescription;
+
     public static final String mypreference = "mypref";
     public static final String Description = "descriptionKey";
     public static final String Hours = "hoursKey";
@@ -45,6 +47,7 @@ public class ProjectDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //opening activity
         setContentView(R.layout.activity_edit_projects);
+
 
         //---- getting Project
         tvProject = findViewById(R.id.selectedProject);
@@ -78,6 +81,7 @@ public class ProjectDetailActivity extends AppCompatActivity {
 //
 //        }
 
+
 //        // spinner edit PROJECT
 //        projectList.add(new Project ("Projekt1", "kurzbeschreibung 1", 11.1, "blue").getProjName());
 //        projectList.add(new Project ( "Projekt2", "kurzbeschreibung 2", 12.1, "blue").getProjName());
@@ -108,6 +112,15 @@ public class ProjectDetailActivity extends AppCompatActivity {
         arrayAdapterC.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerC.setAdapter(arrayAdapterC);
 
+    }
+
+    public void save(View view) {
+        String savedDescription = editDescription.getText().toString();
+        String savedHours = editHours.getText().toString();
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(Description, savedDescription);
+        editor.putString(Hours, savedHours);
+        editor.commit();
     }
 
     public void save(View view) {
