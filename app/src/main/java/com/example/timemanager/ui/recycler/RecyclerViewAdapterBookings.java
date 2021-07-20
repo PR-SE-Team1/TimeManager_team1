@@ -24,6 +24,7 @@ public class RecyclerViewAdapterBookings extends RecyclerView.Adapter<RecyclerVi
 
     Context context;
     private List<Booking> data;
+    private RecyclerViewAdapterBookings.OnBookingListener onBookingListener;
 
 
 
@@ -33,13 +34,24 @@ public class RecyclerViewAdapterBookings extends RecyclerView.Adapter<RecyclerVi
      * @param data
      * @param
      */
-    public RecyclerViewAdapterBookings(Context context, List<Booking> data){
+    public RecyclerViewAdapterBookings(Context context, List<Booking> data, OnBookingListener onBookingListener){
         this.context = context;
         this.data = data;
+        this.onBookingListener = onBookingListener;
     }
 
+    public void setOnItemClickListener (RecyclerViewAdapterBookings.OnBookingListener listener){
+        onBookingListener = listener;
+    }
 
-
+    /**
+     * interface to detect a click
+     */
+    public interface OnBookingListener{
+        //used in the activity to send position of clicked item
+        void onBookingClick(int position);
+        void onDeleteClick(int position);
+    }
 
     /**
      * static class ViewHolder for different views (elements) of a recycler view
@@ -49,12 +61,22 @@ public class RecyclerViewAdapterBookings extends RecyclerView.Adapter<RecyclerVi
         public ImageView deleteImage;
 
 
-        public ViewHolder(@NonNull View view) {
+        public ViewHolder(@NonNull View view, OnBookingListener onBookingListener) {
             super(view);
             bookingName = (TextView) view.findViewById(R.id.bookingName);
             deleteImage = itemView.findViewById(R.id.image_deleteTask);
 
-
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (onBookingListener != null) {
+                        int position = getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION) {
+                            onBookingListener.onBookingClick(position);
+                        }
+                    }
+                }
+            });
 
 
 
@@ -79,7 +101,7 @@ public class RecyclerViewAdapterBookings extends RecyclerView.Adapter<RecyclerVi
     @Override
     public RecyclerViewAdapterBookings.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) throws NullPointerException {
         View v = LayoutInflater.from(context).inflate(R.layout.recycler_item_view_bookings, parent, false);
-        ViewHolder viewHolder = new ViewHolder(v);
+        ViewHolder viewHolder = new ViewHolder(v, onBookingListener);
 
         return viewHolder;
     }

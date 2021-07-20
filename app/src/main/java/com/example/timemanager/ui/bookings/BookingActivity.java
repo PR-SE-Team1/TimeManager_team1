@@ -16,13 +16,14 @@ import com.example.timemanager.R;
 import com.example.timemanager.ui.projects.Project;
 import com.example.timemanager.ui.recycler.RecyclerViewAdapterBookings;
 import com.example.timemanager.ui.recycler.RecyclerViewAdapterTasks;
+import com.example.timemanager.ui.tasks.TaskDetailActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 //implements RecyclerViewAdapterTasks.OnTaskListener
 
-public class BookingActivity extends AppCompatActivity{
+public class BookingActivity extends AppCompatActivity implements RecyclerViewAdapterBookings.OnBookingListener{
 
     private List<Booking> bookingList;
     private RecyclerView recyclerView;
@@ -89,10 +90,23 @@ public class BookingActivity extends AppCompatActivity{
         recyclerView = findViewById(R.id.recyclerViewTasks);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerViewAdapterBookings = new RecyclerViewAdapterBookings(this, bookingList);
+        recyclerViewAdapterBookings = new RecyclerViewAdapterBookings(this, bookingList, this);
         //recyclerViewAdapterTasks.setClickListener(this);
         recyclerView.setAdapter(recyclerViewAdapterBookings);
 
+        recyclerViewAdapterBookings.setOnItemClickListener((new RecyclerViewAdapterBookings.OnBookingListener() {
+
+            @Override
+            public void onBookingClick(int position) {
+                onBookingClick(position);
+
+            }
+
+            @Override
+            public void onDeleteClick(int position) {
+
+            }
+        }));
     }
 
     /**
@@ -106,6 +120,24 @@ public class BookingActivity extends AppCompatActivity{
     }
 
 
+    /**
+     * get to another activity by clicking on the task
+     */
 
+
+    @Override
+    public void onBookingClick(int position) {
+
+    }
+
+    /**
+     * delete task by clicking on deleteitem
+     * @param position
+     */
+    @Override
+    public void onDeleteClick(int position) {
+        deleteItem(position);
+
+    }
 }
 

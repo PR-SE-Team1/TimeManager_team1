@@ -95,37 +95,5 @@ public class ExampleUnitTest {
         assertEquals(expected, task.getTaskName());
     }
 
-    //-------------Booking-------------
-    private final Booking b1 = new Booking ("Buchung 1", 11);
-
-    @Test
-    public void testGetBookingName(){
-        assertNotNull(b1.getBookingName());
-        assertEquals("Buchung 1", b1.getBookingName());
-        assertNotEquals("keine Buchung", b1.getBookingName());
-    }
-
-    @Test
-    public void testGetTimeWorked(){
-        assertNotNull(b1.getTimeWorked());
-        assertEquals(11, b1.getTimeWorked());
-        assertNotEquals(1, b1.getTimeWorked());
-    }
-
-    @Test
-    public void testSetBookingName(){
-        b1.setBookingName("Neue Buchung");
-        assertNotNull(b1.getBookingName());
-        assertEquals("Neue Buchung", b1.getBookingName());
-    }
-
-    @Test
-    public void testSetTimeWorked(){
-        b1.setTimeWorked(20);
-        assertNotNull(b1.getTimeWorked());
-        assertEquals(20, b1.getTimeWorked());
-        assertNotEquals(-1, b1.getTimeWorked());
-    }
-
 
 }

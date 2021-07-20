@@ -37,12 +37,7 @@ public class Booking implements Parcelable {
 
     }
 
-    /**
-     * delete after parcel is working
-     */
-    public Booking() {
 
-    }
 
     public static final Creator<Booking> CREATOR = new Creator<Booking>() {
         @Override
@@ -61,8 +56,8 @@ public class Booking implements Parcelable {
     public int getTimeWorked(){return timeWorked;}
 
     //SETTER
-    public void setBookingName(String bookingName){this.bookingName = bookingName; }
-    public void setTimeWorked(int timeWorked){
+    public void setBookingName(@NotNull String bookingName){this.bookingName = bookingName; }
+    public void setTimeWorked(@NotNull int timeWorked){
         if (timeWorked <= 0) return;
         this.timeWorked = timeWorked;
     }

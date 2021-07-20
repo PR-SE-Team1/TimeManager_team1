@@ -16,10 +16,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 public class MockParcel {
-    /**
-     * Returns a new mocked Parcel.
-     * @return <i>Parcel</i>
-     */
+
     public static Parcel obtain() {
         return new MockParcel().getMockedParcel();
     }
@@ -28,18 +25,10 @@ public class MockParcel {
     int position;
     List<Object> objects;
 
-    /**
-     * Returns the mocked Parcel.
-     * @return <i>Parcel</i>
-     */
     public Parcel getMockedParcel() {
         return mockedParcel;
     }
 
-    /**
-     * Constructor for the MockParcel class. Sets the mockedParcel and set it up.
-     * Generates a new ArrayList for objects.
-     */
     public MockParcel() {
         mockedParcel = mock(Parcel.class);
         objects = new ArrayList<>();

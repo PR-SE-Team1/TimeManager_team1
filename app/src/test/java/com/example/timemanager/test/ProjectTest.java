@@ -1,18 +1,40 @@
 package com.example.timemanager.test;
 
-import com.example.timemanager.ui.projects.Project;
-
-import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.List;
+import static org.junit.Assert.*;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertNotNull;
+public class ProjectTest {
 
-class ProjectTest {
+    @Test
+    public void getProjName() {
+    }
 
+    @Test
+    public void getDescription() {
+    }
 
+    @Test
+    public void getPlannedHours() {
+    }
+
+    @Test
+    public void getColor() {
+    }
+
+    @Test
+    public void getTaskList() {
+    }
+
+    @Test
+    public void getBookingList() {
+    }
+
+    @Test
+    public void describeContents() {
+    }
+
+    @Test
+    public void writeToParcel() {
+    }
 }
