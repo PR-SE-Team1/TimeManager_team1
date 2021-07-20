@@ -67,10 +67,26 @@ public class Task implements Parcelable{
     public String getTaskName() {
         return taskName;
     }
+    public Project getProject(){ return project;}
+    public boolean getDefaultTask(){ return defaultTask;}
 
     //SETTER
     public void setTaskName(String taskName){this.taskName = taskName;}
-
+    public void setProject(Project project){this.project = project;}
+    //public boolean setDefaultTask(double num)
+    //        {
+    //            if(num%2 == 0)
+    //            {
+    //                System.out.print(true);
+    //                return true;
+    //            }
+    //            else
+    //            {
+    //                System.out.print(false);
+    //                return false;
+    //            }
+    //
+    //        }
 
 
     @Override

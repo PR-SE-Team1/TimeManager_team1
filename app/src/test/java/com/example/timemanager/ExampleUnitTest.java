@@ -1,7 +1,5 @@
 package com.example.timemanager;
 
-import android.os.Parcel;
-
 import com.example.timemanager.ui.bookings.Booking;
 import com.example.timemanager.ui.projects.Project;
 import com.example.timemanager.ui.tasks.Task;
@@ -13,7 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 
@@ -79,20 +76,12 @@ public class ExampleUnitTest {
     //-------------Task-------------
     @Test
     public void testGetTaskName(){
-        assertNotNull(t.getTaskName());
-        assertEquals("Aufgabe1", t.getTaskName());
-        assertNotEquals("null", t.getTaskName());
+
     }
 
     @Test
     public void testSetTaskName(){ //bin ma nd sicher ob des so funktioniert, habs vo stachoverflow
-        String input = "abc\n";
-        String expected = "abc";
 
-        Task task = new Task(input);
-        task.setTaskName(input);
-
-        assertEquals(expected, task.getTaskName());
     }
 
     //-------------Booking-------------
