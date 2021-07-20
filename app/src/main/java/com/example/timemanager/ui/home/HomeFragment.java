@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.timemanager.R;
+import com.example.timemanager.ui.bookings.BookingActivity;
 import com.example.timemanager.ui.projects.Project;
 import com.example.timemanager.ui.projects.ProjectActivity;
 import com.example.timemanager.ui.projects.ProjectDetailActivity;
@@ -28,6 +29,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
     private List<Project> projectList;
     private Button btnProjects;
     private Button btnTasks;
+    private Button btnBookings;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -60,6 +62,16 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
 
         });
 
+
+        btnBookings = (Button) v.findViewById(R.id.btnBookings);
+        btnBookings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), BookingActivity.class);
+                startActivity(intent);
+            }
+
+        });
 
         return v;
 

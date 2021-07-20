@@ -32,8 +32,11 @@ public class ProjectDetailActivity extends AppCompatActivity {
     public List<String> colorList = new ArrayList<>();
 
     SharedPreferences sharedPreferences;
+
+    TextView tvProject;
+    TextView editHours;;
     TextView editDescription;
-    TextView editHours;
+
     public static final String mypreference = "mypref";
     public static final String Description = "descriptionKey";
     public static final String Hours = "hoursKey";
@@ -45,18 +48,39 @@ public class ProjectDetailActivity extends AppCompatActivity {
         //opening activity
         setContentView(R.layout.activity_edit_projects);
 
-        //editText PROJECT
-        editDescription = (TextView) findViewById(R.id.mltEditDescription);
-        editHours = (TextView) findViewById(R.id.ptEditHours);
-        sharedPreferences = getSharedPreferences(mypreference,
-                Context.MODE_PRIVATE);
-        if (sharedPreferences.contains(Description)) {
-            editDescription.setText(sharedPreferences.getString(Description, ""));
-        }
-        if (sharedPreferences.contains(Hours)) {
-            editHours.setText(sharedPreferences.getString(Hours, ""));
 
+        //---- getting Project
+        tvProject = findViewById(R.id.selectedProject);
+        Intent intent1 = getIntent();
+        if (intent1.getExtras() != null){
+            Project project = (Project) intent1.getParcelableExtra("data");
+            tvProject.setText(project.getProjName());
         }
+
+//        editDescription = findViewById(R.id.mltEditDescription);
+//        Intent intent2 = getIntent();
+//        if (intent2.getExtras() != null){
+//            Project project = (Project) intent2.getSerializableExtra("data");
+//            editDescription.setText(project.getDescription());
+//        }
+
+
+
+
+
+//        //editText PROJECT
+//        editDescription = (TextView) findViewById(R.id.mltEditDescription);
+//        editHours = (TextView) findViewById(R.id.ptEditHours);
+//        sharedPreferences = getSharedPreferences(mypreference,
+//                Context.MODE_PRIVATE);
+//        if (sharedPreferences.contains(Description)) {
+//            editDescription.setText(sharedPreferences.getString(Description, ""));
+//        }
+//        if (sharedPreferences.contains(Hours)) {
+//            editHours.setText(sharedPreferences.getString(Hours, ""));
+//
+//        }
+
 
 //        // spinner edit PROJECT
 //        projectList.add(new Project ("Projekt1", "kurzbeschreibung 1", 11.1, "blue").getProjName());
@@ -70,14 +94,13 @@ public class ProjectDetailActivity extends AppCompatActivity {
 
 
         //spinner edit TASK
-        taskList.add(new Task("Aufgabe1", new Project( "Projekt11", "kurzbeschreibung 11", 11.1, "blue"), true).getTaskName());
-        taskList.add(new Task("Aufgabe2", new Project( "Projekt12", "kurzbeschreibung 12", 11.1, "blue"), false).getTaskName());
+        taskList.add(new Task("Aufgabe1").getTaskName());
+        taskList.add(new Task("Aufgabe2").getTaskName());
         Spinner spinnerT;
         spinnerT = findViewById(R.id.spinnerEditDefTask);
         ArrayAdapter arrayAdapterT = new ArrayAdapter(this,android.R.layout.simple_spinner_item,taskList);
         arrayAdapterT.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerT.setAdapter(arrayAdapterT);
-
 
         //spinner edit COLOR
         colorList.add("BLAU");
@@ -89,11 +112,15 @@ public class ProjectDetailActivity extends AppCompatActivity {
         arrayAdapterC.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerC.setAdapter(arrayAdapterC);
 
+    }
 
-
-
-
-
+    public void save(View view) {
+        String savedDescription = editDescription.getText().toString();
+        String savedHours = editHours.getText().toString();
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(Description, savedDescription);
+        editor.putString(Hours, savedHours);
+        editor.commit();
     }
 
     public void save(View view) {

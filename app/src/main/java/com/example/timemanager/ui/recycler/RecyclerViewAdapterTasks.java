@@ -2,6 +2,7 @@ package com.example.timemanager.ui.recycler;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.SystemClock;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.timemanager.R;
+import com.example.timemanager.ui.projects.Project;
 import com.example.timemanager.ui.tasks.Task;
 import com.example.timemanager.ui.tasks.TaskActivity;
 
@@ -30,7 +32,6 @@ public class RecyclerViewAdapterTasks extends RecyclerView.Adapter<RecyclerViewA
 
     Context context;
     private List<Task> data;
-    private LayoutInflater inflater;
     private OnTaskListener onTaskListener;
 
 
@@ -45,7 +46,6 @@ public class RecyclerViewAdapterTasks extends RecyclerView.Adapter<RecyclerViewA
     public RecyclerViewAdapterTasks(Context context, List<Task> data, OnTaskListener onTaskListener){
         this.context = context;
         this.data = data;
-        inflater = LayoutInflater.from(context);
         this.onTaskListener = onTaskListener;
     }
 
@@ -82,6 +82,8 @@ public class RecyclerViewAdapterTasks extends RecyclerView.Adapter<RecyclerViewA
             super(view);
             taskName = (TextView) view.findViewById(R.id.taskName);
             deleteImage = itemView.findViewById(R.id.image_deleteTask);
+
+
 
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -150,6 +152,8 @@ public class RecyclerViewAdapterTasks extends RecyclerView.Adapter<RecyclerViewA
         @Override
         public void onClick(View view) {
             onTaskListener.onTaskClick(getAdapterPosition());
+
+
             Toast.makeText(view.getContext(), "position : " + getLayoutPosition() + " text : " + this.taskName.getText(), Toast.LENGTH_SHORT).show();
             Toast.makeText(view.getContext(), "The Item Clicked is: "+getLayoutPosition(),Toast.LENGTH_SHORT).show();
 

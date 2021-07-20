@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 // implements Parcelable to pass complex data from one activity to another activity
-public class Task {
+public class Task implements Parcelable{
 
     private String taskName;
     private Project project;
@@ -21,72 +21,72 @@ public class Task {
 
     /**
      * constructor to initialize a task object
+     * to insert: Project project, boolean defaultTask
      * @param taskName
-     * @param project
-     * @param defaultTask
+     * @param
      */
-    public Task (String taskName, Project project, boolean defaultTask){
+    public Task (String taskName ){
         this.taskName = taskName;
-        this.defaultTask = defaultTask;
-        this.project = project;
+//        this.defaultTask = defaultTask;
+//        this.project = project;
     }
-    public Task (String taskName){
-        this.taskName = taskName;
-
-    }
-
-//    /**
-//     * retrieving task-data
-//     * this constructor is invoked by method createFromParcel(Parcel source)
-//     * @param in
-//     */
-//    protected Task(Parcel in) {
-//        taskName = in.readString();
-//        defaultTask = ;
-//        project = ;
-//    }
-
-//    /**
-//     * delete after parcel is working
-//     */
-//    public Project() {
+//    public Task (String taskName){
+//        this.taskName = taskName;
 //
 //    }
+
+    /**
+     * retrieving task-data
+     * this constructor is invoked by method createFromParcel(Parcel source)
+     * @param in
+     */
+    protected Task(Parcel in) {
+        taskName = in.readString();
+    }
+
+    /**
+     * delete after parcel is working
+     */
+    public Task() {
+
+    }
+
+    public static final Creator<Task> CREATOR = new Creator<Task>() {
+        @Override
+        public Task createFromParcel(Parcel in) {
+            return new Task(in);
+        }
+
+        @Override
+        public Task[] newArray(int size) {
+            return new Task[size];
+        }
+    };
 
     //GETTER
     public String getTaskName() {
         return taskName;
     }
-    public boolean getDefTask() {
-        return defaultTask;
-    }
-    public Project getTaskProject() {
-        return project;
-    }
 
-    public static List<Task> getTaskList(){
-        return taskList;
-    }
+    //SETTER
+    public void setTaskName(String taskName){this.taskName = taskName;}
 
 
-//
-//    @Override
-//    public int describeContents() {
-//        return 0;
-//    }
-//
-//    /**
-//     * storing the project data to a parcel-object
-//     * @param dest
-//     * @param flags
-//     */
-//    @Override
-//    public void writeToParcel(Parcel dest, int flags) {
-//        dest.writeString(projName);
-//        dest.writeString(description);
-//        dest.writeDouble(plannedHours);
-//        dest.writeString(color);
-//    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    /**
+     * storing the project data to a parcel-object
+     * @param dest
+     * @param flags
+     */
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(taskName);
+    }
 
     public void changeText1 (String text){
         taskName = text;

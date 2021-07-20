@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.timemanager.R;
+import com.example.timemanager.ui.bookings.Booking;
 import com.example.timemanager.ui.recycler.RecyclerViewAdapter;
 import com.example.timemanager.ui.recycler.RecyclerViewAdapterTasks;
 import com.example.timemanager.ui.tasks.Task;
@@ -23,7 +24,7 @@ import java.util.List;
 
 public class ProjectActivity extends AppCompatActivity implements RecyclerViewAdapter.OnProjectListener {
 
-    List<Project> projectList ;
+    List<Project> projectList;
 
     private RecyclerView recyclerView;
     private RecyclerViewAdapter recyclerViewAdapter;
@@ -74,7 +75,7 @@ public class ProjectActivity extends AppCompatActivity implements RecyclerViewAd
      * @param position
      */
     private void insertItem(int position) {
-        projectList.add(position, new Project("Projekt11", "kurzbeschreibung 11", 11.1, "blue"));
+        projectList.add(position, new Project("Projekt11", "kurzbeschreibung 11", 11, "blue"));
         recyclerViewAdapter.notifyItemInserted(position);
     }
 
@@ -117,15 +118,17 @@ public class ProjectActivity extends AppCompatActivity implements RecyclerViewAd
     }
 
 
-    //get to another activity by clicking on the task
+//    //get to another activity by clicking on the task
+//    @Override
+//    public void onProjectClick(int position) {
+//        Intent intent = new Intent(this, ProjectDetailActivity.class);
+//        startActivity(intent);
+//    }
+
+
     @Override
-    public void onProjectClick(int position) {
-        Intent intent = new Intent(this, ProjectDetailActivity.class);
-        startActivity(intent);
+    public void onProjectClick(Project project) {
+        startActivity(new Intent(ProjectActivity.this, ProjectDetailActivity.class).putExtra("data", project));
+
     }
-
-
-
-
-
 }

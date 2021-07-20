@@ -2,13 +2,10 @@ package com.example.timemanager.ui.tasks;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.SystemClock;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Chronometer;
 import android.widget.EditText;
 import android.widget.Toast;
-import android.widget.ToggleButton;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,7 +13,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.timemanager.R;
-import com.example.timemanager.ui.projects.Project;
 import com.example.timemanager.ui.recycler.RecyclerViewAdapterTasks;
 
 import java.util.ArrayList;
@@ -34,9 +30,6 @@ public class TaskActivity extends AppCompatActivity implements RecyclerViewAdapt
     private EditText etAddT;
 
 
-
-
-
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +38,6 @@ public class TaskActivity extends AppCompatActivity implements RecyclerViewAdapt
         createTaskList();
         buildRecyclerView();
         setButtons();
-
     }
 
 
@@ -77,7 +69,7 @@ public class TaskActivity extends AppCompatActivity implements RecyclerViewAdapt
      * @param position
      */
     private void insertItem(int position) {
-        taskList.add(position, new Task("Aufgabe3", new Project("Projekt11", "kurzbeschreibung 11", 11.1, "blue"), true));
+        taskList.add(position, new Task("Aufgabe3"));
         recyclerViewAdapterTasks.notifyItemInserted(position);
     }
 
@@ -121,18 +113,24 @@ public class TaskActivity extends AppCompatActivity implements RecyclerViewAdapt
      */
     private void createTaskList() {
         taskList = new ArrayList<>();
-        taskList.add(new Task("Aufgabe1", new Project( "Projekt11", "kurzbeschreibung 11", 11.1, "blue"), true));
-        taskList.add(new Task("Aufgabe2", new Project("Projekt12", "kurzbeschreibung 12", 11.1, "blue"), false));
+        taskList.add(new Task("Aufgabe1"));
+        taskList.add(new Task("Aufgabe2"));
     }
 
 
-    //get to another activity by clicking on the task
+    /**
+     * get to another activity by clicking on the task
+     */
     @Override
     public void onTaskClick(int position) {
         Intent intent = new Intent(this, TaskDetailActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * delete task by clicking on deleteitem
+     * @param position
+     */
     @Override
     public void onDeleteClick(int position) {
         deleteItem(position);

@@ -1,5 +1,6 @@
 package com.example.timemanager.ui.settings;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -82,15 +83,17 @@ public class SettingsFragment extends Fragment {
 
 
 
+
+
+
     public void clickedSearchButton(View v){
         Intent pathPicker = new Intent(this.getActivity(), FolderPicker.class);
         startActivityForResult(pathPicker, 10);
     }
 
-
-
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data){
+
         projectList = new ArrayList<>();
         projectList.add(new Project ("Projekt1", "kurzbeschreibung 1", 11.1, "blue"));
         projectList.add(new Project ("Projekt2", "kurzbeschreibung 2", 12.1, "blue"));

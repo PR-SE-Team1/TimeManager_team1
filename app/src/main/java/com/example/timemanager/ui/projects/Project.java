@@ -3,6 +3,10 @@ package com.example.timemanager.ui.projects;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.example.timemanager.ui.bookings.Booking;
+import com.example.timemanager.ui.tasks.Task;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -12,14 +16,17 @@ import java.util.Scanner;
 //https://stackoverflow.com/questions/34503724/adding-data-to-a-parcelable-object-passed-to-another-activity
 
 //dokumentation https://developer.android.com/reference/android/os/Parcelable
-public class Project  implements Parcelable{
-    public int projId;
+
+//another example https://www.vogella.com/tutorials/AndroidParcelable/article.html
+public class Project  implements Parcelable {
     private String projName;
     private String description;
     private double plannedHours;
     private String color;
     //tasks need to be implemented
-    private static List<Project> projectList = new ArrayList<>();
+    private static List<Task> tasks;
+    private static List<Booking> bookings;
+
 
 
     /**
@@ -28,13 +35,16 @@ public class Project  implements Parcelable{
      * @param description
      * @param plannedHours
      * @param color
+     *
+     * to insert: , List<Task> tasks, List<Booking> bookings
      */
-    public Project ( String projName, String description, double plannedHours, String color){
-        this.projId = projId;
+    public Project (String projName, String description, double plannedHours, String color){
         this.projName = projName;
         this.description = description;
         this.plannedHours = plannedHours;
         this.color = color;
+//        this.tasks = new ArrayList<>();
+//        this.bookings = new ArrayList<>();
     }
 
     public Project ( String projName){
@@ -51,6 +61,8 @@ public class Project  implements Parcelable{
         description = in.readString();
         plannedHours = in.readDouble();
         color = in.readString();
+//        tasks = in.createTypedArrayList(Task.CREATOR);
+//        bookings = in.createTypedArrayList(Booking.CREATOR);
     }
 
     /**
@@ -61,9 +73,7 @@ public class Project  implements Parcelable{
     }
 
     //GETTER
-    public int getProjId() {
-        return projId;
-    }
+
     public String getProjName() {
         return projName;
     }
@@ -76,8 +86,11 @@ public class Project  implements Parcelable{
     public String getColor() {
         return color;
     }
-    public static List<Project> getProjectList(){
-        return projectList;
+    public static List<Task> getTaskList(){
+        return tasks;
+    }
+    public static List<Booking> getBookingList(){
+        return bookings;
     }
 
     public static final Creator<Project> CREATOR = new Creator<Project>() {
@@ -108,6 +121,7 @@ public class Project  implements Parcelable{
         dest.writeString(description);
         dest.writeDouble(plannedHours);
         dest.writeString(color);
+//        dest.writeTypedList(tasks);
     }
 
 

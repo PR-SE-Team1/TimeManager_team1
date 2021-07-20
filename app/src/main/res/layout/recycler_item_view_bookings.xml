@@ -9,22 +9,19 @@
     app:cardElevation="4dp"
     app:cardCornerRadius="8dp"
     android:layout_marginHorizontal="16dp"
-    android:layout_marginBottom="5dp"
-    >
+    android:layout_marginBottom="4dp">
 
 
     <RelativeLayout
-        android:id="@+id/linearRecyclerProject"
-        android:layout_width="363dp"
+        android:id="@+id/linearRecyclerBooking"
+        android:layout_width="360dp"
         android:layout_height="74dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="150dp"
         android:layout_marginRight="150dp"
-
         android:orientation="vertical"
-        android:padding="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -33,24 +30,15 @@
         app:layout_constraintVertical_bias="0.0">
 
         <TextView
-            android:id="@+id/projName"
+            android:id="@+id/bookingName"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:text="@string/Projektname"
+            android:text="Buchung"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/projDescr"
-            android:layout_width="224dp"
-            android:layout_height="45dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginEnd="47dp"
-            android:layout_marginRight="47dp"
-            android:text="@string/Beschreibung" />
 
         <ImageView
-            android:id="@+id/image_delete"
+            android:id="@+id/image_deleteBooking"
             android:layout_width="56dp"
             android:layout_height="47dp"
             android:layout_alignParentTop="true"

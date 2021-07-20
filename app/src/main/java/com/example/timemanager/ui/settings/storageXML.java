@@ -14,15 +14,18 @@ import java.util.List;
 public class storageXML {
 
     private static final String XML_PROJECT = "project", XML_PROJECTLIST = "projectlist", XML_PROJECTNAME = "projectname";
-    private static final String XML_PROJECTDESCRIPTION = "projectdescription", XML_PROJECTHOURS_WEEK = "hours per week";
-    private static final String XML_COLOR = "coulor", XML_TASK = "task", XML_TASKNAME = "taskname";
-    private static final String XML_START = "starttime", XML_END = "endtime", XML_HOURS_WORKED = "hours worked";
+    private static final String XML_PROJECTDESCRIPTION = "projectdescription", XML_PROJECTHOURS_WEEK = "hours per week", XML_COLOR = "coulor";
+    //private static final String XML_TASK = "task", XML_TASKNAME = "taskname";
+    //private static final String XML_START = "starttime", XML_END = "endtime", XML_HOURS_WORKED = "hours worked";
 
     private static final String XML_FILE = "/TimeManagerProjects.xml";
 
     FileOutputStream fileOutputStream = null;
 
 
+    /**
+     * writes the file
+     */
     public void writeConfigFile(List<Project> projects, String path) throws IOException {
         try {
             File file = new File(path + XML_FILE);
@@ -54,6 +57,9 @@ public class storageXML {
         }
     }
 
+    /**
+     * structurs the data
+     */
     private void serializeProject(XmlSerializer serializer, Project project) throws IOException {
         serializer.startTag("", XML_PROJECTNAME);
         serializer.text(project.getProjName());
