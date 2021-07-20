@@ -20,10 +20,7 @@ import static org.junit.Assert.assertNotNull;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 public class ExampleUnitTest {
-    @Test
-    public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
-    }
+
     Project p;
     List<Project> list;
     List<Project> list1;
@@ -79,6 +76,18 @@ public class ExampleUnitTest {
         assertNotNull(t.getTaskName());
         assertEquals("Aufgabe1", t.getTaskName());
         assertNotEquals("null", t.getTaskName());
+    }
+
+    public void testGetProject(){
+        assertNotNull(t.getProject());
+        assertEquals("Project 1", t.getProject());//stimmt das so?
+        assertNotEquals(null, t.getProject());
+    }
+
+    public void testGetDefaultTask(){
+        assertNotNull(t.getDefaultTask());
+        assertEquals(true, t.getDefaultTask());
+        assertNotEquals(null, t.getDefaultTask());
     }
 
     @Test
