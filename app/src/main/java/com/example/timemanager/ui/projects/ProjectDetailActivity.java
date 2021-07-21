@@ -68,18 +68,18 @@ public class ProjectDetailActivity extends AppCompatActivity {
 
 
 
-//        //editText PROJECT
-//        editDescription = (TextView) findViewById(R.id.mltEditDescription);
-//        editHours = (TextView) findViewById(R.id.ptEditHours);
-//        sharedPreferences = getSharedPreferences(mypreference,
-//                Context.MODE_PRIVATE);
-//        if (sharedPreferences.contains(Description)) {
-//            editDescription.setText(sharedPreferences.getString(Description, ""));
-//        }
-//        if (sharedPreferences.contains(Hours)) {
-//            editHours.setText(sharedPreferences.getString(Hours, ""));
-//
-//        }
+        //editText PROJECT
+        editDescription = (TextView) findViewById(R.id.mltEditDescription);
+        editHours = (TextView) findViewById(R.id.ptEditHours);
+        sharedPreferences = getSharedPreferences(mypreference,
+                Context.MODE_PRIVATE);
+        if (sharedPreferences.contains(Description)) {
+            editDescription.setText(sharedPreferences.getString(Description, ""));
+        }
+        if (sharedPreferences.contains(Hours)) {
+            editHours.setText(sharedPreferences.getString(Hours, ""));
+
+        }
 
 
 //        // spinner edit PROJECT
