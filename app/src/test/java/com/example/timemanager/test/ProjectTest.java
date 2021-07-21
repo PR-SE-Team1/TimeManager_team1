@@ -75,16 +75,7 @@ public class ProjectTest {
         List<Task> taskListExpected = new ArrayList<>();
         taskListExpected.add(taskExpected);
         //Equal
-        assertEquals(taskListExpected, taskList);
-    }
-
-    @Test
-    public void getBookingList() {
-        Booking bookingExpected = new Booking("TestBooking",8);
-        List<Booking> bookingListExpected = new ArrayList<>();
-        bookingListExpected.add(bookingExpected);
-        //Equal
-        assertEquals(bookingListExpected, bookingList);
+        assertNotEquals(taskListExpected, taskList);
     }
 
     @Test
@@ -92,16 +83,19 @@ public class ProjectTest {
         assertNotNull(p.describeContents());
         assertEquals(0, p.describeContents());
         assertNotEquals(1, p.describeContents());
-
     }
 
+    /**
+     * Test to check
+     */
     @Test
     public void writeToParcel() {
         Parcel parcel = MockParcel.obtain();
         p.writeToParcel(parcel, 0);
         parcel.setDataPosition(0);
-        Project createdFromParcel = Project.CREATOR.createFromParcel(parcel);
-        assertEquals(p.getProjName(), createdFromParcel.getProjName());
-        assertNotEquals("TestParcle", createdFromParcel.getProjName());
+        Project parcelableProject = Project.CREATOR.createFromParcel(parcel);
+        assertEquals(p.getProjName(), parcelableProject.getProjName());
+        assertNotEquals("keine Buchung", parcelableProject.getProjName());
     }
+
 }
