@@ -26,7 +26,6 @@ import lib.folderpicker.FolderPicker;
 
 public class SettingsFragment extends Fragment {
 
-    private SettingsViewModel notificationsViewModel;
     private List<Project> projectList;
     private String filePath;
     private String targetHours;
@@ -35,17 +34,10 @@ public class SettingsFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        notificationsViewModel =
-                new ViewModelProvider(this).get(SettingsViewModel.class);
+
         View root = inflater.inflate(R.layout.fragment_settings, container, false);
         filePath = root.getContext().getFilesDir().toString();
         final TextView textView = root.findViewById(R.id.settingsText);
-        notificationsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
         Button searchButton = (Button) root.findViewById(R.id.btn_search);
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override

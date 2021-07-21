@@ -12,17 +12,14 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.timemanager.R;
+import com.example.timemanager.ui.bookings.BookingActivity;
 
 
 public class InfoFragment extends Fragment {
 
-    private InfoViewModel infoViewModel;
-
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        infoViewModel =
-                new ViewModelProvider(this).get(InfoViewModel.class);
         View root = inflater.inflate(R.layout.fragment_info, container, false);
 
         Button btnWorkingHours = (Button) root.findViewById(R.id.btnInfoWorkingHours);
@@ -43,13 +40,14 @@ public class InfoFragment extends Fragment {
             }
         });
 
-        Button btnBookingList = (Button) root.findViewById(R.id.btnInfoBookingList);
-        btnBookingList.setOnClickListener(new View.OnClickListener() {
+        Button btnBookings = (Button) root.findViewById(R.id.btnInfoBookingList);
+        btnBookings.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), BookingListActivity.class);
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), BookingActivity.class);
                 startActivity(intent);
             }
+
         });
 
 

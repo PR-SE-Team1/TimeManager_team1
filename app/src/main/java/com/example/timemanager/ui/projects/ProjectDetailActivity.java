@@ -51,35 +51,16 @@ public class ProjectDetailActivity extends AppCompatActivity {
 
         //---- getting Project
         tvProject = findViewById(R.id.selectedProject);
+        editDescription = findViewById(R.id.mltEditDescription);
+        editHours = findViewById(R.id.ptEditHours);
         Intent intent1 = getIntent();
         if (intent1.getExtras() != null){
             Project project = (Project) intent1.getParcelableExtra("data");
             tvProject.setText(project.getProjName());
+            editDescription.setText(project.getDescription());
+            double d = project.getPlannedHours();
+            editHours.setText(String.valueOf(d));
         }
-
-//        editDescription = findViewById(R.id.mltEditDescription);
-//        Intent intent2 = getIntent();
-//        if (intent2.getExtras() != null){
-//            Project project = (Project) intent2.getSerializableExtra("data");
-//            editDescription.setText(project.getDescription());
-//        }
-
-
-
-
-
-//        //editText PROJECT
-//        editDescription = (TextView) findViewById(R.id.mltEditDescription);
-//        editHours = (TextView) findViewById(R.id.ptEditHours);
-//        sharedPreferences = getSharedPreferences(mypreference,
-//                Context.MODE_PRIVATE);
-//        if (sharedPreferences.contains(Description)) {
-//            editDescription.setText(sharedPreferences.getString(Description, ""));
-//        }
-//        if (sharedPreferences.contains(Hours)) {
-//            editHours.setText(sharedPreferences.getString(Hours, ""));
-//
-//        }
 
 
 //        // spinner edit PROJECT
