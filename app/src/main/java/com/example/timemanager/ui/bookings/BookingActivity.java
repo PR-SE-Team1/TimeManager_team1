@@ -23,7 +23,7 @@ import java.util.List;
 
 //implements RecyclerViewAdapterTasks.OnTaskListener
 
-public class BookingActivity extends AppCompatActivity implements RecyclerViewAdapterBookings.OnBookingListener{
+public class BookingActivity extends AppCompatActivity{
 
     private List<Booking> bookingList;
     private RecyclerView recyclerView;
@@ -36,33 +36,8 @@ public class BookingActivity extends AppCompatActivity implements RecyclerViewAd
 
         createBookingList();
         buildRecyclerView();
-        //setButtons();
 
     }
-
-
-//    /**
-//     * method setting up buttons
-//     */
-//    private void setButtons() {
-//        btnAddT = findViewById(R.id.btnAddNewTask);
-//        etAddT = findViewById(R.id.etAddNewTask);
-//
-//        btnAddT.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                String getInput = etAddT.getText().toString();
-//
-//                if (taskList.contains(getInput)){
-//                    Toast.makeText(getBaseContext(), "Aufgabe existiert bereits", Toast.LENGTH_LONG).show();
-//                } else if (getInput == null || getInput.trim().equals("")){
-//                    Toast.makeText(getBaseContext(), "Kein Name eingegeben", Toast.LENGTH_LONG).show();
-//                }else {
-//                    taskList.add(new Booking(getInput));
-//                }
-//            }
-//        });
-//    }
 
     /**
      * add items to list
@@ -73,40 +48,20 @@ public class BookingActivity extends AppCompatActivity implements RecyclerViewAd
         recyclerViewAdapterBookings.notifyItemInserted(position);
     }
 
-    /**
-     * deletes Item from List
-     * @param position
-     */
-    private void deleteItem(int position) {
-        bookingList.remove(position);
-        recyclerViewAdapterBookings.notifyItemRemoved(position);
-    }
+
 
     /**
      * Method building recyclerview
      */
     private void buildRecyclerView() {
         // set up the RecyclerView
-        recyclerView = findViewById(R.id.recyclerViewTasks);
+        recyclerView = findViewById(R.id.recyclerViewBookings);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerViewAdapterBookings = new RecyclerViewAdapterBookings(this, bookingList, this);
+        recyclerViewAdapterBookings = new RecyclerViewAdapterBookings(this, bookingList);
         //recyclerViewAdapterTasks.setClickListener(this);
         recyclerView.setAdapter(recyclerViewAdapterBookings);
 
-        recyclerViewAdapterBookings.setOnItemClickListener((new RecyclerViewAdapterBookings.OnBookingListener() {
-
-            @Override
-            public void onBookingClick(int position) {
-                onBookingClick(position);
-
-            }
-
-            @Override
-            public void onDeleteClick(int position) {
-
-            }
-        }));
     }
 
     /**
@@ -120,24 +75,5 @@ public class BookingActivity extends AppCompatActivity implements RecyclerViewAd
     }
 
 
-    /**
-     * get to another activity by clicking on the task
-     */
-
-
-    @Override
-    public void onBookingClick(int position) {
-
-    }
-
-    /**
-     * delete task by clicking on deleteitem
-     * @param position
-     */
-    @Override
-    public void onDeleteClick(int position) {
-        deleteItem(position);
-
-    }
 }
 

@@ -3,7 +3,7 @@
     <string name="app_name">TimeManager</string>
     <string name="title_home">Home</string>
     <string name="title_info">Info</string>
-    <string name="title_settings">Settings</string>
+    <string name="title_settings">Einstellungen</string>
 
 
     <!-- not sure?? -->
@@ -59,7 +59,6 @@
     <!-- activity_bookings -->
     <string name="btnAddNewBooking">hinzufügen</string>
     <string name="etAddNewBooking">Neue Aufgabe</string>
-
 
 
     <!-- activity_tasks -->

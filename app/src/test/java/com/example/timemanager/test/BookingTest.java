@@ -53,24 +53,25 @@ public class BookingTest {
         assertNotEquals(-1, b1.getTimeWorked());
     }
 
-    /**
-     * test to check the getter for BookingName
-     */
-    @Test
-    public void describeContents() {
-        Parcel parcel = MockParcel.obtain();
-        b1.writeToParcel(parcel, b1.describeContents());
-        parcel.setDataPosition(0);
-        Booking parcelableBooking = Booking.CREATOR.createFromParcel(parcel);
-        assertEquals(b1.describeContents(), parcelableBooking.describeContents());
-    }
+//    /**
+//     * test to check the getter for BookingName
+//     */
+//    @Test
+//    public void describeContents() {
+//        Parcel parcel = MockParcel.obtain();
+//        b1.writeToParcel(parcel, b1.describeContents());
+//        parcel.setDataPosition(0);
+//        Booking parcelableBooking = Booking.CREATOR.createFromParcel(parcel);
+//        assertEquals(b1.describeContents(), parcelableBooking.describeContents());
+//    }
 
     /**
      * Test to check
      */
     @Test
-    public void newParcelTest() {
+    public void writeToParcel() {
         Parcel parcel = MockParcel.obtain();
+        b1.writeToParcel(parcel, b1.describeContents());
         b1.writeToParcel(parcel, 0);
         parcel.setDataPosition(0);
         Booking parcelableBooking = Booking.CREATOR.createFromParcel(parcel);

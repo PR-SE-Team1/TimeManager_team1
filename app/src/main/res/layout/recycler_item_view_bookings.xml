@@ -37,20 +37,6 @@
             android:textStyle="bold" />
 
 
-        <ImageView
-            android:id="@+id/image_deleteBooking"
-            android:layout_width="56dp"
-            android:layout_height="47dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="14dp"
-            android:layout_marginEnd="1dp"
-            android:layout_marginRight="1dp"
-            android:src="@drawable/ic_delete"
-            />
-
-
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>
