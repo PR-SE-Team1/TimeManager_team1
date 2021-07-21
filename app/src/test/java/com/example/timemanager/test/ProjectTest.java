@@ -7,11 +7,8 @@ import com.example.timemanager.ui.bookings.Booking;
 import com.example.timemanager.ui.projects.Project;
 import com.example.timemanager.ui.tasks.Task;
 
-import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -98,4 +95,5 @@ public class ProjectTest {
         assertNotEquals("keine Buchung", parcelableProject.getProjName());
     }
 
+    
 }

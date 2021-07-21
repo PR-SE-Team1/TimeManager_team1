@@ -24,18 +24,14 @@ import java.util.List;
 public class HomeFragment extends Fragment implements View.OnClickListener{
 
     private static final String TAG = "ProjectActivity";
-    private HomeViewModel homeViewModel;
     View v;
     private List<Project> projectList;
     private Button btnProjects;
     private Button btnTasks;
-    private Button btnBookings;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
 
         //inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_home, container, false);
@@ -57,17 +53,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), TaskActivity.class);
-                startActivity(intent);
-            }
-
-        });
-
-
-        btnBookings = (Button) v.findViewById(R.id.btnBookings);
-        btnBookings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), BookingActivity.class);
                 startActivity(intent);
             }
 

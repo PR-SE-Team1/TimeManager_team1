@@ -152,8 +152,6 @@ public class RecyclerViewAdapterTasks extends RecyclerView.Adapter<RecyclerViewA
         @Override
         public void onClick(View view) {
             onTaskListener.onTaskClick(getAdapterPosition());
-
-
             Toast.makeText(view.getContext(), "position : " + getLayoutPosition() + " text : " + this.taskName.getText(), Toast.LENGTH_SHORT).show();
             Toast.makeText(view.getContext(), "The Item Clicked is: "+getLayoutPosition(),Toast.LENGTH_SHORT).show();
 

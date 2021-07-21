@@ -39,8 +39,6 @@ public class RecyclerViewAdapterBookings extends RecyclerView.Adapter<RecyclerVi
     }
 
 
-
-
     /**
      * static class ViewHolder for different views (elements) of a recycler view
      */
@@ -52,11 +50,6 @@ public class RecyclerViewAdapterBookings extends RecyclerView.Adapter<RecyclerVi
         public ViewHolder(@NonNull View view) {
             super(view);
             bookingName = (TextView) view.findViewById(R.id.bookingName);
-            deleteImage = itemView.findViewById(R.id.image_deleteTask);
-
-
-
-
 
         }
 

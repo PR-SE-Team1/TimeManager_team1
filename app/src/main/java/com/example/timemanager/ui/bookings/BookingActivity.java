@@ -16,6 +16,7 @@ import com.example.timemanager.R;
 import com.example.timemanager.ui.projects.Project;
 import com.example.timemanager.ui.recycler.RecyclerViewAdapterBookings;
 import com.example.timemanager.ui.recycler.RecyclerViewAdapterTasks;
+import com.example.timemanager.ui.tasks.TaskDetailActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,33 +36,8 @@ public class BookingActivity extends AppCompatActivity{
 
         createBookingList();
         buildRecyclerView();
-        //setButtons();
 
     }
-
-
-//    /**
-//     * method setting up buttons
-//     */
-//    private void setButtons() {
-//        btnAddT = findViewById(R.id.btnAddNewTask);
-//        etAddT = findViewById(R.id.etAddNewTask);
-//
-//        btnAddT.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                String getInput = etAddT.getText().toString();
-//
-//                if (taskList.contains(getInput)){
-//                    Toast.makeText(getBaseContext(), "Aufgabe existiert bereits", Toast.LENGTH_LONG).show();
-//                } else if (getInput == null || getInput.trim().equals("")){
-//                    Toast.makeText(getBaseContext(), "Kein Name eingegeben", Toast.LENGTH_LONG).show();
-//                }else {
-//                    taskList.add(new Booking(getInput));
-//                }
-//            }
-//        });
-//    }
 
     /**
      * add items to list
@@ -72,14 +48,7 @@ public class BookingActivity extends AppCompatActivity{
         recyclerViewAdapterBookings.notifyItemInserted(position);
     }
 
-    /**
-     * deletes Item from List
-     * @param position
-     */
-    private void deleteItem(int position) {
-        bookingList.remove(position);
-        recyclerViewAdapterBookings.notifyItemRemoved(position);
-    }
+
 
     /**
      * Method building recyclerview
@@ -104,7 +73,6 @@ public class BookingActivity extends AppCompatActivity{
         bookingList.add(new Booking("Buchung 1", 1));
         bookingList.add(new Booking("Buching 2", 2));
     }
-
 
 
 }
