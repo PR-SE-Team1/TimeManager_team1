@@ -86,7 +86,7 @@ public class BookingActivity extends AppCompatActivity{
      */
     private void buildRecyclerView() {
         // set up the RecyclerView
-        recyclerView = findViewById(R.id.recyclerViewTasks);
+        recyclerView = findViewById(R.id.recyclerViewBookings);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerViewAdapterBookings = new RecyclerViewAdapterBookings(this, bookingList);

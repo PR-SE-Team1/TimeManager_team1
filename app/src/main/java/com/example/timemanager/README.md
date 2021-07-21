@@ -12,7 +12,12 @@ Doku (optional):
         https://stackoverflow.com/questions/34503724/adding-data-to-a-parcelable-object-passed-to-another-activity
         https://developer.android.com/reference/android/os/Parcelable
         https://www.vogella.com/tutorials/AndroidParcelable/article.html
-    -RecyclerView
+    -Documentation and examples for RecyclerView:
+        https://stackoverflow.com/questions/40584424/simple-android-recyclerview-example
+        https://developer.android.com/guide/topics/ui/layout/recyclerview
+    -Documentation and examples for SharedPreferences:
+        https://stackoverflow.com/questions/45320981/how-to-save-changes-in-recyclerview
+        https://developer.android.com/reference/android/content/SharedPreferences
     -Speicherung
     
     

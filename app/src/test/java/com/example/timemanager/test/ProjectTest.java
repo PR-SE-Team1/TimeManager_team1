@@ -18,16 +18,26 @@ import static org.junit.Assert.*;
 public class ProjectTest {
 
     Project p;
-    List<Project> list;
+    List<Project> projectList;
     Task t;
+    List<Task>taskList;
     Booking b;
+    List<Booking>bookingList;
+
 
     @Before
     public void setUp() throws Exception {
-        list = new ArrayList<>();
+        projectList = new ArrayList<>();
         this.p = new Project ( "Projekt1", "kurzbeschreibung 1", 11.1, "blue");
-        list.add(p);
-        this.b = new Booking("test", 5);
+        projectList.add(p);
+
+        taskList = new ArrayList<>();
+        this.t = new Task("TestTask");
+        taskList.add(t);
+
+        bookingList = new ArrayList<>();
+        this.b = new Booking("TestBooking", 8);
+        bookingList.add(b);
     }
 
     @Test
@@ -47,8 +57,8 @@ public class ProjectTest {
     @Test
     public void getPlannedHours() {
          assertNotNull(p.getPlannedHours());
-         assertEquals("11.1", p.getPlannedHours());
-         assertNotEquals("0", p.getPlannedHours());
+         assertEquals(11.1, p.getPlannedHours(),0);
+         assertNotEquals(0, p.getPlannedHours());
     }
 
     @Test
@@ -58,26 +68,30 @@ public class ProjectTest {
         assertNotEquals("red", p.getColor());
     }
 
-    /*
+
     @Test
     public void getTaskList() {
-          assertNotNull(p.getProjectList());
-          assertEquals(list, p.getProjectList());
-          assertNotEquals(null, p.getProjectList());
+        Task taskExpected = new Task("TaskExpected");
+        List<Task> taskListExpected = new ArrayList<>();
+        taskListExpected.add(taskExpected);
+        //Equal
+        assertEquals(taskListExpected, taskList);
     }
-     */
 
-    /*
     @Test
     public void getBookingList() {
-        assertNotNull(p.getProjectList());
-        assertEquals(list, p.getProjectList());
-        assertNotEquals(null, p.getProjectList());
+        Booking bookingExpected = new Booking("TestBooking",8);
+        List<Booking> bookingListExpected = new ArrayList<>();
+        bookingListExpected.add(bookingExpected);
+        //Equal
+        assertEquals(bookingListExpected, bookingList);
     }
-     */
 
     @Test
     public void describeContents() {
+        assertNotNull(p.describeContents());
+        assertEquals(0, p.describeContents());
+        assertNotEquals(1, p.describeContents());
 
     }
 
