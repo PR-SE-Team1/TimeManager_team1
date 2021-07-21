@@ -49,7 +49,7 @@ public class Project  implements Parcelable {
 
     public Project ( String projName){
         this.projName = projName;
-    }
+   }
 
     /**
      * retrieving project-data
@@ -65,12 +65,6 @@ public class Project  implements Parcelable {
 //        bookings = in.createTypedArrayList(Booking.CREATOR);
     }
 
-    /**
-     * delete after parcel is working
-     */
-    public Project() {
-
-    }
 
     //GETTER
 
@@ -86,12 +80,9 @@ public class Project  implements Parcelable {
     public String getColor() {
         return color;
     }
-    public static List<Task> getTaskList(){
-        return tasks;
-    }
-    public static List<Booking> getBookingList(){
-        return bookings;
-    }
+//    public static List<Task> getTaskList(){
+//        return tasks;
+//    }
 
     public static final Creator<Project> CREATOR = new Creator<Project>() {
         @Override
