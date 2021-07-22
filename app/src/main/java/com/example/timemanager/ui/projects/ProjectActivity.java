@@ -13,10 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.timemanager.R;
-import com.example.timemanager.ui.bookings.Booking;
 import com.example.timemanager.ui.recycler.RecyclerViewAdapter;
-import com.example.timemanager.ui.recycler.RecyclerViewAdapterTasks;
-import com.example.timemanager.ui.tasks.Task;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +28,7 @@ public class ProjectActivity extends AppCompatActivity implements RecyclerViewAd
 
     private Button btnAddP;
     private EditText etAddP;
-
+    // initialisieren?
 
 
     @Override
@@ -75,9 +72,10 @@ public class ProjectActivity extends AppCompatActivity implements RecyclerViewAd
      * @param position
      */
     private void insertItem(int position) {
-        projectList.add(position, new Project("Projekt11", "kurzbeschreibung 11", 11, "blue"));
+        double plannedHours = 11;
+        projectList.add(position, new Project("Projekt11", "kurzbeschreibung 11", plannedHours, "blue"));
         recyclerViewAdapter.notifyItemInserted(position);
-    }
+    }// soll gelöscht werden wird nicht verwendet
 
 
     /**
@@ -87,7 +85,7 @@ public class ProjectActivity extends AppCompatActivity implements RecyclerViewAd
     private void deleteItem(int position) {
         projectList.remove(position);
         recyclerViewAdapter.notifyItemRemoved(position);
-    }
+    }//soll gelöscht werden
 
     /**
      * Method building recyclerview
@@ -114,7 +112,7 @@ public class ProjectActivity extends AppCompatActivity implements RecyclerViewAd
         projectList.add(new Project ( "Projekt3", "kurzbeschreibung 3", 13.1, "blue"));
         projectList.add(new Project ( "Projekt4", "kurzbeschreibung 4", 14.1, "blue"));
         projectList.add(new Project ("Projekt5", "kurzbeschreibung 5", 15.1, "blue"));
-
+        // sollen wieder double daraus gemacht werden wie bei HomeFragment oder soll man es so lassen
     }
 
 

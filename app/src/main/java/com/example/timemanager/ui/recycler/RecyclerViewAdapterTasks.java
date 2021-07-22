@@ -2,7 +2,6 @@ package com.example.timemanager.ui.recycler;
 
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.SystemClock;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,9 +17,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.timemanager.R;
-import com.example.timemanager.ui.projects.Project;
 import com.example.timemanager.ui.tasks.Task;
-import com.example.timemanager.ui.tasks.TaskActivity;
 
 import java.util.List;
 
@@ -33,8 +30,6 @@ public class RecyclerViewAdapterTasks extends RecyclerView.Adapter<RecyclerViewA
     Context context;
     private List<Task> data;
     private OnTaskListener onTaskListener;
-
-
 
 
     /**
@@ -78,12 +73,10 @@ public class RecyclerViewAdapterTasks extends RecyclerView.Adapter<RecyclerViewA
 
         long timeElapsed = 0;
 
-        public ViewHolder(@NonNull View view, OnTaskListener onTaskListener) {
+        public ViewHolder(@NonNull View view, OnTaskListener onTaskListener) {//codesmel in sonarqube anschauen
             super(view);
             taskName = (TextView) view.findViewById(R.id.taskName);
             deleteImage = itemView.findViewById(R.id.image_deleteTask);
-
-
 
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -159,12 +152,6 @@ public class RecyclerViewAdapterTasks extends RecyclerView.Adapter<RecyclerViewA
     }
 
 
-
-
-
-
-
-
     /**
      *
      * @param parent
@@ -178,7 +165,7 @@ public class RecyclerViewAdapterTasks extends RecyclerView.Adapter<RecyclerViewA
         ViewHolder viewHolder = new ViewHolder(v, onTaskListener);
 
         return viewHolder;
-    }
+    }// IllegalArgumentException?
 
     /**
      *

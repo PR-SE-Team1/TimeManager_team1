@@ -28,12 +28,12 @@ public class ProjectDetailActivity extends AppCompatActivity {
     SharedPreferences sharedPreferences;
 
     TextView tvProject;
-    TextView editHours;;
+    TextView editHours;
     TextView editDescription;
 
-    public static final String mypreference = "mypref";
-    public static final String Description = "descriptionKey";
-    public static final String Hours = "hoursKey";
+    public static final String mypreference = "mypreference"; //nochmal kontrolieren ob mypref wo steht
+    public static final String Description = "descriptionKey";//sonarqube will das Key weg haben
+    public static final String Hours = "hoursKey";// -"-
 
     public Project project = new Project("Project1", "Beschreibung", 28, "red");
 
@@ -104,6 +104,6 @@ public class ProjectDetailActivity extends AppCompatActivity {
     public void sendMessage(View view) {
         Intent intent = new Intent(this, TaskActivity.class);
         startActivity(intent);
-    }
+    }//entfernen?
 
 }

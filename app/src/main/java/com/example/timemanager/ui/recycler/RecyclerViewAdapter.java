@@ -1,12 +1,10 @@
 package com.example.timemanager.ui.recycler;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,8 +13,6 @@ import com.example.timemanager.R;
 import com.example.timemanager.ui.projects.Project;
 
 import java.util.List;
-
-import static androidx.core.content.ContextCompat.startActivity;
 
 /**
  * class used to create a recycler view of projects displayed on homescreen
@@ -49,7 +45,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         ViewHolder viewHolder = new ViewHolder(v, onProjectListener);
 
         return viewHolder;
-    }
+    }//möchte eine IllegalArgumentException
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewAdapter.ViewHolder holder, int position){

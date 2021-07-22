@@ -11,7 +11,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
 
-public class storageXML {
+public class storageXML { //lässt sich nicht umbenennen?
 
     private static final String XML_PROJECT = "project", XML_PROJECTLIST = "projectlist", XML_PROJECTNAME = "projectname";
     private static final String XML_PROJECTDESCRIPTION = "projectdescription", XML_PROJECTHOURS_WEEK = "hours per week", XML_COLOR = "coulor";

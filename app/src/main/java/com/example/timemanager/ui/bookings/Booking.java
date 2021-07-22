@@ -58,7 +58,9 @@ public class Booking implements Parcelable {
     //SETTER
     public void setBookingName(@NotNull String bookingName){this.bookingName = bookingName; }
     public void setTimeWorked(@NotNull int timeWorked){
-        if (timeWorked <= 0) return;
+        if (timeWorked <= 0){
+            return;
+        }
         this.timeWorked = timeWorked;
     }
 

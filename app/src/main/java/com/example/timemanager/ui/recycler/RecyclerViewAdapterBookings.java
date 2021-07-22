@@ -56,12 +56,6 @@ public class RecyclerViewAdapterBookings extends RecyclerView.Adapter<RecyclerVi
     }
 
 
-
-
-
-
-
-
     /**
      *
      * @param parent
@@ -75,7 +69,7 @@ public class RecyclerViewAdapterBookings extends RecyclerView.Adapter<RecyclerVi
         ViewHolder viewHolder = new ViewHolder(v);
 
         return viewHolder;
-    }
+    }//IllegalArgumentException?
 
     /**
      *

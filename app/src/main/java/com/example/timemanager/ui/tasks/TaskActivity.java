@@ -31,6 +31,11 @@ public class TaskActivity extends AppCompatActivity implements RecyclerViewAdapt
     private EditText etAddT;
 
     public Project project = new Project("Project1", "Beschreibung", 28, "red");
+    //initialisieren?
+
+    public TaskActivity(){
+
+    }
 
 
     @Override
@@ -74,7 +79,7 @@ public class TaskActivity extends AppCompatActivity implements RecyclerViewAdapt
     private void insertItem(int position) {
         taskList.add(position, new Task("Aufgabe3", false, project));
         recyclerViewAdapterTasks.notifyItemInserted(position);
-    }
+    }//löschen?
 
     /**
      * deletes Item from List
