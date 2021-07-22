@@ -11,6 +11,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * class to write an XML for the storage of the data
+ */
 public class storageXML { //lässt sich nicht umbenennen?
 
     private static final String XML_PROJECT = "project", XML_PROJECTLIST = "projectlist", XML_PROJECTNAME = "projectname";

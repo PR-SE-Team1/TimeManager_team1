@@ -38,7 +38,6 @@ public class SettingsFragment extends Fragment {
                 clickedSearchButton(v);
             }
         });
-
         Button btnsave = (Button) root.findViewById(R.id.btn_save);
         btnsave.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,8 +46,6 @@ public class SettingsFragment extends Fragment {
                 startActivity(intent);
             }
         });
-
-
         return root;
     }
 

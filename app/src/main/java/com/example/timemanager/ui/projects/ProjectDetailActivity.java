@@ -91,7 +91,10 @@ public class ProjectDetailActivity extends AppCompatActivity {
 
     }
 
-
+    /**
+     * saves the details of the project
+     * @param view
+     */
     public void save(View view) {
         String savedDescription = editDescription.getText().toString();
         String savedHours = editHours.getText().toString();

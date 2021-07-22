@@ -27,6 +27,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
     private Button btnTasks;
     //sollten initialisiert werden
 
+    /**
+     * constructor for code quality
+     */
     public HomeFragment(){
 
     }
@@ -37,7 +40,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         //inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-
         btnProjects = (Button) view.findViewById(R.id.btnProjects);
         btnProjects.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,9 +47,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
                 Intent intent = new Intent(getActivity(), ProjectActivity.class);
                 startActivity(intent);
             }
-
         });
-
 
         btnTasks = (Button) v.findViewById(R.id.btnTasks);
         btnTasks.setOnClickListener(new View.OnClickListener() {
@@ -56,16 +56,13 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
                 Intent intent = new Intent(getActivity(), TaskActivity.class);
                 startActivity(intent);
             }
-
         });
-
         return v;
-
     }
 
-
-
-
+    /**
+     * creates a List of Projects
+     */
     public void createProjectList(){
         double plannedHours = 11.1; //sonarqube will das so
         double plannedHours2 = 12.1;

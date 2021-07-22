@@ -6,10 +6,7 @@ import android.os.Parcelable;
 import com.example.timemanager.ui.bookings.Booking;
 import com.example.timemanager.ui.tasks.Task;
 
-import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 
 // implements Parcelable to pass complex data from one activity to another activity
@@ -68,18 +65,38 @@ public class Project  implements Parcelable {
 
     //GETTER
 
+    /**
+     * gets the name of the project
+     * @return projName
+     */
     public String getProjName() {
         return projName;
     }
+
+    /**
+     * gets the description of the project
+     * @return description
+     */
     public String getDescription() {
         return description;
     }
+
+    /**
+     * gets the planned hours of the project
+     * @return plannedHours
+     */
     public double getPlannedHours() {
         return plannedHours;
     }
+
+    /**
+     * gets the color of the project
+     * @return color
+     */
     public String getColor() {
         return color;
     }
+
 //    public static List<Task> getTaskList(){
 //        return tasks;
 //    }

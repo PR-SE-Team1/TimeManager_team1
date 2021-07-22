@@ -38,6 +38,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     }
 
+
     @Override
     public RecyclerViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) throws NullPointerException {
         context = parent.getContext();
@@ -47,24 +48,21 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return viewHolder;
     }//möchte eine IllegalArgumentException
 
+
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewAdapter.ViewHolder holder, int position){
         holder.projektName.setText(data.get(position).getProjName());
         holder.beschreibung.setText(data.get(position).getDescription());
-
     }
 
-
+    /**
+     * gets the numbers of items
+     * @return data.size
+     */
     @Override
     public int getItemCount() {
         return this.data.size();
     }
-
-
-
-
-
-
 
 
     /**

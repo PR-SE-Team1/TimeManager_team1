@@ -24,10 +24,10 @@ public class BookingActivity extends AppCompatActivity{
 
 
     /**
-     * constructor
+     * constructor for code quality
      */
     public BookingActivity(){
-        // wird laut sonarqube gebraucht
+
     }
 
     @Override
@@ -37,7 +37,6 @@ public class BookingActivity extends AppCompatActivity{
 
         createBookingList();
         buildRecyclerView();
-
     }
 
     /**
@@ -49,7 +48,7 @@ public class BookingActivity extends AppCompatActivity{
         bookingList.add(position, new Booking("Buchung3", 3));
         recyclerViewAdapterBookings.notifyItemInserted(position);
     }*/
-//soll laut sonarqube gelöscht werden, weil es nicht gebraucht wird, und die nummer 3 soll zu einem int hinzugefügt werden
+//soll laut sonarqube gelöscht werden, weil es nicht gebraucht wird, und die nummer 3 soll zu einer konstante gemacht werden
 
 
     /**
@@ -63,7 +62,6 @@ public class BookingActivity extends AppCompatActivity{
         recyclerViewAdapterBookings = new RecyclerViewAdapterBookings(this, bookingList);
         //recyclerViewAdapterTasks.setClickListener(this);
         recyclerView.setAdapter(recyclerViewAdapterBookings);
-
     }
 
     /**
@@ -77,7 +75,6 @@ public class BookingActivity extends AppCompatActivity{
         bookingList.add(new Booking("Buchung 1", timeWorked1));
         bookingList.add(new Booking("Buching 2", timeWorked2));
     }
-
 
 }
 

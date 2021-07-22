@@ -26,7 +26,6 @@ public class RecyclerViewAdapterBookings extends RecyclerView.Adapter<RecyclerVi
     private List<Booking> data;
 
 
-
     /**
      * constructor for a recycler view adapter
      * @param context
@@ -46,13 +45,10 @@ public class RecyclerViewAdapterBookings extends RecyclerView.Adapter<RecyclerVi
         public TextView bookingName;
         public ImageView deleteImage;
 
-
         public ViewHolder(@NonNull View view) {
             super(view);
             bookingName = (TextView) view.findViewById(R.id.bookingName);
-
         }
-
     }
 
 
@@ -91,10 +87,5 @@ public class RecyclerViewAdapterBookings extends RecyclerView.Adapter<RecyclerVi
     public int getItemCount() {
         return this.data.size();
     }
-
-
-
-
-
 
 }

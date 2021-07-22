@@ -188,9 +188,4 @@ public class RecyclerViewAdapterTasks extends RecyclerView.Adapter<RecyclerViewA
         return this.data.size();
     }
 
-
-
-
-
-
 }

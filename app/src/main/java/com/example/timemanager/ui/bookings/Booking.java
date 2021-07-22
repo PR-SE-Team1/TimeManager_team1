@@ -16,13 +16,11 @@ public class Booking implements Parcelable {
     /**
      * constructor to initialize a task object
      * @param bookingName
-     * @param
-     * @param
+     * @param timeWorked
      */
     public Booking(String bookingName, int timeWorked){
         this.bookingName = bookingName;
         this.timeWorked = timeWorked;
-
     }
 
 
@@ -34,9 +32,7 @@ public class Booking implements Parcelable {
     protected Booking(Parcel in) {
         bookingName = in.readString();
         timeWorked = in.readInt();
-
     }
-
 
 
     public static final Creator<Booking> CREATOR = new Creator<Booking>() {
@@ -52,11 +48,31 @@ public class Booking implements Parcelable {
     };
 
     //GETTER
+
+    /**
+     * gets the name of the booking
+     * @return bookingName
+     */
     public String getBookingName() {return bookingName; }
+
+    /**
+     * gets the time worked
+     * @return timeWorked
+     */
     public int getTimeWorked(){return timeWorked;}
 
     //SETTER
+
+    /**
+     * sets the name of the booking
+     * @param bookingName
+     */
     public void setBookingName(@NotNull String bookingName){this.bookingName = bookingName; }
+
+    /**
+     * sets the time worked
+     * @param timeWorked
+     */
     public void setTimeWorked(@NotNull int timeWorked){
         if (timeWorked <= 0){
             return;

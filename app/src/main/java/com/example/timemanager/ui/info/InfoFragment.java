@@ -9,7 +9,6 @@ import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
 import com.example.timemanager.R;
 import com.example.timemanager.ui.bookings.BookingActivity;
@@ -30,7 +29,6 @@ public class InfoFragment extends Fragment {
                 startActivity(intent);
             }
         });
-
         Button btnOverview = (Button) root.findViewById(R.id.btnInfoOverview);
         btnOverview.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,7 +37,6 @@ public class InfoFragment extends Fragment {
                 startActivity(intent);
             }
         });
-
         Button btnBookings = (Button) root.findViewById(R.id.btnInfoBookingList);
         btnBookings.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,14 +44,7 @@ public class InfoFragment extends Fragment {
                 Intent intent = new Intent(getActivity(), BookingActivity.class);
                 startActivity(intent);
             }
-
         });
-
-
         return root;
     }
-
-
-
-
 }
