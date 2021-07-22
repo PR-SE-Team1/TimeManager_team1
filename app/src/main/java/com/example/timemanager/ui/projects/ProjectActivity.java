@@ -18,19 +18,22 @@ import com.example.timemanager.ui.recycler.RecyclerViewAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * class needed to create a recyclerview with different projects and display them in activity_projects
+ */
 public class ProjectActivity extends AppCompatActivity implements RecyclerViewAdapter.OnProjectListener {
 
-    List<Project> projectList;
-
+    private List<Project> projectList;
     private RecyclerView recyclerView;
     private RecyclerViewAdapter recyclerViewAdapter;
-
     private Button btnAddP;
     private EditText etAddP;
-    // initialisieren?
 
-
+    /**
+     * opens activity_projects, creates a list of projects, builds a recycler view and sets the needed button to add a new project
+     * further information in AppCompatActivity
+     * @param savedInstanceState
+     */
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +46,8 @@ public class ProjectActivity extends AppCompatActivity implements RecyclerViewAd
     }
 
     /**
-     * method setting up buttons
+     * method setting up button to add a new project
+     * After writing the name of the project and clicking on the button, the project will be added.
      */
     private void setButtons() {
         btnAddP = findViewById(R.id.btnAddNewProject);
@@ -65,30 +69,8 @@ public class ProjectActivity extends AppCompatActivity implements RecyclerViewAd
         });
     }
 
-
-
     /**
-     * add items to list
-     * @param position
-     */
-    private void insertItem(int position) {
-        double plannedHours = 11;
-        projectList.add(position, new Project("Projekt11", "kurzbeschreibung 11", plannedHours, "blue"));
-        recyclerViewAdapter.notifyItemInserted(position);
-    }// soll gelöscht werden wird nicht verwendet
-
-
-    /**
-     * deletes Item from List
-     * @param position
-     */
-    private void deleteItem(int position) {
-        projectList.remove(position);
-        recyclerViewAdapter.notifyItemRemoved(position);
-    }//soll gelöscht werden
-
-    /**
-     * Method building recyclerview
+     * method building recyclerview
      */
     private void buildRecyclerView() {
         // set up the RecyclerView
@@ -96,34 +78,26 @@ public class ProjectActivity extends AppCompatActivity implements RecyclerViewAd
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerViewAdapter = new RecyclerViewAdapter(this, projectList, this);
-        //recyclerViewAdapterTasks.setClickListener(this);
         recyclerView.setAdapter(recyclerViewAdapter);
     }
 
 
     /**
-     * method creating project list
-     *
+     * method creating a list of projects
      */
     private void createProjectList() {
         projectList = new ArrayList<>();
-        projectList.add(new Project ("Projekt1", "kurzbeschreibung 1", 11.1, "blue"));
-        projectList.add(new Project ("Projekt2", "kurzbeschreibung 2", 12.1, "blue"));
-        projectList.add(new Project ( "Projekt3", "kurzbeschreibung 3", 13.1, "blue"));
-        projectList.add(new Project ( "Projekt4", "kurzbeschreibung 4", 14.1, "blue"));
-        projectList.add(new Project ("Projekt5", "kurzbeschreibung 5", 15.1, "blue"));
-        // sollen wieder double daraus gemacht werden wie bei HomeFragment oder soll man es so lassen
+        projectList.add(new Project ("Time Manager", "App, die das Zeitmanagement vereinfacht.", 11.1, "grün"));
+        projectList.add(new Project ("Vier gewinnt", "Spiel für zwei Personen.", 12.1, "rot"));
+        projectList.add(new Project ( "Offenes Notitzbuch", "Das Notizbuch für die ganze Firma.", 13.1, "grün"));
+        projectList.add(new Project ( "Bookend", "Digitaler Buchclub.", 14.1, "lila"));
+        projectList.add(new Project ("RezepteToGo", "Alle Rezepte auf jedem Gerät.", 15.1, "gelb"));
     }
 
-
-//    //get to another activity by clicking on the task
-//    @Override
-//    public void onProjectClick(int position) {
-//        Intent intent = new Intent(this, ProjectDetailActivity.class);
-//        startActivity(intent);
-//    }
-
-
+    /**
+     * implemented method to start ProjectDetailActivity (the overview of each project) by clicking on the specific project in the recycler view
+     * @param project clicked project
+     */
     @Override
     public void onProjectClick(Project project) {
         startActivity(new Intent(ProjectActivity.this, ProjectDetailActivity.class).putExtra("data", project));

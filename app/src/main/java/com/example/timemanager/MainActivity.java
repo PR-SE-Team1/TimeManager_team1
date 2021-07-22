@@ -1,39 +1,32 @@
 package com.example.timemanager;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.os.SystemClock;
-import android.view.LayoutInflater;
-import android.widget.Button;
-import android.widget.Toast;
-import android.view.View;
-import android.util.Log;
-import android.widget.ToggleButton;
-import com.example.timemanager.ui.projects.Project;
-import com.example.timemanager.ui.projects.ProjectActivity;
-import com.example.timemanager.ui.recycler.RecyclerViewAdapter;
-import com.example.timemanager.ui.tasks.TaskDetailActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import java.util.List;
 
+
+/**
+ * class used to create a navigationbar to be able to navigate between home, info and settings
+ */
 public class MainActivity extends AppCompatActivity  {
 
+    /**
+     * opens activity_main and contains the implementation of the navigationbar.
+     * The user can switch between navigation_home, navigation_info and navigation_settings.
+     * This navigationbar can be found in nav_host_fragment.
+     * further information in AppCompatActivity
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_home, R.id.navigation_info, R.id.navigation_settings)
                 .build();

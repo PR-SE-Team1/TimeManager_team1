@@ -9,43 +9,41 @@ import com.example.timemanager.ui.projects.Project;
 import java.util.ArrayList;
 import java.util.List;
 
-// implements Parcelable to pass complex data from one activity to another activity
+/**
+ * class needed to create task-items used in other classes
+ * implements Parcelable to pass complex data from one activity to another activity
+ */
 public class Task implements Parcelable{
 
     private String taskName;
     private Project project;
     private boolean defaultTask;
 
-    private static List<Task> taskList = new ArrayList<>();
-
-
     /**
      * constructor to initialize a task object
-     * to insert: Project project, boolean defaultTask
-     * @param taskName
-     * @param
+     * @param taskName the name of the task
+     * @param defaultTask true if the task is a default task of the assigned project; otherwise false
+     * @param project project to which the task is assigned
      */
     public Task (String taskName, boolean defaultTask, Project project ){
         this.taskName = taskName;
         this.defaultTask = defaultTask;
         this.project = project;
     }
-//    public Task (String taskName){
-//        this.taskName = taskName;
-//
-//    }
 
     /**
      * retrieving task-data
      * this constructor is invoked by method createFromParcel(Parcel source)
-     * @param in
+     * further information in implemented Parcelable
+     * @param in retrieved data from parcel
      */
     protected Task(Parcel in) {
         taskName = in.readString();
     }
 
     /**
-     *
+     * creating a new parcel
+     * implemented from Parcel
      */
     public static final Creator<Task> CREATOR = new Creator<Task>() {
         @Override
@@ -59,55 +57,41 @@ public class Task implements Parcelable{
         }
     };
 
-    //GETTER
-
     /**
-     * gets the Name of the Task
-     * @return taskName
+     * gets the name of the task
+     * @return the name of the task
      */
     public String getTaskName() { return taskName; }
 
     /**
-     * gets the Project
-     * @return project
+     * gets the project to which the task is assigned
+     * @return the project to which the task is assigned
      */
     public Project getProject(){ return project;}
 
     /**
-     * gets the boolean if it is a default Task
-     * @return defaultTask
+     * gets defaulttask
+     * @return true if the task is a default task of the assigned project; otherwise false
      */
     public boolean getDefaultTask(){ return defaultTask;}
 
-    //SETTER
-
     /**
      * sets the Name of the Task
-     * @param taskName
+     * @param taskName name of the task
      */
     public void setTaskName(String taskName){this.taskName = taskName;}
 
     /**
      * sets the Project
-     * @param project
+     * @param project project to which the task is assigned
      */
     public void setProject(Project project){this.project = project;}
-    //public boolean setDefaultTask(double num)
-    //        {
-    //            if(num%2 == 0)
-    //            {
-    //                System.out.print(true);
-    //                return true;
-    //            }
-    //            else
-    //            {
-    //                System.out.print(false);
-    //                return false;
-    //            }
-    //
-    //        }
 
-
+    /**
+     * describe the kinds of objects contained in this representation
+     * further information in implemented Parcelable
+     * @return 0
+     */
     @Override
     public int describeContents() {
         return 0;
@@ -115,6 +99,7 @@ public class Task implements Parcelable{
 
     /**
      * storing the project data to a parcel-object
+     * further information in implemented Parcelable
      * @param dest
      * @param flags
      */

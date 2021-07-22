@@ -19,25 +19,23 @@ import com.example.timemanager.ui.recycler.RecyclerViewAdapterTasks;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * opens activity_task, creates a RecyclerView and a list of tasks
+ */
 public class TaskActivity extends AppCompatActivity implements RecyclerViewAdapterTasks.OnTaskListener {
 
     private List<Task> taskList;
-
     private RecyclerView recyclerView;
     private RecyclerViewAdapterTasks recyclerViewAdapterTasks;
-
     private Button btnAddT;
     private EditText etAddT;
+    private Project project = new Project ("Time Manager", "App, die das Zeitmanagement vereinfacht.", 11.1, "grün");
 
-    public Project project = new Project("Project1", "Beschreibung", 28, "red");
-    //initialisieren?
-
-    public TaskActivity(){
-
-    }
-
-
+    /**
+     * opens activity_tasks, creates a list of tasks, builds a recycler view and sets button needed to add a new task
+     * further information in AppCompatActivity
+     * @param savedInstanceState
+     */
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +48,8 @@ public class TaskActivity extends AppCompatActivity implements RecyclerViewAdapt
 
 
     /**
-     * method setting up buttons
+     * method setting up button to add a new task.
+     * After writing the name of the task and clicking on the button, the task will be added.
      */
     private void setButtons() {
         btnAddT = findViewById(R.id.btnAddNewTask);
@@ -72,18 +71,10 @@ public class TaskActivity extends AppCompatActivity implements RecyclerViewAdapt
         });
     }
 
-    /**
-     * add items to list
-     * @param position
-     */
-    private void insertItem(int position) {
-        taskList.add(position, new Task("Aufgabe3", false, project));
-        recyclerViewAdapterTasks.notifyItemInserted(position);
-    }//löschen?
 
     /**
-     * deletes Item from List
-     * @param position
+     * deletes Item from List on a specific position
+     * @param position position of the item that needs to be deleted
      */
     private void deleteItem(int position) {
         taskList.remove(position);
@@ -94,19 +85,12 @@ public class TaskActivity extends AppCompatActivity implements RecyclerViewAdapt
      * Method building recyclerview
      */
     private void buildRecyclerView() {
-        // set up the RecyclerView
         recyclerView = findViewById(R.id.recyclerViewTasks);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerViewAdapterTasks = new RecyclerViewAdapterTasks(this, taskList, this);
-        //recyclerViewAdapterTasks.setClickListener(this);
         recyclerView.setAdapter(recyclerViewAdapterTasks);
-
         recyclerViewAdapterTasks.setOnItemClickListener((new RecyclerViewAdapterTasks.OnTaskListener() {
-            @Override
-            public void onTaskClick(int position) {
-                onTaskClick(position);
-            }
 
             @Override
             public void onDeleteClick(int position) {
@@ -116,33 +100,22 @@ public class TaskActivity extends AppCompatActivity implements RecyclerViewAdapt
     }
 
     /**
-     * method creating task list
-     *
+     * method creating a list of tasks (containing a project)
      */
     private void createTaskList() {
         taskList = new ArrayList<>();
-        taskList.add(new Task("Aufgabe1", true, project));
-        taskList.add(new Task("Aufgabe2", false, project));
-    }
 
-
-    /**
-     * get to another activity by clicking on the task
-     */
-    @Override
-    public void onTaskClick(int position) {
-        Intent intent = new Intent(this, TaskDetailActivity.class);
-        startActivity(intent);
+        taskList.add(new Task("Arbeit aufteilen", true, project));
+        taskList.add(new Task("Gruppen bilden", false, project));
     }
 
     /**
-     * delete task by clicking on deleteitem
-     * @param position
+     * delete task by clicking on the delete icon in a recycler view item
+     * @param position position of the task that needs to be deleted
      */
     @Override
     public void onDeleteClick(int position) {
         deleteItem(position);
-
     }
 }
 

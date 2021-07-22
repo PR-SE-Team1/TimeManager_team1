@@ -13,7 +13,7 @@ public class BookingTest {
     private final Booking b1 = new Booking ("Buchung 1", 11);
 
     /**
-     * test to check the getter for BookingName
+     * tests the method getBookingName
      */
     @Test
     public void getBookingName() {
@@ -23,7 +23,7 @@ public class BookingTest {
     }
 
     /**
-     * test to check the getter for BookingName
+     * tests the method getTimeWorked
      */
     @Test
     public void getTimeWorked() {
@@ -33,7 +33,8 @@ public class BookingTest {
     }
 
     /**
-     * test to check the getter for BookingName
+     * tests the method setBookingName
+     * should not be null
      */
     @Test
     public void setBookingName() {
@@ -43,7 +44,8 @@ public class BookingTest {
     }
 
     /**
-     * test to check the getter for BookingName
+     * tests the method setTimeWorked
+     * should not be null or smaller than 1
      */
     @Test
     public void setTimeWorked() {
@@ -53,20 +55,18 @@ public class BookingTest {
         assertNotEquals(-1, b1.getTimeWorked());
     }
 
-//    /**
-//     * test to check the getter for BookingName
-//     */
-//    @Test
-//    public void describeContents() {
-//        Parcel parcel = MockParcel.obtain();
-//        b1.writeToParcel(parcel, b1.describeContents());
-//        parcel.setDataPosition(0);
-//        Booking parcelableBooking = Booking.CREATOR.createFromParcel(parcel);
-//        assertEquals(b1.describeContents(), parcelableBooking.describeContents());
-//    }
+    /**
+     * tests the method describeContents
+     */
+    @Test
+    public void describeContents() {
+        assertNotNull(b1.describeContents());
+        assertEquals(0, b1.describeContents());
+        assertNotEquals(1, b1.describeContents());
+    }
 
     /**
-     * Test to check
+     * Test to check the method writeToParcel
      */
     @Test
     public void writeToParcel() {

@@ -41,6 +41,7 @@ public class TaskTest {
         assertNotEquals( proj, t.getProject());
     }
 
+
     /**
      * tests the method getDefaultTask, if the boolean is not null and if it is equal or not
      */
