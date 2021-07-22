@@ -5,12 +5,22 @@ Info about project structure:
     res: contains icons, layouts, menus, the navigation and values (strings, ids)
     manifests: contains the AndroidManifest.xml 
     MainActivity.java is used to create the navigation bar
+    
+    Packages:
+        bookings:
+        home:
+        info:
+        projects:
+        recycler:
+        settings: 
+        tasks
 
 Documentations (optional):
     -Documentation and examples for Parcelable:
         https://stackoverflow.com/questions/34503724/adding-data-to-a-parcelable-object-passed-to-another-activity
         https://developer.android.com/reference/android/os/Parcelable
         https://www.vogella.com/tutorials/AndroidParcelable/article.html
+        https://gist.github.com/Sloy/d59a36e6c51214d0b131
     -Documentation and examples for RecyclerView:
         https://stackoverflow.com/questions/40584424/simple-android-recyclerview-example
         https://developer.android.com/guide/topics/ui/layout/recyclerview

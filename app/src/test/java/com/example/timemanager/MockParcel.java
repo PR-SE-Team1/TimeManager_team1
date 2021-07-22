@@ -15,6 +15,10 @@ import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+/**
+ * MockParcel for testing Parcelables implementations with the new Android's Unit testing support (http://tools.android.com/tech-docs/unit-testing-support).
+ * Only String and Long read/write implemented here.
+ */
 public class MockParcel {
 
     public static Parcel obtain() {
@@ -29,18 +33,24 @@ public class MockParcel {
         return mockedParcel;
     }
 
+    /**
+     * constructor
+     */
     public MockParcel() {
         mockedParcel = mock(Parcel.class);
         objects = new ArrayList<>();
         setupMock();
     }
 
+    /**
+     * sets up a new mock containing Writes, Reads and Others
+     */
+
     private void setupMock() {
         setupWrites();
         setupReads();
         setupOthers();
     }
-
 
     private void setupWrites() {
         Answer<Void> writeValueAnswer = new Answer<Void>() {
