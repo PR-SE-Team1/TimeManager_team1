@@ -68,11 +68,17 @@ public class TaskTest {
         assertEquals(project, t.getProject());
     }
 
+    /**
+     * tests the method describeContents
+     */
     @Test
     public void describeContents() {
-
+        assertEquals(0,t.describeContents());
     }
 
+    /**
+     * tests the method writeToParcel
+     */
     @Test
     public void writeToParcel() {
         Parcel parcel = MockParcel.obtain();
