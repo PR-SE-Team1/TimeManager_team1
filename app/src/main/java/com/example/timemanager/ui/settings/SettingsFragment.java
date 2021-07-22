@@ -20,25 +20,39 @@ import java.util.List;
 
 import lib.folderpicker.FolderPicker;
 
+/**
+ * class needed to open the fragment_settings including the functionality to set a location where data can be saved
+ */
 public class SettingsFragment extends Fragment {
 
     private List<Project> projectList;
     private String filePath;
 
+    /**
+     * opens fragment_settings and contains functionality behind the buttons search and save.
+     * After clicking on btnsave the user gets redirected to HomeFragment.
+     * further information in implemented Parcelable
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return view
+     */
+    @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        View root = inflater.inflate(R.layout.fragment_settings, container, false);
-        filePath = root.getContext().getFilesDir().toString();
-        //final TextView textView = root.findViewById(R.id.settingsText);
-        Button searchButton = (Button) root.findViewById(R.id.btn_search);
+        View view = inflater.inflate(R.layout.fragment_settings, container, false);
+        filePath = view.getContext().getFilesDir().toString();
+
+        Button searchButton = (Button) view.findViewById(R.id.btn_search);
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 clickedSearchButton(v);
             }
         });
-        Button btnsave = (Button) root.findViewById(R.id.btn_save);
+
+        Button btnsave = (Button) view.findViewById(R.id.btn_save);
         btnsave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -46,13 +60,14 @@ public class SettingsFragment extends Fragment {
                 startActivity(intent);
             }
         });
-        return root;
+
+        return view;
     }
 
 
     /**
-     * with click on the button you can pick a folder from the Device (not every folder can be picked)
-     * @param v
+     * with click on the button you can pick a folder from the device (not every folder can be picked)
+     * @param v current view
      */
     public void clickedSearchButton(View v){
         Intent pathPicker = new Intent(this.getActivity(), FolderPicker.class);
@@ -60,27 +75,22 @@ public class SettingsFragment extends Fragment {
     }
 
     /**
-     * writes a new XML-Data
+     * creates a list of projects which are stored in a XML-file and saved at the chosen location
      * @param requestCode
      * @param resultCode
      * @param data
      */
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data){
-
         projectList = new ArrayList<>();
-        //plannedHours in double umwandeln??
-        projectList.add(new Project ("Projekt1", "kurzbeschreibung 1", 11.1, "blue"));
-        projectList.add(new Project ("Projekt2", "kurzbeschreibung 2", 12.1, "blue"));
-        projectList.add(new Project ("Projekt3", "kurzbeschreibung 3", 13.1, "blue"));
-        projectList.add(new Project ("Projekt4", "kurzbeschreibung 4", 14.1, "blue"));
-        projectList.add(new Project ("Projekt5", "kurzbeschreibung 5", 15.1, "blue"));
-        projectList.add(new Project ("Projekt6", "kurzbeschreibung 6", 16.1, "blue"));
-        storageXML writer = new storageXML();
+        projectList.add(new Project ("Time Manager", "App, die das Zeitmanagement vereinfacht.", 11.1, "grün"));
+        projectList.add(new Project ("Vier gewinnt", "Spiel für zwei Personen.", 12.1, "rot"));
+        projectList.add(new Project ( "Offenes Notitzbuch", "Das Notizbuch für die ganze Firma.", 13.1, "grün"));
+        projectList.add(new Project ( "Bookend", "Digitaler Buchclub.", 14.1, "lila"));
+        projectList.add(new Project ("RezepteToGo", "Alle Rezepte auf jedem Gerät.", 15.1, "gelb"));
+        StorageXML writer = new StorageXML();
         filePath = data.getExtras().getString("data");
-        try {
-            writer.writeConfigFile(projectList, filePath);
-        }
+        try { writer.writeConfigFile(projectList, filePath); }
         catch(Exception ex){
             ex.printStackTrace();
         }

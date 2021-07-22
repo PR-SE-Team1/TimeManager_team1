@@ -142,6 +142,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="120dp"
+        android:onClick="goToActivities"
         android:text="@string/btnGoToTasks"
         app:backgroundTint="#2E4BDD"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -152,10 +153,10 @@
 
     <Button
         android:id="@+id/saveButton"
-        android:layout_width="68dp"
-        android:layout_height="41dp"
+        android:layout_width="113dp"
+        android:layout_height="37dp"
         android:onClick="save"
-        android:text="save"
+        android:text="speichern"
         android:textSize="10sp"
         app:layout_constraintBottom_toTopOf="@+id/btnGoToTasks"
         app:layout_constraintEnd_toEndOf="parent"

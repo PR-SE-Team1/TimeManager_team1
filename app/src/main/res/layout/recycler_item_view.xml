@@ -34,19 +34,21 @@
 
         <TextView
             android:id="@+id/projName"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
+            android:layout_width="247dp"
+            android:layout_height="wrap_content"
             android:text="@string/Projektname"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/projDescr"
-            android:layout_width="224dp"
-            android:layout_height="45dp"
+            android:layout_width="341dp"
+            android:layout_height="39dp"
+            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_marginEnd="47dp"
-            android:layout_marginRight="47dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="18dp"
+            android:layout_marginRight="18dp"
             android:text="@string/Beschreibung" />
 
 

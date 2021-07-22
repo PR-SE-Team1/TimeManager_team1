@@ -18,10 +18,11 @@ import com.example.timemanager.ui.tasks.TaskActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * opens activity_edit_project, shows details about a project
+ */
 public class ProjectDetailActivity extends AppCompatActivity {
 
-    public List<String> projectList = new ArrayList<>();
     public List<String> taskList = new ArrayList<>();
     public List<String> colorList = new ArrayList<>();
 
@@ -31,21 +32,22 @@ public class ProjectDetailActivity extends AppCompatActivity {
     TextView editHours;
     TextView editDescription;
 
-    public static final String mypreference = "mypreference"; //nochmal kontrolieren ob mypref wo steht
-    public static final String Description = "descriptionKey";//sonarqube will das Key weg haben
-    public static final String Hours = "hoursKey";// -"-
+    public static final String Description = "descriptionKey";
+    public static final String Hours = "hoursKey";
 
     public Project project = new Project("Project1", "Beschreibung", 28, "red");
 
-
+    /**
+     * opens activity_edit_projects and contains the implementation to display only details from the clicked project.
+     * The name of the project and the short description are displayed in a TextView and the defauls task and color can be changed in a spinner
+     * further information in AppCompatActivity
+     * @param savedInstanceState
+     */
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //opening activity
         setContentView(R.layout.activity_edit_projects);
 
-
-        //---- getting Project
         tvProject = findViewById(R.id.selectedProject);
         editDescription = findViewById(R.id.mltEditDescription);
         editHours = findViewById(R.id.ptEditHours);
@@ -58,28 +60,14 @@ public class ProjectDetailActivity extends AppCompatActivity {
             editHours.setText(String.valueOf(d));
         }
 
-
-//        // spinner edit PROJECT
-//        projectList.add(new Project ("Projekt1", "kurzbeschreibung 1", 11.1, "blue").getProjName());
-//        projectList.add(new Project ( "Projekt2", "kurzbeschreibung 2", 12.1, "blue").getProjName());
-//        projectList.add(new Project ( "Projekt3", "kurzbeschreibung 3", 13.1, "blue").getProjName());
-//        Spinner spinnerP;
-//        spinnerP = findViewById(R.id.spinnerEditChangeProj);
-//        ArrayAdapter arrayAdapterP = new ArrayAdapter(this,android.R.layout.simple_spinner_item,projectList);
-//        arrayAdapterP.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        spinnerP.setAdapter(arrayAdapterP);
-
-
-        //spinner edit TASK
-        taskList.add(new Task("Aufgabe1", true, project).getTaskName());
-        taskList.add(new Task("Aufgabe2", false, project).getTaskName());
+        taskList.add(new Task("Arbeit aufteilen", true, project).getTaskName());
+        taskList.add(new Task("Gruppen bilden", false, project).getTaskName());
         Spinner spinnerT;
         spinnerT = findViewById(R.id.spinnerEditDefTask);
         ArrayAdapter arrayAdapterT = new ArrayAdapter(this,android.R.layout.simple_spinner_item,taskList);
         arrayAdapterT.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerT.setAdapter(arrayAdapterT);
 
-        //spinner edit COLOR
         colorList.add("BLAU");
         colorList.add("ROT");
         colorList.add("GRÜN");
@@ -92,7 +80,7 @@ public class ProjectDetailActivity extends AppCompatActivity {
     }
 
     /**
-     * saves the details of the project
+     * saves the details of the project on button click
      * @param view
      */
     public void save(View view) {
@@ -104,9 +92,13 @@ public class ProjectDetailActivity extends AppCompatActivity {
         editor.commit();
     }
 
-    public void sendMessage(View view) {
+    /**
+     * opens TaskActivity on button click
+     * @param view
+     */
+    public void goToActivities(View view) {
         Intent intent = new Intent(this, TaskActivity.class);
         startActivity(intent);
-    }//entfernen?
+    }
 
 }

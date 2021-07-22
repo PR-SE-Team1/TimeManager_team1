@@ -14,20 +14,17 @@ import java.util.List;
 /**
  * class to write an XML for the storage of the data
  */
-public class storageXML { //lässt sich nicht umbenennen?
+public class StorageXML {
 
     private static final String XML_PROJECT = "project", XML_PROJECTLIST = "projectlist", XML_PROJECTNAME = "projectname";
-    private static final String XML_PROJECTDESCRIPTION = "projectdescription", XML_PROJECTHOURS_WEEK = "hours per week", XML_COLOR = "coulor";
-    //private static final String XML_TASK = "task", XML_TASKNAME = "taskname";
-    //private static final String XML_START = "starttime", XML_END = "endtime", XML_HOURS_WORKED = "hours worked";
-
+    private static final String XML_PROJECTDESCRIPTION = "projectdescription", XML_PROJECTHOURS_WEEK = "hours per week", XML_COLOR = "color";
     private static final String XML_FILE = "/TimeManagerProjects.xml";
 
     FileOutputStream fileOutputStream = null;
 
 
     /**
-     * writes the file
+     * writes the document which contains the list of projects. The encoding of this document is UTF-8.
      */
     public void writeConfigFile(List<Project> projects, String path) throws IOException {
         try {
@@ -42,9 +39,6 @@ public class storageXML { //lässt sich nicht umbenennen?
             for(Project project : projects) {
                 serializer.startTag("", XML_PROJECT);
                 serializeProject(serializer, project);
-                //serializeTasks(serializer, project.getTasks());
-                //serializeBookings(serializer, project.getBookings());
-
                 serializer.endTag("", XML_PROJECT);
             }
             serializer.endTag("", XML_PROJECTLIST);
@@ -61,7 +55,7 @@ public class storageXML { //lässt sich nicht umbenennen?
     }
 
     /**
-     * structurs the data
+     * structures the data
      */
     private void serializeProject(XmlSerializer serializer, Project project) throws IOException {
         serializer.startTag("", XML_PROJECTNAME);

@@ -56,6 +56,17 @@ public class ProjectTest {
     }
 
     /**
+     * tests the method setProjName
+     * should not be null
+     */
+    @Test
+    public void setProjName() {
+        p.setProjName("Project1");
+        assertNotNull(p.getProjName());
+        assertEquals("Project1", p.getProjName());
+    }
+
+    /**
      * tests the getter for the description
      */
     @Test
@@ -63,6 +74,17 @@ public class ProjectTest {
         assertNotNull(p.getDescription());
         assertEquals("kurzbeschreibung 1", p.getDescription());
         assertNotEquals("Kurzbeschreibung 1", p.getDescription());
+    }
+
+    /**
+     * tests the method setDescription
+     * should not be null
+     */
+    @Test
+    public void setDescription() {
+        p.setDescription("Kurzbeschreibung1");
+        assertNotNull(p.getDescription());
+        assertEquals("Kurzbeschreibung1", p.getDescription());
     }
 
     /**
@@ -76,6 +98,17 @@ public class ProjectTest {
     }
 
     /**
+     * tests the method setPlannedHours
+     * should not be null or smaller than 1
+     */
+    @Test
+    public void setPlannedHours() {
+        p.setPlannedHours(20);
+        assertNotNull(p.getPlannedHours());
+        assertNotEquals(-1, p.getPlannedHours());
+    }
+
+    /**
      * tests the getter for the color
      */
     @Test
@@ -86,19 +119,19 @@ public class ProjectTest {
     }
 
     /**
-     * tests the getter for TaskList
+     * tests the method setColor
+     * should not be null
      */
     @Test
-    public void getTaskList() {
-        Task taskExpected = new Task("TaskExpected", true, p);
-        List<Task> taskListExpected = new ArrayList<>();
-        taskListExpected.add(taskExpected);
-        //Equal
-        assertNotEquals(taskListExpected, taskList);
+    public void setColor() {
+        p.setDescription("blue");
+        assertNotNull(p.getColor());
+        assertEquals("blue", p.getColor());
     }
 
+
     /**
-     * tests the methode describeContents
+     * tests the method describeContents
      */
     @Test
     public void describeContents() {
@@ -108,7 +141,7 @@ public class ProjectTest {
     }
 
     /**
-     * Test to check the methode writeToParcel
+     * Test to check the method writeToParcel
      */
     @Test
     public void writeToParcel() {

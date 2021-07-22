@@ -59,14 +59,14 @@
   </Project>
   <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" instanceHash="e6abc8c5bada737f687f88b203938994" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
     <ShortMessage>Class names should start with an upper case letter</ShortMessage>
-    <LongMessage>The class name com.example.timemanager.ui.settings.storageXML doesn&apos;t start with an upper case letter</LongMessage>
-    <Class classname="com.example.timemanager.ui.settings.storageXML" primary="true">
-      <SourceLine classname="com.example.timemanager.ui.settings.storageXML" start="14" end="76" sourcefile="storageXML.java" sourcepath="com/example/timemanager/ui/settings/storageXML.java">
+    <LongMessage>The class name com.example.timemanager.ui.settings.StorageXML doesn&apos;t start with an upper case letter</LongMessage>
+    <Class classname="com.example.timemanager.ui.settings.StorageXML" primary="true">
+      <SourceLine classname="com.example.timemanager.ui.settings.StorageXML" start="14" end="76" sourcefile="storageXML.java" sourcepath="com/example/timemanager/ui/settings/storageXML.java">
         <Message>At storageXML.java:[lines 14-76]</Message>
       </SourceLine>
-      <Message>In class com.example.timemanager.ui.settings.storageXML</Message>
+      <Message>In class com.example.timemanager.ui.settings.StorageXML</Message>
     </Class>
-    <SourceLine classname="com.example.timemanager.ui.settings.storageXML" start="14" end="76" sourcefile="storageXML.java" sourcepath="com/example/timemanager/ui/settings/storageXML.java" synthetic="true">
+    <SourceLine classname="com.example.timemanager.ui.settings.StorageXML" start="14" end="76" sourcefile="storageXML.java" sourcepath="com/example/timemanager/ui/settings/storageXML.java" synthetic="true">
       <Message>At storageXML.java:[lines 14-76]</Message>
     </SourceLine>
   </BugInstance>
@@ -214,7 +214,7 @@
       <ClassStats class="com.example.timemanager.ui.settings.SettingsFragment$2" sourceFile="SettingsFragment.java" interface="false" size="7" bugs="0"/>
       <ClassStats class="com.example.timemanager.ui.settings.SettingsFragment$3" sourceFile="SettingsFragment.java" interface="false" size="8" bugs="0"/>
       <ClassStats class="com.example.timemanager.ui.settings.SettingsViewModel" sourceFile="SettingsViewModel.java" interface="false" size="8" bugs="0"/>
-      <ClassStats class="com.example.timemanager.ui.settings.storageXML" sourceFile="storageXML.java" interface="false" size="46" bugs="1" priority_2="1"/>
+      <ClassStats class="com.example.timemanager.ui.settings.StorageXML" sourceFile="storageXML.java" interface="false" size="46" bugs="1" priority_2="1"/>
     </PackageStats>
     <PackageStats package="com.example.timemanager.ui.tasks" total_bugs="0" total_types="6" total_size="130">
       <ClassStats class="com.example.timemanager.ui.tasks.Task" sourceFile="Task.java" interface="false" size="32" bugs="0"/>

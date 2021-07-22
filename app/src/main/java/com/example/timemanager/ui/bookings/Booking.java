@@ -6,17 +6,19 @@ import android.os.Parcelable;
 
 import org.jetbrains.annotations.NotNull;
 
-// implements Parcelable to pass complex data from one activity to another activity
+/**
+ * class needed to create booking-items used in other classes
+ * implements Parcelable to pass complex data from one activity to another activity
+ */
 public class Booking implements Parcelable {
-    //times need to be added
     private String bookingName;
     private int timeWorked;
 
 
     /**
      * constructor to initialize a task object
-     * @param bookingName
-     * @param timeWorked
+     * @param bookingName name of the booking
+     * @param timeWorked time worked
      */
     public Booking(String bookingName, int timeWorked){
         this.bookingName = bookingName;
@@ -27,14 +29,17 @@ public class Booking implements Parcelable {
     /**
      * retrieving task-data
      * this constructor is invoked by method createFromParcel(Parcel source)
-     * @param in
+     * @param in retrieved data from parcel
      */
     protected Booking(Parcel in) {
         bookingName = in.readString();
         timeWorked = in.readInt();
     }
 
-
+    /**
+     * creating a new parcel
+     * implemented from Parcel
+     */
     public static final Creator<Booking> CREATOR = new Creator<Booking>() {
         @Override
         public Booking createFromParcel(Parcel in) {
@@ -47,31 +52,27 @@ public class Booking implements Parcelable {
         }
     };
 
-    //GETTER
-
     /**
      * gets the name of the booking
-     * @return bookingName
+     * @return the name of the booking
      */
     public String getBookingName() {return bookingName; }
 
     /**
      * gets the time worked
-     * @return timeWorked
+     * @return the time worked
      */
     public int getTimeWorked(){return timeWorked;}
 
-    //SETTER
-
     /**
      * sets the name of the booking
-     * @param bookingName
+     * @param bookingName name of the booking
      */
     public void setBookingName(@NotNull String bookingName){this.bookingName = bookingName; }
 
     /**
-     * sets the time worked
-     * @param timeWorked
+     * sets the time worked and checks if time entered is over 0
+     * @param timeWorked booked time
      */
     public void setTimeWorked(@NotNull int timeWorked){
         if (timeWorked <= 0){
@@ -80,6 +81,11 @@ public class Booking implements Parcelable {
         this.timeWorked = timeWorked;
     }
 
+    /**
+     * describe the kinds of objects contained in this representation
+     * further information in implemented Parcelable
+     * @return 0
+     */
     @Override
     public int describeContents() {
         return 0;
@@ -87,6 +93,7 @@ public class Booking implements Parcelable {
 
     /**
      * storing the project data to a parcel-object
+     * further information in implemented Parcelable
      * @param dest
      * @param flags
      */
