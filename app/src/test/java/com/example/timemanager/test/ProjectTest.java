@@ -26,7 +26,10 @@ public class ProjectTest {
     Booking b;
     List<Booking>bookingList;
 
-
+    /**
+     * sets up a test project
+     * @throws Exception
+     */
     @Before
     public void setUp() throws Exception {//welche Exception??
         projectList = new ArrayList<>();
@@ -42,6 +45,9 @@ public class ProjectTest {
         bookingList.add(b);
     }
 
+    /**
+     * tests the getter for the projectname
+     */
     @Test
     public void getProjName() {
         assertNotNull(p.getProjName());
@@ -49,6 +55,9 @@ public class ProjectTest {
         assertNotEquals("Projekt2", p.getProjName());
     }
 
+    /**
+     * tests the getter for the description
+     */
     @Test
     public void getDescription() {
         assertNotNull(p.getDescription());
@@ -56,6 +65,9 @@ public class ProjectTest {
         assertNotEquals("Kurzbeschreibung 1", p.getDescription());
     }
 
+    /**
+     * tests the getter for the planned hours
+     */
     @Test
     public void getPlannedHours() {
          assertNotNull(p.getPlannedHours());
@@ -63,6 +75,9 @@ public class ProjectTest {
          assertNotEquals(0, p.getPlannedHours());
     }
 
+    /**
+     * tests the getter for the color
+     */
     @Test
     public void getColor() {
         assertNotNull(p.getColor());
@@ -70,7 +85,9 @@ public class ProjectTest {
         assertNotEquals("red", p.getColor());
     }
 
-
+    /**
+     * tests the getter for TaskList
+     */
     @Test
     public void getTaskList() {
         Task taskExpected = new Task("TaskExpected", true, p);
@@ -80,6 +97,9 @@ public class ProjectTest {
         assertNotEquals(taskListExpected, taskList);
     }
 
+    /**
+     * tests the methode describeContents
+     */
     @Test
     public void describeContents() {
         assertNotNull(p.describeContents());
@@ -88,7 +108,7 @@ public class ProjectTest {
     }
 
     /**
-     * Test to check
+     * Test to check the methode writeToParcel
      */
     @Test
     public void writeToParcel() {

@@ -12,6 +12,9 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 
+/**
+ *
+ */
 public class TaskTest {
 
     Project project = new Project("Project1","Beschreibung", 20, "blue");
@@ -73,7 +76,9 @@ public class TaskTest {
      */
     @Test
     public void describeContents() {
-        assertEquals(0,t.describeContents());
+        assertNotNull(t.describeContents());
+        assertEquals(0, t.describeContents());
+        assertNotEquals(1, t.describeContents());
     }
 
     /**
