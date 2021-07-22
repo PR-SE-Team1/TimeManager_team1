@@ -2,5 +2,5 @@ projectKey=time_mgr_team_01
 serverUrl=https://sonar2.se.jku.at
 serverVersion=8.9.0.43852
 dashboardUrl=https://sonar2.se.jku.at/dashboard?id=time_mgr_team_01
-ceTaskId=AXrNDFUNRuobizQ1SmYK
-ceTaskUrl=https://sonar2.se.jku.at/api/ce/task?id=AXrNDFUNRuobizQ1SmYK
+ceTaskId=AXrPrJaGRuobizQ1Smdp
+ceTaskUrl=https://sonar2.se.jku.at/api/ce/task?id=AXrPrJaGRuobizQ1Smdp
