@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.timemanager.R;
+import com.example.timemanager.ui.projects.Project;
 import com.example.timemanager.ui.recycler.RecyclerViewAdapterTasks;
 
 import java.util.ArrayList;
@@ -28,6 +29,8 @@ public class TaskActivity extends AppCompatActivity implements RecyclerViewAdapt
 
     private Button btnAddT;
     private EditText etAddT;
+
+    public Project project = new Project("Project1", "Beschreibung", 28, "red");
 
 
     @Override
@@ -58,7 +61,7 @@ public class TaskActivity extends AppCompatActivity implements RecyclerViewAdapt
                 } else if (getInput == null || getInput.trim().equals("")){
                     Toast.makeText(getBaseContext(), "Kein Name eingegeben", Toast.LENGTH_LONG).show();
                 }else {
-                    taskList.add(new Task (getInput));
+                    taskList.add(new Task (getInput, true, project));
                 }
             }
         });
@@ -69,7 +72,7 @@ public class TaskActivity extends AppCompatActivity implements RecyclerViewAdapt
      * @param position
      */
     private void insertItem(int position) {
-        taskList.add(position, new Task("Aufgabe3"));
+        taskList.add(position, new Task("Aufgabe3", false, project));
         recyclerViewAdapterTasks.notifyItemInserted(position);
     }
 
@@ -113,8 +116,8 @@ public class TaskActivity extends AppCompatActivity implements RecyclerViewAdapt
      */
     private void createTaskList() {
         taskList = new ArrayList<>();
-        taskList.add(new Task("Aufgabe1"));
-        taskList.add(new Task("Aufgabe2"));
+        taskList.add(new Task("Aufgabe1", true, project));
+        taskList.add(new Task("Aufgabe2", false, project));
     }
 
 
