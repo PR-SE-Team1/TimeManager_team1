@@ -28,7 +28,7 @@ public class ProjectTest {
 
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() throws Exception {//welche Exception??
         projectList = new ArrayList<>();
         this.p = new Project ( "Projekt1", "kurzbeschreibung 1", 11.1, "blue");
         projectList.add(p);
