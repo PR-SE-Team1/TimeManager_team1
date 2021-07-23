@@ -1,0 +1,127 @@
+<html>
+<head>
+<title>Booking.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #629755; font-style: italic;}
+.s3 { color: #629755; font-weight: bold; font-style: italic;}
+.s4 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Booking.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.example.timemanager.ui.bookings</span><span class="s0">;</span>
+
+
+<span class="s0">import </span><span class="s1">android.os.Parcel</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.os.Parcelable</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">org.jetbrains.annotations.NotNull</span><span class="s0">;</span>
+
+<span class="s2">/**</span>
+ <span class="s2">* class needed to create booking-items used in other classes</span>
+ <span class="s2">* implements Parcelable to pass complex data from one activity to another activity</span>
+ <span class="s2">*/</span>
+<span class="s0">public class </span><span class="s1">Booking </span><span class="s0">implements </span><span class="s1">Parcelable {</span>
+    <span class="s0">private </span><span class="s1">String bookingName</span><span class="s0">;</span>
+    <span class="s0">private int </span><span class="s1">timeWorked</span><span class="s0">;</span>
+
+
+    <span class="s2">/**</span>
+     <span class="s2">* constructor to initialize a task object</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">bookingName name of the booking</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">timeWorked time worked</span>
+     <span class="s2">*/</span>
+    <span class="s0">public </span><span class="s1">Booking(String bookingName</span><span class="s0">, int </span><span class="s1">timeWorked){</span>
+        <span class="s0">this</span><span class="s1">.bookingName = bookingName</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.timeWorked = timeWorked</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+
+    <span class="s2">/**</span>
+     <span class="s2">* retrieving task-data</span>
+     <span class="s2">* this constructor is invoked by method createFromParcel(Parcel source)</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">in retrieved data from parcel</span>
+     <span class="s2">*/</span>
+    <span class="s0">protected </span><span class="s1">Booking(Parcel in) {</span>
+        <span class="s1">bookingName = in.readString()</span><span class="s0">;</span>
+        <span class="s1">timeWorked = in.readInt()</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* creating a new parcel</span>
+     <span class="s2">* implemented from Parcel</span>
+     <span class="s2">*/</span>
+    <span class="s0">public static final </span><span class="s1">Creator&lt;Booking&gt; CREATOR = </span><span class="s0">new </span><span class="s1">Creator&lt;Booking&gt;() {</span>
+        <span class="s1">@Override</span>
+        <span class="s0">public </span><span class="s1">Booking createFromParcel(Parcel in) {</span>
+            <span class="s0">return new </span><span class="s1">Booking(in)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+
+        <span class="s1">@Override</span>
+        <span class="s0">public </span><span class="s1">Booking[] newArray(</span><span class="s0">int </span><span class="s1">size) {</span>
+            <span class="s0">return new </span><span class="s1">Booking[size]</span><span class="s0">;</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span><span class="s0">;</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* gets the name of the booking</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">the name of the booking</span>
+     <span class="s2">*/</span>
+    <span class="s0">public </span><span class="s1">String getBookingName() {</span><span class="s0">return </span><span class="s1">bookingName</span><span class="s0">; </span><span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* gets the time worked</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">the time worked</span>
+     <span class="s2">*/</span>
+    <span class="s0">public int </span><span class="s1">getTimeWorked(){</span><span class="s0">return </span><span class="s1">timeWorked</span><span class="s0">;</span><span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* sets the name of the booking</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">bookingName name of the booking</span>
+     <span class="s2">*/</span>
+    <span class="s0">public void </span><span class="s1">setBookingName(@NotNull String bookingName){</span><span class="s0">this</span><span class="s1">.bookingName = bookingName</span><span class="s0">; </span><span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* sets the time worked and checks if time entered is over 0</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">timeWorked booked time</span>
+     <span class="s2">*/</span>
+    <span class="s0">public void </span><span class="s1">setTimeWorked(@NotNull </span><span class="s0">int </span><span class="s1">timeWorked){</span>
+        <span class="s0">if </span><span class="s1">(timeWorked &lt;= </span><span class="s4">0</span><span class="s1">){</span>
+            <span class="s0">return;</span>
+        <span class="s1">}</span>
+        <span class="s0">this</span><span class="s1">.timeWorked = timeWorked</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* describe the kinds of objects contained in this representation</span>
+     <span class="s2">* further information in implemented Parcelable</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">0</span>
+     <span class="s2">*/</span>
+    <span class="s1">@Override</span>
+    <span class="s0">public int </span><span class="s1">describeContents() {</span>
+        <span class="s0">return </span><span class="s4">0</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* storing the project data to a parcel-object</span>
+     <span class="s2">* further information in implemented Parcelable</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">dest</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">flags</span>
+     <span class="s2">*/</span>
+    <span class="s1">@Override</span>
+    <span class="s0">public void </span><span class="s1">writeToParcel(Parcel dest</span><span class="s0">, int </span><span class="s1">flags) {</span>
+        <span class="s1">dest.writeString(bookingName)</span><span class="s0">;</span>
+        <span class="s1">dest.writeInt(timeWorked)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<html>
+<head>
+<title>TaskActivity.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #629755; font-style: italic;}
+.s3 { color: #6a8759;}
+.s4 { color: #6897bb;}
+.s5 { color: #629755; font-weight: bold; font-style: italic;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+TaskActivity.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.example.timemanager.ui.tasks</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">android.content.Intent</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.os.Bundle</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.view.View</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.Button</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.EditText</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.Toast</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">androidx.annotation.Nullable</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">androidx.appcompat.app.AppCompatActivity</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">androidx.recyclerview.widget.LinearLayoutManager</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">androidx.recyclerview.widget.RecyclerView</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">com.example.timemanager.R</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">com.example.timemanager.ui.projects.Project</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">com.example.timemanager.ui.recycler.RecyclerViewAdapterTasks</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">java.util.ArrayList</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.List</span><span class="s0">;</span>
+
+<span class="s2">/**</span>
+ <span class="s2">* opens activity_task, creates a RecyclerView and a list of tasks</span>
+ <span class="s2">*/</span>
+<span class="s0">public class </span><span class="s1">TaskActivity </span><span class="s0">extends </span><span class="s1">AppCompatActivity </span><span class="s0">implements </span><span class="s1">RecyclerViewAdapterTasks.OnTaskListener {</span>
+
+    <span class="s0">private </span><span class="s1">List&lt;Task&gt; taskList</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">RecyclerView recyclerView</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">RecyclerViewAdapterTasks recyclerViewAdapterTasks</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">Button btnAddT</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">EditText etAddT</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">Project project = </span><span class="s0">new </span><span class="s1">Project (</span><span class="s3">&quot;Time Manager&quot;</span><span class="s0">, </span><span class="s3">&quot;App, die das Zeitmanagement vereinfacht.&quot;</span><span class="s0">, </span><span class="s4">11.1</span><span class="s0">, </span><span class="s3">&quot;grün&quot;</span><span class="s1">)</span><span class="s0">;</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* opens activity_tasks, creates a list of tasks, builds a recycler view and sets button needed to add a new task</span>
+     <span class="s2">* further information in AppCompatActivity</span>
+     <span class="s2">* </span><span class="s5">@param </span><span class="s2">savedInstanceState</span>
+     <span class="s2">*/</span>
+    <span class="s1">@Override</span>
+    <span class="s0">public void </span><span class="s1">onCreate(@Nullable Bundle savedInstanceState) {</span>
+        <span class="s0">super</span><span class="s1">.onCreate(savedInstanceState)</span><span class="s0">;</span>
+        <span class="s1">setContentView(R.layout.activity_tasks)</span><span class="s0">;</span>
+
+        <span class="s1">createTaskList()</span><span class="s0">;</span>
+        <span class="s1">buildRecyclerView()</span><span class="s0">;</span>
+        <span class="s1">setButtons()</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+
+    <span class="s2">/**</span>
+     <span class="s2">* method setting up button to add a new task.</span>
+     <span class="s2">* After writing the name of the task and clicking on the button, the task will be added.</span>
+     <span class="s2">*/</span>
+    <span class="s0">private void </span><span class="s1">setButtons() {</span>
+        <span class="s1">btnAddT = findViewById(R.id.btnAddNewTask)</span><span class="s0">;</span>
+        <span class="s1">etAddT = findViewById(R.id.etAddNewTask)</span><span class="s0">;</span>
+
+        <span class="s1">btnAddT.setOnClickListener(</span><span class="s0">new </span><span class="s1">View.OnClickListener() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick(View v) {</span>
+                <span class="s1">String getInput = etAddT.getText().toString()</span><span class="s0">;</span>
+
+                <span class="s0">if </span><span class="s1">(taskList.contains(getInput)){</span>
+                    <span class="s1">Toast.makeText(getBaseContext()</span><span class="s0">, </span><span class="s3">&quot;Aufgabe existiert bereits&quot;</span><span class="s0">, </span><span class="s1">Toast.LENGTH_LONG).show()</span><span class="s0">;</span>
+                <span class="s1">} </span><span class="s0">else if </span><span class="s1">(getInput == </span><span class="s0">null </span><span class="s1">|| getInput.trim().equals(</span><span class="s3">&quot;&quot;</span><span class="s1">)){</span>
+                    <span class="s1">Toast.makeText(getBaseContext()</span><span class="s0">, </span><span class="s3">&quot;Kein Name eingegeben&quot;</span><span class="s0">, </span><span class="s1">Toast.LENGTH_LONG).show()</span><span class="s0">;</span>
+                <span class="s1">}</span><span class="s0">else </span><span class="s1">{</span>
+                    <span class="s1">taskList.add(</span><span class="s0">new </span><span class="s1">Task (getInput</span><span class="s0">, true, </span><span class="s1">project))</span><span class="s0">;</span>
+                <span class="s1">}</span>
+            <span class="s1">}</span>
+        <span class="s1">})</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+
+    <span class="s2">/**</span>
+     <span class="s2">* deletes Item from List on a specific position</span>
+     <span class="s2">* </span><span class="s5">@param </span><span class="s2">position position of the item that needs to be deleted</span>
+     <span class="s2">*/</span>
+    <span class="s0">private void </span><span class="s1">deleteItem(</span><span class="s0">int </span><span class="s1">position) {</span>
+        <span class="s1">taskList.remove(position)</span><span class="s0">;</span>
+        <span class="s1">recyclerViewAdapterTasks.notifyItemRemoved(position)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* Method building recyclerview</span>
+     <span class="s2">*/</span>
+    <span class="s0">private void </span><span class="s1">buildRecyclerView() {</span>
+        <span class="s1">recyclerView = findViewById(R.id.recyclerViewTasks)</span><span class="s0">;</span>
+        <span class="s1">recyclerView.setHasFixedSize(</span><span class="s0">true</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">recyclerView.setLayoutManager(</span><span class="s0">new </span><span class="s1">LinearLayoutManager(</span><span class="s0">this</span><span class="s1">))</span><span class="s0">;</span>
+        <span class="s1">recyclerViewAdapterTasks = </span><span class="s0">new </span><span class="s1">RecyclerViewAdapterTasks(</span><span class="s0">this, </span><span class="s1">taskList</span><span class="s0">, this</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">recyclerView.setAdapter(recyclerViewAdapterTasks)</span><span class="s0">;</span>
+        <span class="s1">recyclerViewAdapterTasks.setOnItemClickListener((</span><span class="s0">new </span><span class="s1">RecyclerViewAdapterTasks.OnTaskListener() {</span>
+
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onDeleteClick(</span><span class="s0">int </span><span class="s1">position) {</span>
+                <span class="s1">deleteItem(position)</span><span class="s0">;</span>
+            <span class="s1">}</span>
+        <span class="s1">}))</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* method creating a list of tasks (containing a project)</span>
+     <span class="s2">*/</span>
+    <span class="s0">private void </span><span class="s1">createTaskList() {</span>
+        <span class="s1">taskList = </span><span class="s0">new </span><span class="s1">ArrayList&lt;&gt;()</span><span class="s0">;</span>
+
+        <span class="s1">taskList.add(</span><span class="s0">new </span><span class="s1">Task(</span><span class="s3">&quot;Arbeit aufteilen&quot;</span><span class="s0">, true, </span><span class="s1">project))</span><span class="s0">;</span>
+        <span class="s1">taskList.add(</span><span class="s0">new </span><span class="s1">Task(</span><span class="s3">&quot;Gruppen bilden&quot;</span><span class="s0">, false, </span><span class="s1">project))</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* delete task by clicking on the delete icon in a recycler view item</span>
+     <span class="s2">* </span><span class="s5">@param </span><span class="s2">position position of the task that needs to be deleted</span>
+     <span class="s2">*/</span>
+    <span class="s1">@Override</span>
+    <span class="s0">public void </span><span class="s1">onDeleteClick(</span><span class="s0">int </span><span class="s1">position) {</span>
+        <span class="s1">deleteItem(position)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+
+</pre>
+</body>
+</html>

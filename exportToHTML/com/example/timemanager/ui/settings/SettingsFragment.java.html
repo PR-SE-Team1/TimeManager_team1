@@ -1,0 +1,121 @@
+<html>
+<head>
+<title>SettingsFragment.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #629755; font-style: italic;}
+.s3 { color: #629755; font-weight: bold; font-style: italic;}
+.s4 { color: #6897bb;}
+.s5 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+SettingsFragment.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.example.timemanager.ui.settings</span><span class="s0">;</span>
+
+
+<span class="s0">import </span><span class="s1">android.content.Intent</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.os.Bundle</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.view.LayoutInflater</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.view.View</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.view.ViewGroup</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.Button</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">androidx.annotation.NonNull</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">androidx.fragment.app.Fragment</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">com.example.timemanager.R</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">com.example.timemanager.ui.home.HomeFragment</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">com.example.timemanager.ui.projects.Project</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">java.util.ArrayList</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.List</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">lib.folderpicker.FolderPicker</span><span class="s0">;</span>
+
+<span class="s2">/**</span>
+ <span class="s2">* class needed to open the fragment_settings including the functionality to set a location where data can be saved</span>
+ <span class="s2">*/</span>
+<span class="s0">public class </span><span class="s1">SettingsFragment </span><span class="s0">extends </span><span class="s1">Fragment {</span>
+
+    <span class="s0">private </span><span class="s1">List&lt;Project&gt; projectList</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">String filePath</span><span class="s0">;</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* opens fragment_settings and contains functionality behind the buttons search and save.</span>
+     <span class="s2">* After clicking on btnsave the user gets redirected to HomeFragment.</span>
+     <span class="s2">* further information in implemented Parcelable</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">inflater</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">container</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">savedInstanceState</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">view</span>
+     <span class="s2">*/</span>
+    <span class="s1">@Override</span>
+    <span class="s0">public </span><span class="s1">View onCreateView(@NonNull LayoutInflater inflater</span><span class="s0">,</span>
+                             <span class="s1">ViewGroup container</span><span class="s0">, </span><span class="s1">Bundle savedInstanceState) {</span>
+
+        <span class="s1">View view = inflater.inflate(R.layout.fragment_settings</span><span class="s0">, </span><span class="s1">container</span><span class="s0">, false</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">filePath = view.getContext().getFilesDir().toString()</span><span class="s0">;</span>
+
+        <span class="s1">Button searchButton = (Button) view.findViewById(R.id.btn_search)</span><span class="s0">;</span>
+        <span class="s1">searchButton.setOnClickListener(</span><span class="s0">new </span><span class="s1">View.OnClickListener() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick(View v) {</span>
+                <span class="s1">clickedSearchButton(v)</span><span class="s0">;</span>
+            <span class="s1">}</span>
+        <span class="s1">})</span><span class="s0">;</span>
+
+        <span class="s1">Button btnsave = (Button) view.findViewById(R.id.btn_save)</span><span class="s0">;</span>
+        <span class="s1">btnsave.setOnClickListener(</span><span class="s0">new </span><span class="s1">View.OnClickListener() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick(View view) {</span>
+                <span class="s1">Intent intent = </span><span class="s0">new </span><span class="s1">Intent(getActivity()</span><span class="s0">, </span><span class="s1">HomeFragment.</span><span class="s0">class</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s1">startActivity(intent)</span><span class="s0">;</span>
+            <span class="s1">}</span>
+        <span class="s1">})</span><span class="s0">;</span>
+
+        <span class="s0">return </span><span class="s1">view</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+
+    <span class="s2">/**</span>
+     <span class="s2">* with click on the button you can pick a folder from the device (not every folder can be picked)</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">v current view</span>
+     <span class="s2">*/</span>
+    <span class="s0">public void </span><span class="s1">clickedSearchButton(View v){</span>
+        <span class="s1">Intent pathPicker = </span><span class="s0">new </span><span class="s1">Intent(</span><span class="s0">this</span><span class="s1">.getActivity()</span><span class="s0">, </span><span class="s1">FolderPicker.</span><span class="s0">class</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">startActivityForResult(pathPicker</span><span class="s0">, </span><span class="s4">10</span><span class="s1">)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* creates a list of projects which are stored in a XML-file and saved at the chosen location</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">requestCode</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">resultCode</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">data</span>
+     <span class="s2">*/</span>
+    <span class="s1">@Override</span>
+    <span class="s0">public void </span><span class="s1">onActivityResult(</span><span class="s0">int </span><span class="s1">requestCode</span><span class="s0">, int </span><span class="s1">resultCode</span><span class="s0">, </span><span class="s1">Intent data){</span>
+        <span class="s1">projectList = </span><span class="s0">new </span><span class="s1">ArrayList&lt;&gt;()</span><span class="s0">;</span>
+        <span class="s1">projectList.add(</span><span class="s0">new </span><span class="s1">Project (</span><span class="s5">&quot;Time Manager&quot;</span><span class="s0">, </span><span class="s5">&quot;App, die das Zeitmanagement vereinfacht.&quot;</span><span class="s0">, </span><span class="s4">11.1</span><span class="s0">, </span><span class="s5">&quot;grün&quot;</span><span class="s1">))</span><span class="s0">;</span>
+        <span class="s1">projectList.add(</span><span class="s0">new </span><span class="s1">Project (</span><span class="s5">&quot;Vier gewinnt&quot;</span><span class="s0">, </span><span class="s5">&quot;Spiel für zwei Personen.&quot;</span><span class="s0">, </span><span class="s4">12.1</span><span class="s0">, </span><span class="s5">&quot;rot&quot;</span><span class="s1">))</span><span class="s0">;</span>
+        <span class="s1">projectList.add(</span><span class="s0">new </span><span class="s1">Project ( </span><span class="s5">&quot;Offenes Notitzbuch&quot;</span><span class="s0">, </span><span class="s5">&quot;Das Notizbuch für die ganze Firma.&quot;</span><span class="s0">, </span><span class="s4">13.1</span><span class="s0">, </span><span class="s5">&quot;grün&quot;</span><span class="s1">))</span><span class="s0">;</span>
+        <span class="s1">projectList.add(</span><span class="s0">new </span><span class="s1">Project ( </span><span class="s5">&quot;Bookend&quot;</span><span class="s0">, </span><span class="s5">&quot;Digitaler Buchclub.&quot;</span><span class="s0">, </span><span class="s4">14.1</span><span class="s0">, </span><span class="s5">&quot;lila&quot;</span><span class="s1">))</span><span class="s0">;</span>
+        <span class="s1">projectList.add(</span><span class="s0">new </span><span class="s1">Project (</span><span class="s5">&quot;RezepteToGo&quot;</span><span class="s0">, </span><span class="s5">&quot;Alle Rezepte auf jedem Gerät.&quot;</span><span class="s0">, </span><span class="s4">15.1</span><span class="s0">, </span><span class="s5">&quot;gelb&quot;</span><span class="s1">))</span><span class="s0">;</span>
+        <span class="s1">StorageXML writer = </span><span class="s0">new </span><span class="s1">StorageXML()</span><span class="s0">;</span>
+        <span class="s1">filePath = data.getExtras().getString(</span><span class="s5">&quot;data&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s0">try </span><span class="s1">{ writer.writeConfigFile(projectList</span><span class="s0">, </span><span class="s1">filePath)</span><span class="s0">; </span><span class="s1">}</span>
+        <span class="s0">catch</span><span class="s1">(Exception ex){</span>
+            <span class="s1">ex.printStackTrace()</span><span class="s0">;</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+
+
+<span class="s1">}</span></pre>
+</body>
+</html>

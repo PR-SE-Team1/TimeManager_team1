@@ -1,0 +1,129 @@
+<html>
+<head>
+<title>ProjectActivity.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #629755; font-style: italic;}
+.s3 { color: #629755; font-weight: bold; font-style: italic;}
+.s4 { color: #6a8759;}
+.s5 { color: #808080;}
+.s6 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+ProjectActivity.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.example.timemanager.ui.projects</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">android.content.Intent</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.os.Bundle</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.view.View</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.Button</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.EditText</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.Toast</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">androidx.annotation.Nullable</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">androidx.appcompat.app.AppCompatActivity</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">androidx.recyclerview.widget.LinearLayoutManager</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">androidx.recyclerview.widget.RecyclerView</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">com.example.timemanager.R</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">com.example.timemanager.ui.recycler.RecyclerViewAdapter</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">java.util.ArrayList</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.List</span><span class="s0">;</span>
+
+<span class="s2">/**</span>
+ <span class="s2">* class needed to create a recyclerview with different projects and display them in activity_projects</span>
+ <span class="s2">*/</span>
+<span class="s0">public class </span><span class="s1">ProjectActivity </span><span class="s0">extends </span><span class="s1">AppCompatActivity </span><span class="s0">implements </span><span class="s1">RecyclerViewAdapter.OnProjectListener {</span>
+
+    <span class="s0">private </span><span class="s1">List&lt;Project&gt; projectList</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">RecyclerView recyclerView</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">RecyclerViewAdapter recyclerViewAdapter</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">Button btnAddP</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">EditText etAddP</span><span class="s0">;</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* opens activity_projects, creates a list of projects, builds a recycler view and sets the needed button to add a new project</span>
+     <span class="s2">* further information in AppCompatActivity</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">savedInstanceState</span>
+     <span class="s2">*/</span>
+    <span class="s1">@Override</span>
+    <span class="s0">public void </span><span class="s1">onCreate(@Nullable Bundle savedInstanceState) {</span>
+        <span class="s0">super</span><span class="s1">.onCreate(savedInstanceState)</span><span class="s0">;</span>
+      
+        <span class="s1">setContentView(R.layout.activity_projects)</span><span class="s0">;</span>
+
+        <span class="s1">createProjectList()</span><span class="s0">;</span>
+        <span class="s1">buildRecyclerView()</span><span class="s0">;</span>
+        <span class="s1">setButtons()</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* method setting up button to add a new project</span>
+     <span class="s2">* After writing the name of the project and clicking on the button, the project will be added.</span>
+     <span class="s2">*/</span>
+    <span class="s0">private void </span><span class="s1">setButtons() {</span>
+        <span class="s1">btnAddP = findViewById(R.id.btnAddNewProject)</span><span class="s0">;</span>
+        <span class="s1">etAddP = findViewById(R.id.etAddNewProject)</span><span class="s0">;</span>
+
+        <span class="s1">btnAddP.setOnClickListener(</span><span class="s0">new </span><span class="s1">View.OnClickListener() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick(View v) {</span>
+                <span class="s1">String getInput = etAddP.getText().toString()</span><span class="s0">;</span>
+
+                <span class="s0">if </span><span class="s1">(projectList.contains(getInput)){</span>
+                    <span class="s1">Toast.makeText(getBaseContext()</span><span class="s0">, </span><span class="s4">&quot;Projekt existiert bereits&quot;</span><span class="s0">, </span><span class="s1">Toast.LENGTH_LONG).show()</span><span class="s0">;</span>
+                <span class="s1">} </span><span class="s0">else if </span><span class="s1">(getInput == </span><span class="s0">null </span><span class="s1">|| getInput.trim().equals(</span><span class="s4">&quot;&quot;</span><span class="s1">)){</span>
+                    <span class="s1">Toast.makeText(getBaseContext()</span><span class="s0">, </span><span class="s4">&quot;Kein Name eingegeben&quot;</span><span class="s0">, </span><span class="s1">Toast.LENGTH_LONG).show()</span><span class="s0">;</span>
+                <span class="s1">}</span><span class="s0">else </span><span class="s1">{</span>
+                    <span class="s1">projectList.add(</span><span class="s0">new </span><span class="s1">Project(getInput))</span><span class="s0">;</span>
+                <span class="s1">}</span>
+            <span class="s1">}</span>
+        <span class="s1">})</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* method building recyclerview</span>
+     <span class="s2">*/</span>
+    <span class="s0">private void </span><span class="s1">buildRecyclerView() {</span>
+        <span class="s5">// set up the RecyclerView</span>
+        <span class="s1">recyclerView = findViewById(R.id.recyclerViewProjects)</span><span class="s0">;</span>
+        <span class="s1">recyclerView.setHasFixedSize(</span><span class="s0">true</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">recyclerView.setLayoutManager(</span><span class="s0">new </span><span class="s1">LinearLayoutManager(</span><span class="s0">this</span><span class="s1">))</span><span class="s0">;</span>
+        <span class="s1">recyclerViewAdapter = </span><span class="s0">new </span><span class="s1">RecyclerViewAdapter(</span><span class="s0">this, </span><span class="s1">projectList</span><span class="s0">, this</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">recyclerView.setAdapter(recyclerViewAdapter)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+
+    <span class="s2">/**</span>
+     <span class="s2">* method creating a list of projects</span>
+     <span class="s2">*/</span>
+    <span class="s0">private void </span><span class="s1">createProjectList() {</span>
+        <span class="s1">projectList = </span><span class="s0">new </span><span class="s1">ArrayList&lt;&gt;()</span><span class="s0">;</span>
+        <span class="s1">projectList.add(</span><span class="s0">new </span><span class="s1">Project (</span><span class="s4">&quot;Time Manager&quot;</span><span class="s0">, </span><span class="s4">&quot;App, die das Zeitmanagement vereinfacht.&quot;</span><span class="s0">, </span><span class="s6">11.1</span><span class="s0">, </span><span class="s4">&quot;grün&quot;</span><span class="s1">))</span><span class="s0">;</span>
+        <span class="s1">projectList.add(</span><span class="s0">new </span><span class="s1">Project (</span><span class="s4">&quot;Vier gewinnt&quot;</span><span class="s0">, </span><span class="s4">&quot;Spiel für zwei Personen.&quot;</span><span class="s0">, </span><span class="s6">12.1</span><span class="s0">, </span><span class="s4">&quot;rot&quot;</span><span class="s1">))</span><span class="s0">;</span>
+        <span class="s1">projectList.add(</span><span class="s0">new </span><span class="s1">Project ( </span><span class="s4">&quot;Offenes Notitzbuch&quot;</span><span class="s0">, </span><span class="s4">&quot;Das Notizbuch für die ganze Firma.&quot;</span><span class="s0">, </span><span class="s6">13.1</span><span class="s0">, </span><span class="s4">&quot;grün&quot;</span><span class="s1">))</span><span class="s0">;</span>
+        <span class="s1">projectList.add(</span><span class="s0">new </span><span class="s1">Project ( </span><span class="s4">&quot;Bookend&quot;</span><span class="s0">, </span><span class="s4">&quot;Digitaler Buchclub.&quot;</span><span class="s0">, </span><span class="s6">14.1</span><span class="s0">, </span><span class="s4">&quot;lila&quot;</span><span class="s1">))</span><span class="s0">;</span>
+        <span class="s1">projectList.add(</span><span class="s0">new </span><span class="s1">Project (</span><span class="s4">&quot;RezepteToGo&quot;</span><span class="s0">, </span><span class="s4">&quot;Alle Rezepte auf jedem Gerät.&quot;</span><span class="s0">, </span><span class="s6">15.1</span><span class="s0">, </span><span class="s4">&quot;gelb&quot;</span><span class="s1">))</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* implemented method to start ProjectDetailActivity (the overview of each project) by clicking on the specific project in the recycler view</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">project clicked project</span>
+     <span class="s2">*/</span>
+    <span class="s1">@Override</span>
+    <span class="s0">public void </span><span class="s1">onProjectClick(Project project) {</span>
+        <span class="s1">startActivity(</span><span class="s0">new </span><span class="s1">Intent(ProjectActivity.</span><span class="s0">this, </span><span class="s1">ProjectDetailActivity.</span><span class="s0">class</span><span class="s1">).putExtra(</span><span class="s4">&quot;data&quot;</span><span class="s0">, </span><span class="s1">project))</span><span class="s0">;</span>
+
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

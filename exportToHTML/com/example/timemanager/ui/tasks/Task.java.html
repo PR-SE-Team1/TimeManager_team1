@@ -1,0 +1,134 @@
+<html>
+<head>
+<title>Task.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #629755; font-style: italic;}
+.s3 { color: #629755; font-weight: bold; font-style: italic;}
+.s4 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Task.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.example.timemanager.ui.tasks</span><span class="s0">;</span>
+
+
+<span class="s0">import </span><span class="s1">android.os.Parcel</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.os.Parcelable</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">com.example.timemanager.ui.projects.Project</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">java.util.ArrayList</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.List</span><span class="s0">;</span>
+
+<span class="s2">/**</span>
+ <span class="s2">* class needed to create task-items used in other classes</span>
+ <span class="s2">* implements Parcelable to pass complex data from one activity to another activity</span>
+ <span class="s2">*/</span>
+<span class="s0">public class </span><span class="s1">Task </span><span class="s0">implements </span><span class="s1">Parcelable{</span>
+
+    <span class="s0">private </span><span class="s1">String taskName</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">Project project</span><span class="s0">;</span>
+    <span class="s0">private boolean </span><span class="s1">defaultTask</span><span class="s0">;</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* constructor to initialize a task object</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">taskName the name of the task</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">defaultTask true if the task is a default task of the assigned project; otherwise false</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">project project to which the task is assigned</span>
+     <span class="s2">*/</span>
+    <span class="s0">public </span><span class="s1">Task (String taskName</span><span class="s0">, boolean </span><span class="s1">defaultTask</span><span class="s0">, </span><span class="s1">Project project ){</span>
+        <span class="s0">this</span><span class="s1">.taskName = taskName</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.defaultTask = defaultTask</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.project = project</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* retrieving task-data</span>
+     <span class="s2">* this constructor is invoked by method createFromParcel(Parcel source)</span>
+     <span class="s2">* further information in implemented Parcelable</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">in retrieved data from parcel</span>
+     <span class="s2">*/</span>
+    <span class="s0">protected </span><span class="s1">Task(Parcel in) {</span>
+        <span class="s1">taskName = in.readString()</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* creating a new parcel</span>
+     <span class="s2">* implemented from Parcel</span>
+     <span class="s2">*/</span>
+    <span class="s0">public static final </span><span class="s1">Creator&lt;Task&gt; CREATOR = </span><span class="s0">new </span><span class="s1">Creator&lt;Task&gt;() {</span>
+        <span class="s1">@Override</span>
+        <span class="s0">public </span><span class="s1">Task createFromParcel(Parcel in) {</span>
+            <span class="s0">return new </span><span class="s1">Task(in)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+
+        <span class="s1">@Override</span>
+        <span class="s0">public </span><span class="s1">Task[] newArray(</span><span class="s0">int </span><span class="s1">size) {</span>
+            <span class="s0">return new </span><span class="s1">Task[size]</span><span class="s0">;</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span><span class="s0">;</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* gets the name of the task</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">the name of the task</span>
+     <span class="s2">*/</span>
+    <span class="s0">public </span><span class="s1">String getTaskName() { </span><span class="s0">return </span><span class="s1">taskName</span><span class="s0">; </span><span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* gets the project to which the task is assigned</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">the project to which the task is assigned</span>
+     <span class="s2">*/</span>
+    <span class="s0">public </span><span class="s1">Project getProject(){ </span><span class="s0">return </span><span class="s1">project</span><span class="s0">;</span><span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* gets defaulttask</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">true if the task is a default task of the assigned project; otherwise false</span>
+     <span class="s2">*/</span>
+    <span class="s0">public boolean </span><span class="s1">getDefaultTask(){ </span><span class="s0">return </span><span class="s1">defaultTask</span><span class="s0">;</span><span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* sets the Name of the Task</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">taskName name of the task</span>
+     <span class="s2">*/</span>
+    <span class="s0">public void </span><span class="s1">setTaskName(String taskName){</span><span class="s0">this</span><span class="s1">.taskName = taskName</span><span class="s0">;</span><span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* sets the Project</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">project project to which the task is assigned</span>
+     <span class="s2">*/</span>
+    <span class="s0">public void </span><span class="s1">setProject(Project project){</span><span class="s0">this</span><span class="s1">.project = project</span><span class="s0">;</span><span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* describe the kinds of objects contained in this representation</span>
+     <span class="s2">* further information in implemented Parcelable</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">0</span>
+     <span class="s2">*/</span>
+    <span class="s1">@Override</span>
+    <span class="s0">public int </span><span class="s1">describeContents() {</span>
+        <span class="s0">return </span><span class="s4">0</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* storing the project data to a parcel-object</span>
+     <span class="s2">* further information in implemented Parcelable</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">dest</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">flags</span>
+     <span class="s2">*/</span>
+    <span class="s1">@Override</span>
+    <span class="s0">public void </span><span class="s1">writeToParcel(Parcel dest</span><span class="s0">, int </span><span class="s1">flags) {</span>
+        <span class="s1">dest.writeString(taskName)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+
+
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

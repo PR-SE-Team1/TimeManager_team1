@@ -1,0 +1,187 @@
+<html>
+<head>
+<title>RecyclerViewAdapterTasks.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #629755; font-style: italic;}
+.s3 { color: #629755; font-weight: bold; font-style: italic;}
+.s4 { color: #6897bb;}
+.s5 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+RecyclerViewAdapterTasks.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.example.timemanager.ui.recycler</span><span class="s0">;</span>
+
+
+<span class="s0">import </span><span class="s1">android.content.Context</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.os.SystemClock</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.view.LayoutInflater</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.view.View</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.view.ViewGroup</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.Chronometer</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.CompoundButton</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.ImageView</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.TextView</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.Toast</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.ToggleButton</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">androidx.annotation.NonNull</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">androidx.recyclerview.widget.RecyclerView</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">com.example.timemanager.R</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">com.example.timemanager.ui.tasks.Task</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">java.util.List</span><span class="s0">;</span>
+
+<span class="s2">/**</span>
+ <span class="s2">* class used to create a recycler view of tasks displayed on taskscreen</span>
+ <span class="s2">* these tasks open a new activity when clicked</span>
+ <span class="s2">*/</span>
+<span class="s0">public class </span><span class="s1">RecyclerViewAdapterTasks </span><span class="s0">extends </span><span class="s1">RecyclerView.Adapter&lt;RecyclerViewAdapterTasks.ViewHolder&gt; {</span>
+
+    <span class="s1">Context context</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">List&lt;Task&gt; data</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">OnTaskListener onTaskListener</span><span class="s0">;</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* constructor for a recycler view adapter</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">context context of this adapter</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">data list of tasks displayed in recyclerview</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">onTaskListener listener to perform an action depending on the click</span>
+     <span class="s2">*/</span>
+    <span class="s0">public </span><span class="s1">RecyclerViewAdapterTasks(Context context</span><span class="s0">, </span><span class="s1">List&lt;Task&gt; data</span><span class="s0">, </span><span class="s1">OnTaskListener onTaskListener){</span>
+        <span class="s0">this</span><span class="s1">.context = context</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.data = data</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.onTaskListener = onTaskListener</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* sets an on item click listener</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">listener listener to perform an action depending on the click</span>
+     <span class="s2">*/</span>
+    <span class="s0">public void </span><span class="s1">setOnItemClickListener (OnTaskListener listener){</span>
+        <span class="s1">onTaskListener = listener</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* interface to detect a click</span>
+     <span class="s2">* used in the activity to send position of clicked item</span>
+     <span class="s2">*/</span>
+    <span class="s0">public interface </span><span class="s1">OnTaskListener{</span>
+        <span class="s0">void </span><span class="s1">onDeleteClick(</span><span class="s0">int </span><span class="s1">position)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* static class for different views (elements) of a recycler view</span>
+     <span class="s2">*/</span>
+    <span class="s0">public static class </span><span class="s1">ViewHolder </span><span class="s0">extends </span><span class="s1">RecyclerView.ViewHolder </span><span class="s0">implements </span><span class="s1">View.OnClickListener {</span>
+        <span class="s0">public </span><span class="s1">TextView taskName</span><span class="s0">;</span>
+        <span class="s0">public </span><span class="s1">ImageView deleteImage</span><span class="s0">;</span>
+        <span class="s0">private </span><span class="s1">ToggleButton toggleButton</span><span class="s0">;</span>
+        <span class="s0">private </span><span class="s1">Chronometer chrono</span><span class="s0">;</span>
+
+        <span class="s0">long </span><span class="s1">timeElapsed = </span><span class="s4">0</span><span class="s0">;</span>
+
+        <span class="s0">public </span><span class="s1">ViewHolder(@NonNull View view</span><span class="s0">, </span><span class="s1">OnTaskListener onTaskListener) {</span>
+            <span class="s0">super</span><span class="s1">(view)</span><span class="s0">;</span>
+            <span class="s1">taskName = (TextView) view.findViewById(R.id.taskName)</span><span class="s0">;</span>
+            <span class="s1">deleteImage = itemView.findViewById(R.id.image_deleteTask)</span><span class="s0">;</span>
+
+            <span class="s1">deleteImage.setOnClickListener(</span><span class="s0">new </span><span class="s1">View.OnClickListener() {</span>
+                <span class="s1">@Override</span>
+                <span class="s0">public void </span><span class="s1">onClick(View v) {</span>
+                    <span class="s0">if </span><span class="s1">(onTaskListener != </span><span class="s0">null</span><span class="s1">) {</span>
+                        <span class="s0">int </span><span class="s1">position = getAdapterPosition()</span><span class="s0">;</span>
+                        <span class="s0">if </span><span class="s1">(position != RecyclerView.NO_POSITION) {</span>
+                            <span class="s1">onTaskListener.onDeleteClick(position)</span><span class="s0">;</span>
+                        <span class="s1">}</span>
+                    <span class="s1">}</span>
+                <span class="s1">}</span>
+            <span class="s1">})</span><span class="s0">;</span>
+
+            <span class="s1">toggleButton = (ToggleButton) view.findViewById(R.id.tbtnChronometerTask)</span><span class="s0">;</span>
+            <span class="s1">chrono = (Chronometer) view.findViewById(R.id.chronometer)</span><span class="s0">;</span>
+
+            <span class="s1">chrono.setOnChronometerTickListener(</span><span class="s0">new </span><span class="s1">Chronometer.OnChronometerTickListener() {</span>
+                <span class="s1">@Override</span>
+                <span class="s0">public void </span><span class="s1">onChronometerTick(Chronometer chronometer) {</span>
+                    <span class="s1">timeElapsed = SystemClock.elapsedRealtime() - chronometer.getBase()</span><span class="s0">;</span>
+                <span class="s1">}</span>
+            <span class="s1">})</span><span class="s0">;</span>
+
+            <span class="s1">toggleButton.setOnCheckedChangeListener(</span><span class="s0">new </span><span class="s1">ToggleButton.OnCheckedChangeListener() {</span>
+                <span class="s1">@Override</span>
+                <span class="s0">public void </span><span class="s1">onCheckedChanged(CompoundButton buttonView</span><span class="s0">, boolean </span><span class="s1">isChecked) {</span>
+                    <span class="s0">if</span><span class="s1">(isChecked == </span><span class="s0">true</span><span class="s1">) {</span>
+                        <span class="s0">if</span><span class="s1">(timeElapsed == </span><span class="s4">0</span><span class="s1">){</span>
+                            <span class="s1">chrono.setBase(SystemClock.elapsedRealtime())</span><span class="s0">;</span>
+                            <span class="s1">chrono.start()</span><span class="s0">;</span>
+                        <span class="s1">}</span>
+                        <span class="s1">Toast.makeText(buttonView.getContext()</span><span class="s0">, </span><span class="s5">&quot;ON State&quot;</span><span class="s0">, </span><span class="s1">Toast.LENGTH_SHORT).show()</span><span class="s0">;</span>
+                    <span class="s1">}</span><span class="s0">else</span><span class="s1">{</span>
+                        <span class="s0">if</span><span class="s1">(timeElapsed != </span><span class="s4">0</span><span class="s1">){</span>
+                            <span class="s1">timeElapsed = </span><span class="s4">0</span><span class="s0">;</span>
+                            <span class="s1">chrono.stop()</span><span class="s0">;</span>
+                        <span class="s1">}</span>
+                        <span class="s1">Toast.makeText(buttonView.getContext()</span><span class="s0">, </span><span class="s5">&quot;OFF State&quot;</span><span class="s0">, </span><span class="s1">Toast.LENGTH_SHORT).show()</span><span class="s0">;</span>
+                    <span class="s1">}</span>
+                <span class="s1">}</span>
+            <span class="s1">})</span><span class="s0">;</span>
+
+        <span class="s1">}</span>
+        <span class="s1">@Override</span>
+        <span class="s0">public void </span><span class="s1">onClick(View view) {</span>
+            <span class="s1">Toast.makeText(view.getContext()</span><span class="s0">, </span><span class="s5">&quot;position : &quot; </span><span class="s1">+ getLayoutPosition() + </span><span class="s5">&quot; text : &quot; </span><span class="s1">+ </span><span class="s0">this</span><span class="s1">.taskName.getText()</span><span class="s0">, </span><span class="s1">Toast.LENGTH_SHORT).show()</span><span class="s0">;</span>
+            <span class="s1">Toast.makeText(view.getContext()</span><span class="s0">, </span><span class="s5">&quot;The Item Clicked is: &quot;</span><span class="s1">+getLayoutPosition()</span><span class="s0">,</span><span class="s1">Toast.LENGTH_SHORT).show()</span><span class="s0">;</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* inflates the recycler_item_view (single cardview-items of a recyclerview) and represents an item</span>
+     <span class="s2">* further information in RecyclerView.Adapter</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">parent</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">viewType</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">viewHolder with view and listener</span>
+     <span class="s2">* </span><span class="s3">@throws </span><span class="s2">NullPointerException</span>
+     <span class="s2">* </span><span class="s3">@throws </span><span class="s2">IllegalArgumentException</span>
+     <span class="s2">*/</span>
+    <span class="s1">@Override</span>
+    <span class="s0">public </span><span class="s1">RecyclerViewAdapterTasks.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent</span><span class="s0">, int </span><span class="s1">viewType) </span><span class="s0">throws </span><span class="s1">NullPointerException</span><span class="s0">, </span><span class="s1">IllegalArgumentException{</span>
+        <span class="s1">View v = LayoutInflater.from(context).inflate(R.layout.recycler_item_view_tasks</span><span class="s0">, </span><span class="s1">parent</span><span class="s0">, false</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">ViewHolder viewHolder = </span><span class="s0">new </span><span class="s1">ViewHolder(v</span><span class="s0">, </span><span class="s1">onTaskListener)</span><span class="s0">;</span>
+
+        <span class="s0">return </span><span class="s1">viewHolder</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* displays the data on a specific position</span>
+     <span class="s2">* further information in RecyclerView.Adapter</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">holder</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">position</span>
+     <span class="s2">*/</span>
+    <span class="s1">@Override</span>
+    <span class="s0">public void </span><span class="s1">onBindViewHolder(@NonNull RecyclerViewAdapterTasks.ViewHolder holder</span><span class="s0">, int </span><span class="s1">position){</span>
+        <span class="s1">Task currentItem = data.get(position)</span><span class="s0">;</span>
+        <span class="s1">holder.taskName.setText(currentItem.getTaskName())</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* gets the number of items in the recycler view</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">number of items (int)</span>
+     <span class="s2">*/</span>
+    <span class="s1">@Override</span>
+    <span class="s0">public int </span><span class="s1">getItemCount() {</span>
+        <span class="s0">return this</span><span class="s1">.data.size()</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

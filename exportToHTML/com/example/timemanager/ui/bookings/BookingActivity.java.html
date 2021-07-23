@@ -1,0 +1,85 @@
+<html>
+<head>
+<title>BookingActivity.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #629755; font-style: italic;}
+.s3 { color: #629755; font-weight: bold; font-style: italic;}
+.s4 { color: #6897bb;}
+.s5 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+BookingActivity.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.example.timemanager.ui.bookings</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">android.os.Bundle</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">androidx.annotation.Nullable</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">androidx.appcompat.app.AppCompatActivity</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">androidx.recyclerview.widget.LinearLayoutManager</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">androidx.recyclerview.widget.RecyclerView</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">com.example.timemanager.R</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">com.example.timemanager.ui.recycler.RecyclerViewAdapterBookings</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">java.util.ArrayList</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.List</span><span class="s0">;</span>
+
+
+<span class="s2">/**</span>
+ <span class="s2">* class needed to create a recyclerview with different bookings and display them in activity_bookings</span>
+ <span class="s2">*/</span>
+<span class="s0">public class </span><span class="s1">BookingActivity </span><span class="s0">extends </span><span class="s1">AppCompatActivity{</span>
+
+    <span class="s0">private </span><span class="s1">List&lt;Booking&gt; bookingList</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">RecyclerView recyclerView</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">RecyclerViewAdapterBookings recyclerViewAdapterBookings</span><span class="s0">;</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* opens activity_bookings, creates a list of bookings and builds a recycler view</span>
+     <span class="s2">* further information in AppCompatActivity</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">savedInstanceState</span>
+     <span class="s2">*/</span>
+    <span class="s1">@Override</span>
+    <span class="s0">public void </span><span class="s1">onCreate(@Nullable Bundle savedInstanceState) {</span>
+        <span class="s0">super</span><span class="s1">.onCreate(savedInstanceState)</span><span class="s0">;</span>
+        <span class="s1">setContentView(R.layout.activity_bookings)</span><span class="s0">;</span>
+
+        <span class="s1">createBookingList()</span><span class="s0">;</span>
+        <span class="s1">buildRecyclerView()</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* method building recyclerview</span>
+     <span class="s2">*/</span>
+    <span class="s0">private void </span><span class="s1">buildRecyclerView() {</span>
+        <span class="s1">recyclerView = findViewById(R.id.recyclerViewBookings)</span><span class="s0">;</span>
+        <span class="s1">recyclerView.setHasFixedSize(</span><span class="s0">true</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">recyclerView.setLayoutManager(</span><span class="s0">new </span><span class="s1">LinearLayoutManager(</span><span class="s0">this</span><span class="s1">))</span><span class="s0">;</span>
+        <span class="s1">recyclerViewAdapterBookings = </span><span class="s0">new </span><span class="s1">RecyclerViewAdapterBookings(</span><span class="s0">this, </span><span class="s1">bookingList)</span><span class="s0">;</span>
+        <span class="s1">recyclerView.setAdapter(recyclerViewAdapterBookings)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* method creating a list with bookings</span>
+     <span class="s2">*/</span>
+    <span class="s0">private void </span><span class="s1">createBookingList() {</span>
+        <span class="s0">int </span><span class="s1">timeWorked1 = </span><span class="s4">1</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">timeWorked2 = </span><span class="s4">2</span><span class="s0">;</span>
+        <span class="s1">bookingList = </span><span class="s0">new </span><span class="s1">ArrayList&lt;&gt;()</span><span class="s0">;</span>
+        <span class="s1">bookingList.add(</span><span class="s0">new </span><span class="s1">Booking(</span><span class="s5">&quot;Buchung 1&quot;</span><span class="s0">, </span><span class="s1">timeWorked1))</span><span class="s0">;</span>
+        <span class="s1">bookingList.add(</span><span class="s0">new </span><span class="s1">Booking(</span><span class="s5">&quot;Buchung 2&quot;</span><span class="s0">, </span><span class="s1">timeWorked2))</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+<span class="s1">}</span>
+
+</pre>
+</body>
+</html>

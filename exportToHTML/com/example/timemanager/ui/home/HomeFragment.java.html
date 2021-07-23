@@ -1,0 +1,82 @@
+<html>
+<head>
+<title>HomeFragment.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #629755; font-style: italic;}
+.s3 { color: #629755; font-weight: bold; font-style: italic;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+HomeFragment.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.example.timemanager.ui.home</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">android.content.Intent</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.os.Bundle</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.view.LayoutInflater</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.view.View</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.view.ViewGroup</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.Button</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">androidx.annotation.NonNull</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">androidx.fragment.app.Fragment</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">com.example.timemanager.R</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">com.example.timemanager.ui.projects.Project</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">com.example.timemanager.ui.projects.ProjectActivity</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">com.example.timemanager.ui.tasks.TaskActivity</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">java.util.ArrayList</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.List</span><span class="s0">;</span>
+
+<span class="s2">/**</span>
+ <span class="s2">* class needed to open the fragment_home and show buttons used to access projects and tasks</span>
+ <span class="s2">*/</span>
+<span class="s0">public class </span><span class="s1">HomeFragment </span><span class="s0">extends </span><span class="s1">Fragment {</span>
+
+    <span class="s0">private </span><span class="s1">Button btnProjects</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">Button btnTasks</span><span class="s0">;</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* opens fragment_home and contains functionality to open ProjectActivity and TaskActivity by clicking on a button</span>
+     <span class="s2">* further information in extended Fragment</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">inflater</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">container</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">savedInstanceState</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">view</span>
+     <span class="s2">*/</span>
+    <span class="s1">@Override</span>
+    <span class="s0">public </span><span class="s1">View onCreateView(@NonNull LayoutInflater inflater</span><span class="s0">,</span>
+                             <span class="s1">ViewGroup container</span><span class="s0">, </span><span class="s1">Bundle savedInstanceState) {</span>
+
+        <span class="s1">View view = inflater.inflate(R.layout.fragment_home</span><span class="s0">, </span><span class="s1">container</span><span class="s0">, false</span><span class="s1">)</span><span class="s0">;</span>
+
+        <span class="s1">btnProjects = (Button) view.findViewById(R.id.btnProjects)</span><span class="s0">;</span>
+        <span class="s1">btnProjects.setOnClickListener(</span><span class="s0">new </span><span class="s1">View.OnClickListener() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick(View v) {</span>
+                <span class="s1">Intent intent = </span><span class="s0">new </span><span class="s1">Intent(getActivity()</span><span class="s0">, </span><span class="s1">ProjectActivity.</span><span class="s0">class</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s1">startActivity(intent)</span><span class="s0">;</span>
+            <span class="s1">}</span>
+        <span class="s1">})</span><span class="s0">;</span>
+
+        <span class="s1">btnTasks = (Button) view.findViewById(R.id.btnTasks)</span><span class="s0">;</span>
+        <span class="s1">btnTasks.setOnClickListener(</span><span class="s0">new </span><span class="s1">View.OnClickListener() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick(View v) {</span>
+                <span class="s1">Intent intent = </span><span class="s0">new </span><span class="s1">Intent(getActivity()</span><span class="s0">, </span><span class="s1">TaskActivity.</span><span class="s0">class</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s1">startActivity(intent)</span><span class="s0">;</span>
+            <span class="s1">}</span>
+        <span class="s1">})</span><span class="s0">;</span>
+        <span class="s0">return </span><span class="s1">view</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+<span class="s1">}</span></pre>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<html>
+<head>
+<title>ProjectDetailActivity.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #629755; font-style: italic;}
+.s3 { color: #6a8759;}
+.s4 { color: #6897bb;}
+.s5 { color: #629755; font-weight: bold; font-style: italic;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+ProjectDetailActivity.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.example.timemanager.ui.projects</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">android.content.Intent</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.content.SharedPreferences</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.os.Bundle</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.view.View</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.ArrayAdapter</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.Spinner</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.TextView</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">androidx.annotation.Nullable</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">androidx.appcompat.app.AppCompatActivity</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">com.example.timemanager.R</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">com.example.timemanager.ui.tasks.Task</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">com.example.timemanager.ui.tasks.TaskActivity</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">java.util.ArrayList</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.List</span><span class="s0">;</span>
+
+<span class="s2">/**</span>
+ <span class="s2">* opens activity_edit_project, shows details about a project</span>
+ <span class="s2">*/</span>
+<span class="s0">public class </span><span class="s1">ProjectDetailActivity </span><span class="s0">extends </span><span class="s1">AppCompatActivity {</span>
+
+    <span class="s0">public </span><span class="s1">List&lt;String&gt; taskList = </span><span class="s0">new </span><span class="s1">ArrayList&lt;&gt;()</span><span class="s0">;</span>
+    <span class="s0">public </span><span class="s1">List&lt;String&gt; colorList = </span><span class="s0">new </span><span class="s1">ArrayList&lt;&gt;()</span><span class="s0">;</span>
+
+    <span class="s1">SharedPreferences sharedPreferences</span><span class="s0">;</span>
+
+    <span class="s1">TextView tvProject</span><span class="s0">;</span>
+    <span class="s1">TextView editHours</span><span class="s0">;</span>
+    <span class="s1">TextView editDescription</span><span class="s0">;</span>
+
+    <span class="s0">public static final </span><span class="s1">String Description = </span><span class="s3">&quot;descriptionKey&quot;</span><span class="s0">;</span>
+    <span class="s0">public static final </span><span class="s1">String Hours = </span><span class="s3">&quot;hoursKey&quot;</span><span class="s0">;</span>
+
+    <span class="s0">public </span><span class="s1">Project project = </span><span class="s0">new </span><span class="s1">Project(</span><span class="s3">&quot;Project1&quot;</span><span class="s0">, </span><span class="s3">&quot;Beschreibung&quot;</span><span class="s0">, </span><span class="s4">28</span><span class="s0">, </span><span class="s3">&quot;red&quot;</span><span class="s1">)</span><span class="s0">;</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* opens activity_edit_projects and contains the implementation to display only details from the clicked project.</span>
+     <span class="s2">* The name of the project and the short description are displayed in a TextView and the defauls task and color can be changed in a spinner</span>
+     <span class="s2">* further information in AppCompatActivity</span>
+     <span class="s2">* </span><span class="s5">@param </span><span class="s2">savedInstanceState</span>
+     <span class="s2">*/</span>
+    <span class="s1">@Override</span>
+    <span class="s0">public void </span><span class="s1">onCreate(@Nullable Bundle savedInstanceState) {</span>
+        <span class="s0">super</span><span class="s1">.onCreate(savedInstanceState)</span><span class="s0">;</span>
+        <span class="s1">setContentView(R.layout.activity_edit_projects)</span><span class="s0">;</span>
+
+        <span class="s1">tvProject = findViewById(R.id.selectedProject)</span><span class="s0">;</span>
+        <span class="s1">editDescription = findViewById(R.id.mltEditDescription)</span><span class="s0">;</span>
+        <span class="s1">editHours = findViewById(R.id.ptEditHours)</span><span class="s0">;</span>
+        <span class="s1">Intent intent1 = getIntent()</span><span class="s0">;</span>
+        <span class="s0">if </span><span class="s1">(intent1.getExtras() != </span><span class="s0">null</span><span class="s1">){</span>
+            <span class="s1">Project project = (Project) intent1.getParcelableExtra(</span><span class="s3">&quot;data&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">tvProject.setText(project.getProjName())</span><span class="s0">;</span>
+            <span class="s1">editDescription.setText(project.getDescription())</span><span class="s0">;</span>
+            <span class="s0">double </span><span class="s1">d = project.getPlannedHours()</span><span class="s0">;</span>
+            <span class="s1">editHours.setText(String.valueOf(d))</span><span class="s0">;</span>
+        <span class="s1">}</span>
+
+        <span class="s1">taskList.add(</span><span class="s0">new </span><span class="s1">Task(</span><span class="s3">&quot;Arbeit aufteilen&quot;</span><span class="s0">, true, </span><span class="s1">project).getTaskName())</span><span class="s0">;</span>
+        <span class="s1">taskList.add(</span><span class="s0">new </span><span class="s1">Task(</span><span class="s3">&quot;Gruppen bilden&quot;</span><span class="s0">, false, </span><span class="s1">project).getTaskName())</span><span class="s0">;</span>
+        <span class="s1">Spinner spinnerT</span><span class="s0">;</span>
+        <span class="s1">spinnerT = findViewById(R.id.spinnerEditDefTask)</span><span class="s0">;</span>
+        <span class="s1">ArrayAdapter arrayAdapterT = </span><span class="s0">new </span><span class="s1">ArrayAdapter(</span><span class="s0">this,</span><span class="s1">android.R.layout.simple_spinner_item</span><span class="s0">,</span><span class="s1">taskList)</span><span class="s0">;</span>
+        <span class="s1">arrayAdapterT.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)</span><span class="s0">;</span>
+        <span class="s1">spinnerT.setAdapter(arrayAdapterT)</span><span class="s0">;</span>
+
+        <span class="s1">colorList.add(</span><span class="s3">&quot;BLAU&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">colorList.add(</span><span class="s3">&quot;ROT&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">colorList.add(</span><span class="s3">&quot;GRÜN&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Spinner spinnerC</span><span class="s0">;</span>
+        <span class="s1">spinnerC = findViewById(R.id.spinnerEditColor)</span><span class="s0">;</span>
+        <span class="s1">ArrayAdapter arrayAdapterC = </span><span class="s0">new </span><span class="s1">ArrayAdapter(</span><span class="s0">this,</span><span class="s1">android.R.layout.simple_spinner_item</span><span class="s0">,</span><span class="s1">colorList)</span><span class="s0">;</span>
+        <span class="s1">arrayAdapterC.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)</span><span class="s0">;</span>
+        <span class="s1">spinnerC.setAdapter(arrayAdapterC)</span><span class="s0">;</span>
+
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* saves the details of the project on button click</span>
+     <span class="s2">* </span><span class="s5">@param </span><span class="s2">view</span>
+     <span class="s2">*/</span>
+    <span class="s0">public void </span><span class="s1">save(View view) {</span>
+        <span class="s1">String savedDescription = editDescription.getText().toString()</span><span class="s0">;</span>
+        <span class="s1">String savedHours = editHours.getText().toString()</span><span class="s0">;</span>
+        <span class="s1">SharedPreferences.Editor editor = sharedPreferences.edit()</span><span class="s0">;</span>
+        <span class="s1">editor.putString(Description</span><span class="s0">, </span><span class="s1">savedDescription)</span><span class="s0">;</span>
+        <span class="s1">editor.putString(Hours</span><span class="s0">, </span><span class="s1">savedHours)</span><span class="s0">;</span>
+        <span class="s1">editor.commit()</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* opens TaskActivity on button click</span>
+     <span class="s2">* </span><span class="s5">@param </span><span class="s2">view</span>
+     <span class="s2">*/</span>
+    <span class="s0">public void </span><span class="s1">goToActivities(View view) {</span>
+        <span class="s1">Intent intent = </span><span class="s0">new </span><span class="s1">Intent(</span><span class="s0">this, </span><span class="s1">TaskActivity.</span><span class="s0">class</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">startActivity(intent)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

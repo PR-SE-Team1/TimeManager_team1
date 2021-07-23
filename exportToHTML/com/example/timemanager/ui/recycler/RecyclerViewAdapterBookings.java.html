@@ -1,0 +1,109 @@
+<html>
+<head>
+<title>RecyclerViewAdapterBookings.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #629755; font-style: italic;}
+.s3 { color: #629755; font-weight: bold; font-style: italic;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+RecyclerViewAdapterBookings.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.example.timemanager.ui.recycler</span><span class="s0">;</span>
+
+
+<span class="s0">import </span><span class="s1">android.content.Context</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.view.LayoutInflater</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.view.View</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.view.ViewGroup</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.ImageView</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">android.widget.TextView</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">androidx.annotation.NonNull</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">androidx.recyclerview.widget.RecyclerView</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">com.example.timemanager.R</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">com.example.timemanager.ui.bookings.Booking</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">java.util.List</span><span class="s0">;</span>
+
+<span class="s2">/**</span>
+ <span class="s2">* class used to create a recycler view of tasks displayed on bookingscreen</span>
+ <span class="s2">* these bookings open a new activity when clicked</span>
+ <span class="s2">*/</span>
+<span class="s0">public class </span><span class="s1">RecyclerViewAdapterBookings </span><span class="s0">extends </span><span class="s1">RecyclerView.Adapter&lt;RecyclerViewAdapterBookings.ViewHolder&gt; {</span>
+
+    <span class="s1">Context context</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">List&lt;Booking&gt; data</span><span class="s0">;</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* constructor for a recycler view adapter</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">context context of this adapter</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">data list of bookings displayed in recyclerview</span>
+     <span class="s2">*/</span>
+    <span class="s0">public </span><span class="s1">RecyclerViewAdapterBookings(Context context</span><span class="s0">, </span><span class="s1">List&lt;Booking&gt; data){</span>
+        <span class="s0">this</span><span class="s1">.context = context</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.data = data</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+
+    <span class="s2">/**</span>
+     <span class="s2">* class for different views (elements) of a recycler view</span>
+     <span class="s2">*/</span>
+    <span class="s0">public static class </span><span class="s1">ViewHolder </span><span class="s0">extends </span><span class="s1">RecyclerView.ViewHolder {</span>
+        <span class="s0">public </span><span class="s1">TextView bookingName</span><span class="s0">;</span>
+
+        <span class="s0">public </span><span class="s1">ViewHolder(@NonNull View view) {</span>
+            <span class="s0">super</span><span class="s1">(view)</span><span class="s0">;</span>
+            <span class="s1">bookingName = (TextView) view.findViewById(R.id.bookingName)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* inflates the recycler_item_view (single cardview-items of a recyclerview) and represents an item</span>
+     <span class="s2">* further information in RecyclerView.Adapter</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">parent</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">viewType</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">viewHolder with view</span>
+     <span class="s2">* </span><span class="s3">@throws </span><span class="s2">NullPointerException</span>
+     <span class="s2">* </span><span class="s3">@throws </span><span class="s2">IllegalArgumentException</span>
+     <span class="s2">*/</span>
+    <span class="s1">@Override</span>
+    <span class="s0">public </span><span class="s1">RecyclerViewAdapterBookings.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent</span><span class="s0">, int </span><span class="s1">viewType) </span><span class="s0">throws </span><span class="s1">NullPointerException</span><span class="s0">, </span><span class="s1">IllegalArgumentException{</span>
+        <span class="s1">View v = LayoutInflater.from(context).inflate(R.layout.recycler_item_view_bookings</span><span class="s0">, </span><span class="s1">parent</span><span class="s0">, false</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">ViewHolder viewHolder = </span><span class="s0">new </span><span class="s1">ViewHolder(v)</span><span class="s0">;</span>
+
+        <span class="s0">return </span><span class="s1">viewHolder</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* displays the data on a specific position</span>
+     <span class="s2">* further information in RecyclerView.Adapter</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">holder</span>
+     <span class="s2">* </span><span class="s3">@param </span><span class="s2">position</span>
+     <span class="s2">*/</span>
+    <span class="s1">@Override</span>
+    <span class="s0">public void </span><span class="s1">onBindViewHolder(@NonNull RecyclerViewAdapterBookings.ViewHolder holder</span><span class="s0">, int </span><span class="s1">position){</span>
+        <span class="s1">Booking currentItem = data.get(position)</span><span class="s0">;</span>
+        <span class="s1">holder.bookingName.setText(currentItem.getBookingName())</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">/**</span>
+     <span class="s2">* gets the number of items in the recycler view</span>
+     <span class="s2">* </span><span class="s3">@return </span><span class="s2">number of items (int)</span>
+     <span class="s2">*/</span>
+    <span class="s1">@Override</span>
+    <span class="s0">public int </span><span class="s1">getItemCount() {</span>
+        <span class="s0">return this</span><span class="s1">.data.size()</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+<span class="s1">}</span>
+</pre>
+</body>
+</html>
