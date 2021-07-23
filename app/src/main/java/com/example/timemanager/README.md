@@ -6,14 +6,6 @@ Info about project structure:
     manifests: contains the AndroidManifest.xml 
     MainActivity.java is used to create the navigation bar
     
-    Packages:
-        bookings:
-        home:
-        info:
-        projects:
-        recycler:
-        settings: 
-        tasks
 
 Documentations (optional):
     -Documentation and examples for Parcelable:
